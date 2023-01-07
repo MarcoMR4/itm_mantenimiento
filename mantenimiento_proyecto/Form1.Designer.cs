@@ -77,9 +77,9 @@
             this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Location = new System.Drawing.Point(382, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 35);
+            this.label1.Size = new System.Drawing.Size(260, 35);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Bienvenido";
+            this.label1.Text = "Bienvenido al gestor";
             // 
             // Form1
             // 
