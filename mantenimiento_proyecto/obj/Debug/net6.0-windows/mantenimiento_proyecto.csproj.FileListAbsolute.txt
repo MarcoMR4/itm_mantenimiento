@@ -15,3 +15,5 @@ C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_manteni
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.pdb
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.genruntimeconfig.cache
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\ref\mantenimiento_proyecto.dll
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Form2.resources
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Form3.resources
