@@ -28,5 +28,10 @@ namespace mantenimiento_proyecto
             formulario.Show();
             this.Hide();
         }
+
+        private void textServicio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
