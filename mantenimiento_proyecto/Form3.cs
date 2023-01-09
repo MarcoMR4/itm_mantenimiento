@@ -58,5 +58,23 @@ namespace mantenimiento_proyecto
         {
 
         }
+
+        private void inicioToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form formulario = new Form1();
+            formulario.Show();
+            this.Hide();
+
+        }
+
+        private void listaDeVerificaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
