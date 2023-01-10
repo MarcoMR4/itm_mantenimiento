@@ -34,13 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textServicio = new System.Windows.Forms.TextBox();
             this.labelServicio = new System.Windows.Forms.Label();
-            this.btnCargarServicio = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboTipo = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +50,17 @@
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnCargarServicio = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelPeriodo
@@ -121,7 +123,7 @@
             this.textServicio.Location = new System.Drawing.Point(323, 356);
             this.textServicio.Margin = new System.Windows.Forms.Padding(2);
             this.textServicio.Name = "textServicio";
-            this.textServicio.Size = new System.Drawing.Size(617, 29);
+            this.textServicio.Size = new System.Drawing.Size(630, 29);
             this.textServicio.TabIndex = 9;
             this.textServicio.Text = "Descripción del servicio";
             this.textServicio.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -136,100 +138,6 @@
             this.labelServicio.TabIndex = 10;
             this.labelServicio.Text = "Servicio:";
             // 
-            // btnCargarServicio
-            // 
-            this.btnCargarServicio.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCargarServicio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarServicio.Location = new System.Drawing.Point(812, 506);
-            this.btnCargarServicio.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCargarServicio.Name = "btnCargarServicio";
-            this.btnCargarServicio.Size = new System.Drawing.Size(128, 39);
-            this.btnCargarServicio.TabIndex = 11;
-            this.btnCargarServicio.Text = "Cargar servicio";
-            this.btnCargarServicio.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(246, 420);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 25);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Meses del Servicio";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboBox3.DisplayMember = "enero-junio";
-            this.comboBox3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "enero-junio",
-            "agosto-diciembre"});
-            this.comboBox3.Location = new System.Drawing.Point(413, 417);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(177, 30);
-            this.comboBox3.TabIndex = 13;
-            this.comboBox3.Text = "Seleccione los meses ";
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
-            // comboTipo
-            // 
-            this.comboTipo.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboTipo.DisplayMember = "enero-junio";
-            this.comboTipo.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboTipo.FormattingEnabled = true;
-            this.comboTipo.Items.AddRange(new object[] {
-            "Interno\t(I)",
-            "Externo\t(E)"});
-            this.comboTipo.Location = new System.Drawing.Point(763, 417);
-            this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(177, 30);
-            this.comboTipo.TabIndex = 15;
-            this.comboTipo.Text = "Interno\t(I)";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(624, 417);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 25);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Tipo de Servicio";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboBox5.DisplayMember = "enero-junio";
-            this.comboBox5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "enero-junio",
-            "agosto-diciembre"});
-            this.comboBox5.Location = new System.Drawing.Point(326, 474);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(239, 30);
-            this.comboBox5.TabIndex = 17;
-            this.comboBox5.Text = "Seleccione la persona que elabora";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(246, 477);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 25);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Elaboró:";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -243,7 +151,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1004, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1017, 31);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -343,7 +251,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "enero-junio",
             "agosto-diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(455, 307);
+            this.comboBox1.Location = new System.Drawing.Point(645, 307);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(308, 30);
             this.comboBox1.TabIndex = 37;
@@ -353,7 +261,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(246, 307);
+            this.label8.Location = new System.Drawing.Point(436, 307);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(203, 25);
             this.label8.TabIndex = 36;
@@ -410,12 +318,125 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "Aprobó:";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.comboBox5);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.comboTipo);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.btnCargarServicio);
+            this.groupBox2.Location = new System.Drawing.Point(54, 390);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(899, 164);
+            this.groupBox2.TabIndex = 42;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox1";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.AutoCompleteCustomSource.AddRange(new string[] {
+            "ene-jun",
+            "ago-dic"});
+            this.comboBox5.DisplayMember = "enero-junio";
+            this.comboBox5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "enero-junio",
+            "agosto-diciembre"});
+            this.comboBox5.Location = new System.Drawing.Point(201, 72);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(256, 30);
+            this.comboBox5.TabIndex = 24;
+            this.comboBox5.Text = "Seleccione la persona que elabora";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(112, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 25);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Elaboró:";
+            // 
+            // comboTipo
+            // 
+            this.comboTipo.AutoCompleteCustomSource.AddRange(new string[] {
+            "ene-jun",
+            "ago-dic"});
+            this.comboTipo.DisplayMember = "enero-junio";
+            this.comboTipo.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Items.AddRange(new object[] {
+            "Interno\t(I)",
+            "Externo\t(E)"});
+            this.comboTipo.Location = new System.Drawing.Point(609, 12);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(177, 30);
+            this.comboTipo.TabIndex = 22;
+            this.comboTipo.Text = "Interno\t(I)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(463, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(140, 25);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Tipo de Servicio";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteCustomSource.AddRange(new string[] {
+            "ene-jun",
+            "ago-dic"});
+            this.comboBox3.DisplayMember = "enero-junio";
+            this.comboBox3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "enero-junio",
+            "agosto-diciembre"});
+            this.comboBox3.Location = new System.Drawing.Point(280, 12);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(177, 30);
+            this.comboBox3.TabIndex = 20;
+            this.comboBox3.Text = "Seleccione los meses ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(112, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(162, 25);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Meses del Servicio";
+            // 
+            // btnCargarServicio
+            // 
+            this.btnCargarServicio.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCargarServicio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCargarServicio.Location = new System.Drawing.Point(658, 110);
+            this.btnCargarServicio.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCargarServicio.Name = "btnCargarServicio";
+            this.btnCargarServicio.Size = new System.Drawing.Size(128, 39);
+            this.btnCargarServicio.TabIndex = 18;
+            this.btnCargarServicio.Text = "Cargar servicio";
+            this.btnCargarServicio.UseVisualStyleBackColor = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1004, 549);
+            this.ClientSize = new System.Drawing.Size(1017, 566);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox2);
@@ -428,13 +449,6 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboTipo);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnCargarServicio);
             this.Controls.Add(this.labelServicio);
             this.Controls.Add(this.textServicio);
             this.Controls.Add(this.label3);
@@ -442,11 +456,14 @@
             this.Controls.Add(this.comboPeriodos);
             this.Controls.Add(this.labelPeriodo);
             this.Name = "Form3";
-            this.Text = "v";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Programa anual";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,13 +476,6 @@
         private Label label3;
         private TextBox textServicio;
         private Label labelServicio;
-        private Button btnCargarServicio;
-        private Label label5;
-        private ComboBox comboBox3;
-        private ComboBox comboTipo;
-        private Label label6;
-        private ComboBox comboBox5;
-        private Label label7;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem inicioToolStripMenuItem;
         private ToolStripMenuItem listaDeVerificaciónToolStripMenuItem;
@@ -482,5 +492,13 @@
         private Label label9;
         private ComboBox comboBox4;
         private Label label10;
+        private GroupBox groupBox2;
+        private ComboBox comboBox5;
+        private Label label7;
+        private ComboBox comboTipo;
+        private Label label6;
+        private ComboBox comboBox3;
+        private Label label5;
+        private Button btnCargarServicio;
     }
 }

@@ -25,5 +25,12 @@ namespace mantenimiento_proyecto
             formulario.Show();
             this.Hide();
         }
+
+        private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new Form4();
+            formulario.Show();
+            this.Hide();
+        }
     }
 }

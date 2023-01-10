@@ -42,6 +42,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearListaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboAtendido = new System.Windows.Forms.ComboBox();
@@ -53,7 +54,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.crearListaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,7 +196,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(867, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 31);
             this.menuStrip1.TabIndex = 28;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -215,6 +215,12 @@
             this.listaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(201, 27);
             this.listaDeVerificaciónToolStripMenuItem.Text = "Crear listas de verificación";
             this.listaDeVerificaciónToolStripMenuItem.Click += new System.EventHandler(this.listaDeVerificaciónToolStripMenuItem_Click);
+            // 
+            // crearListaDeVerificaciónToolStripMenuItem
+            // 
+            this.crearListaDeVerificaciónToolStripMenuItem.Name = "crearListaDeVerificaciónToolStripMenuItem";
+            this.crearListaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(251, 28);
+            this.crearListaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
             // 
             // planAnualToolStripMenuItem
             // 
@@ -288,7 +294,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(308, 30);
             this.comboBox1.TabIndex = 34;
-            this.comboBox1.Text = "Seleccione en la lista";
+            this.comboBox1.Text = "Mantenimiento de equipo";
             // 
             // label2
             // 
@@ -338,18 +344,12 @@
             this.button1.Text = "Agregar Hallazgo";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // crearListaDeVerificaciónToolStripMenuItem
-            // 
-            this.crearListaDeVerificaciónToolStripMenuItem.Name = "crearListaDeVerificaciónToolStripMenuItem";
-            this.crearListaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.crearListaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(867, 542);
+            this.ClientSize = new System.Drawing.Size(1008, 585);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
@@ -372,7 +372,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listas de verificación";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

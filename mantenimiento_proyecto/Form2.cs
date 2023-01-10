@@ -38,7 +38,7 @@ namespace mantenimiento_proyecto
         {
             Form formulario = new Form1();
             formulario.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void listaDeVerificaciónToolStripMenuItem_Click(object sender, EventArgs e)

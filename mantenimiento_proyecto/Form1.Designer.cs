@@ -33,9 +33,9 @@
             this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.listasDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programaAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,18 +86,7 @@
             this.registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
             this.registrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(150, 27);
             this.registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(316, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 43);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Bienvenido";
+            this.registrarPersonalToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonalToolStripMenuItem_Click);
             // 
             // listasDeVerificaciónToolStripMenuItem
             // 
@@ -111,10 +100,25 @@
             this.programaAnualToolStripMenuItem.Size = new System.Drawing.Size(134, 27);
             this.programaAnualToolStripMenuItem.Text = "Programa anual";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(316, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 43);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Bienvenido";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::mantenimiento_proyecto.Properties.Resources.logo4;
-            this.pictureBox1.Location = new System.Drawing.Point(180, 131);
+            this.pictureBox1.Location = new System.Drawing.Point(385, 131);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(521, 342);
             this.pictureBox1.TabIndex = 2;
@@ -132,7 +136,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
