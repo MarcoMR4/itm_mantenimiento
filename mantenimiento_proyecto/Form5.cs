@@ -20,10 +20,6 @@ namespace mantenimiento_proyecto
             mostrarAreas();
         }
 
-        private void textArea_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private async void btnGuardarArea_Click(object sender, EventArgs e)
         {
@@ -41,6 +37,7 @@ namespace mantenimiento_proyecto
                 if (respuesta)
                 {
                     mostrarAreas();
+                    limpiar();
                 }
                 
 
@@ -70,8 +67,46 @@ namespace mantenimiento_proyecto
             return respuesta;
         }
 
+        public void limpiar()
+        { 
+            textArea.Text = string.Empty;
+        }
+
         private void gridAreas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Area area1 = new Area()
+            {
+                idArea = int.Parse(textId.Text),
+                nombre = textArea.Text
+            };
+
+            bool respuesta = AreaLogica.Instancia.Editar(area1);
+
+            if (respuesta)
+            {
+                mostrarAreas();
+                limpiar();
+            }
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Area area1 = new Area()
+            {
+                idArea = int.Parse(textId.Text),
+            };
+            bool respuesta = AreaLogica.Instancia.Eliminar(area1);
+            if (respuesta)
+            {
+                mostrarAreas();
+                limpiar();
+            }
 
         }
     }

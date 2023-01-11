@@ -79,5 +79,53 @@ namespace mantenimiento_proyecto.Logica
             }
         }
 
+        public bool Editar(Area obj)
+        {
+            bool respuesta = true;
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "update Area set nombre=@nombre where idArea=@idarea";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.nombre));
+                cmd.Parameters.Add(new SQLiteParameter("@idarea", obj.idArea));
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                if (cmd.ExecuteNonQuery() < 1)
+                {
+                    respuesta = false;
+                }
+
+            }
+            return respuesta;
+        }
+
+        public bool Eliminar(Area obj)
+        {
+            bool respuesta = true;
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "delete from Area where idArea=@idarea";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.nombre));
+                cmd.Parameters.Add(new SQLiteParameter("@idarea", obj.idArea));
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                if (cmd.ExecuteNonQuery() < 1)
+                {
+                    respuesta = false;
+                }
+
+            }
+            return respuesta;
+        }
+
+
+
     }
 }
