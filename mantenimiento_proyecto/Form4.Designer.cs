@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,10 +37,8 @@
             this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridPersonal = new System.Windows.Forms.DataGridView();
-            this.nombe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.textCargo = new System.Windows.Forms.TextBox();
             this.labelCargo = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -57,6 +55,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnModificarPersonal = new System.Windows.Forms.Button();
             this.btnEliminarPersonal = new System.Windows.Forms.Button();
+            this.textID = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPersonal)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -118,29 +117,25 @@
             // 
             this.registrarDepartamentoToolStripMenuItem.BackColor = System.Drawing.Color.MediumAquamarine;
             this.registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
-            this.registrarDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(120, 27);
-            this.registrarDepartamentoToolStripMenuItem.Text = "Registrar área";
+            this.registrarDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(63, 27);
+            this.registrarDepartamentoToolStripMenuItem.Text = "Áreas";
             this.registrarDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.registrarDepartamentoToolStripMenuItem_Click);
             // 
             // gridPersonal
             // 
-            this.gridPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridPersonal.AllowUserToDeleteRows = false;
+            this.gridPersonal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridPersonal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridPersonal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPersonal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPersonal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombe,
-            this.apellidoPaterno,
-            this.area});
             this.gridPersonal.Location = new System.Drawing.Point(82, 397);
             this.gridPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.gridPersonal.Name = "gridPersonal";
@@ -151,28 +146,9 @@
             this.gridPersonal.TabIndex = 30;
             this.gridPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // nombe
-            // 
-            this.nombe.HeaderText = "Nombre";
-            this.nombe.Name = "nombe";
-            // 
-            // apellidoPaterno
-            // 
-            this.apellidoPaterno.HeaderText = "Apellido Paterno";
-            this.apellidoPaterno.Name = "apellidoPaterno";
-            this.apellidoPaterno.ReadOnly = true;
-            // 
-            // area
-            // 
-            this.area.HeaderText = "Cargo";
-            this.area.Name = "area";
-            this.area.ReadOnly = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnBorrar);
             this.groupBox1.Controls.Add(this.textCargo);
             this.groupBox1.Controls.Add(this.labelCargo);
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -193,6 +169,19 @@
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBorrar.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBorrar.Location = new System.Drawing.Point(682, 222);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(97, 40);
+            this.btnBorrar.TabIndex = 60;
+            this.btnBorrar.Text = "Limpiar campos";
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // textCargo
             // 
@@ -241,6 +230,7 @@
             this.comboArea.Name = "comboArea";
             this.comboArea.Size = new System.Drawing.Size(252, 25);
             this.comboArea.TabIndex = 55;
+            this.comboArea.SelectedIndexChanged += new System.EventHandler(this.comboArea_SelectedIndexChanged);
             // 
             // labelArea
             // 
@@ -307,13 +297,14 @@
             // 
             this.btnAgregarPersonal.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnAgregarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(690, 211);
+            this.btnAgregarPersonal.Location = new System.Drawing.Point(553, 222);
             this.btnAgregarPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPersonal.Name = "btnAgregarPersonal";
             this.btnAgregarPersonal.Size = new System.Drawing.Size(97, 40);
             this.btnAgregarPersonal.TabIndex = 46;
             this.btnAgregarPersonal.Text = "Agregar ";
             this.btnAgregarPersonal.UseVisualStyleBackColor = false;
+            this.btnAgregarPersonal.Click += new System.EventHandler(this.btnAgregarPersonal_Click);
             // 
             // label2
             // 
@@ -341,6 +332,7 @@
             this.btnModificarPersonal.TabIndex = 60;
             this.btnModificarPersonal.Text = "Modificar";
             this.btnModificarPersonal.UseVisualStyleBackColor = false;
+            this.btnModificarPersonal.Click += new System.EventHandler(this.btnModificarPersonal_Click);
             // 
             // btnEliminarPersonal
             // 
@@ -353,6 +345,14 @@
             this.btnEliminarPersonal.TabIndex = 59;
             this.btnEliminarPersonal.Text = "Eliminar ";
             this.btnEliminarPersonal.UseVisualStyleBackColor = false;
+            this.btnEliminarPersonal.Click += new System.EventHandler(this.btnEliminarPersonal_Click);
+            // 
+            // textID
+            // 
+            this.textID.Location = new System.Drawing.Point(441, 343);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(214, 25);
+            this.textID.TabIndex = 61;
             // 
             // Form4
             // 
@@ -360,6 +360,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(982, 615);
+            this.Controls.Add(this.textID);
             this.Controls.Add(this.btnModificarPersonal);
             this.Controls.Add(this.btnEliminarPersonal);
             this.Controls.Add(this.groupBox1);
@@ -369,6 +370,7 @@
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar personal ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPersonal)).EndInit();
@@ -389,9 +391,6 @@
         private ToolStripMenuItem registrarPersonalToolStripMenuItem;
         private DataGridView gridPersonal;
         private ToolStripMenuItem registrarDepartamentoToolStripMenuItem;
-        private DataGridViewTextBoxColumn nombe;
-        private DataGridViewTextBoxColumn apellidoPaterno;
-        private DataGridViewTextBoxColumn area;
         private GroupBox groupBox1;
         private ComboBox comboBox2;
         private Label label6;
@@ -409,5 +408,7 @@
         private Button btnEliminarPersonal;
         private TextBox textCargo;
         private Label labelCargo;
+        private TextBox textID;
+        private Button btnBorrar;
     }
 }
