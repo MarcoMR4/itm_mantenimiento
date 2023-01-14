@@ -13,16 +13,16 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace mantenimiento_proyecto
 {
-    public partial class Form6 : Form
+    public partial class FormEspacios : Form
     {
         int idArea2 = 0;
-        public Form6()
+        public FormEspacios()
         {
             InitializeComponent();
-            int idArea1 = Form2.idAreaSeleccionada;
+            int idArea1 = FormListaNueva.idAreaSeleccionada;
             //MessageBox.Show(idArea1.ToString());
             gridEspacios.DataSource = EspacioLogica.Instancia.Listar(idArea1);
-            area.Text = Form2.nombreAreaSeleccionada;
+            area.Text = FormListaNueva.nombreAreaSeleccionada;
             idArea2 = idArea1;
             mostrarEspacios();
         }

@@ -150,5 +150,34 @@ namespace mantenimiento_proyecto.Logica
             }
         }
 
+        public List<Area> Filtrar(int idA)
+        {
+            List<Area> lista = new List<Area>();
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "select * from Area where idArea=@idA";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@idA", idA));
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Area()
+                        {
+                            idArea = int.Parse(dr["idArea"].ToString()),
+                            nombre = dr["nombre"].ToString()
+                        });
+                    }
+                }
+
+                return lista;
+            }
+        }
+
     }
 }

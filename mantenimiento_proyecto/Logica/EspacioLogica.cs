@@ -127,5 +127,30 @@ namespace mantenimiento_proyecto.Logica
             return respuesta;
         }
 
+        public int buscarEspacio(String nombreE)
+        {
+            int idEncontrado = 0;
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "select idEspacio from Espacio where nombre = @nombreEspacio;";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@nombreEspacio", nombreE));
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        idEncontrado = Convert.ToInt32(dr["idEspacio"]);
+                    }
+                }
+
+                return idEncontrado;
+            }
+        }
+
     }
 }

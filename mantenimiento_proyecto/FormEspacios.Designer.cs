@@ -1,6 +1,6 @@
 ﻿namespace mantenimiento_proyecto
 {
-    partial class Form6
+    partial class FormEspacios
     {
         /// <summary>
         /// Required designer variable.

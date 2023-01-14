@@ -29,7 +29,7 @@ namespace mantenimiento_proyecto
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form1();
+            Form formulario = new FormPrincipal();
             formulario.Show();
             this.Hide();
         }
@@ -61,7 +61,7 @@ namespace mantenimiento_proyecto
 
         private void inicioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Form formulario = new Form1();
+            Form formulario = new FormPrincipal();
             formulario.Show();
             this.Close();
 

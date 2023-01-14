@@ -1,15 +1,15 @@
 namespace mantenimiento_proyecto
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
 
         private void listaDeVerificaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form2();
+            Form formulario = new FormListaNueva();
             formulario.Show();
             this.Hide();
         }
