@@ -14,7 +14,6 @@ C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_manteni
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.pdb
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.genruntimeconfig.cache
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\ref\mantenimiento_proyecto.dll
-C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Form3.resources
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Properties.Resources.resources
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Form4.resources
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Form5.resources
@@ -40,3 +39,4 @@ C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_manteni
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Logica.FormHallazgos.resources
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.FormListaNueva.resources
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.FormPrincipal.resources
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.FormProgramaAnual.resources

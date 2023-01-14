@@ -1,6 +1,6 @@
 ﻿namespace mantenimiento_proyecto
 {
-    partial class Form3
+    partial class FormProgramaAnual
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboAprobo = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -281,6 +281,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(308, 30);
             this.comboBox2.TabIndex = 39;
+            this.comboBox2.Text = "Daniel Villamar Reyes";
             // 
             // label9
             // 
@@ -292,21 +293,21 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "Elaboró:";
             // 
-            // comboBox4
+            // comboAprobo
             // 
-            this.comboBox4.AutoCompleteCustomSource.AddRange(new string[] {
+            this.comboAprobo.AutoCompleteCustomSource.AddRange(new string[] {
             "ene-jun",
             "ago-dic"});
-            this.comboBox4.DisplayMember = "enero-junio";
-            this.comboBox4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboAprobo.DisplayMember = "enero-junio";
+            this.comboAprobo.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboAprobo.FormattingEnabled = true;
+            this.comboAprobo.Items.AddRange(new object[] {
             "Hugo Fernando Hernandez Lopez ",
             "Juan Manuel Treviño Cruz "});
-            this.comboBox4.Location = new System.Drawing.Point(154, 229);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(308, 30);
-            this.comboBox4.TabIndex = 41;
+            this.comboAprobo.Location = new System.Drawing.Point(154, 229);
+            this.comboAprobo.Name = "comboAprobo";
+            this.comboAprobo.Size = new System.Drawing.Size(308, 30);
+            this.comboAprobo.TabIndex = 41;
             // 
             // label10
             // 
@@ -430,14 +431,14 @@
             this.btnCargarServicio.Text = "Cargar servicio";
             this.btnCargarServicio.UseVisualStyleBackColor = false;
             // 
-            // Form3
+            // FormProgramaAnual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1017, 566);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboAprobo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label9);
@@ -455,9 +456,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboPeriodos);
             this.Controls.Add(this.labelPeriodo);
-            this.Name = "Form3";
+            this.Name = "FormProgramaAnual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Programa anual";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form3_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -490,7 +492,7 @@
         private Label label8;
         private ComboBox comboBox2;
         private Label label9;
-        private ComboBox comboBox4;
+        private ComboBox comboAprobo;
         private Label label10;
         private GroupBox groupBox2;
         private ComboBox comboBox5;

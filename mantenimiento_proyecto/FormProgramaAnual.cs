@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mantenimiento_proyecto.Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace mantenimiento_proyecto
 {
-    public partial class Form3 : Form
+    public partial class FormProgramaAnual : Form
     {
-        public Form3()
+        public FormProgramaAnual()
         {
             InitializeComponent();
         }
@@ -41,7 +42,9 @@ namespace mantenimiento_proyecto
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            comboAprobo.DataSource = PersonaLogica.Instancia.Listar();
+            comboAprobo.ValueMember = "nombres";
+            //comboAprobo.ValueMember += "apellidoPaterno";
         }
 
         private void label4_Click(object sender, EventArgs e)

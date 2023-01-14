@@ -21,7 +21,7 @@ namespace mantenimiento_proyecto
 
         private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form3();
+            Form formulario = new FormProgramaAnual();
             formulario.Show();
             this.Hide();
         }

@@ -57,5 +57,45 @@ namespace mantenimiento_proyecto.Logica
             textNombreHallazgo.Text = null;
             comboAtendido.Text = "No";
         }
+
+        private void btnModificarHallazgo_Click(object sender, EventArgs e)
+        {
+            Hallazgo hallazgo1 = new Hallazgo()
+            {
+                idHallazgo = int.Parse(textIdE.Text),
+                descripcion = textNombreHallazgo.Text,
+                atendido = comboAtendido.Text
+            };
+            bool respuesta = HallazgoLogica.Instancia.Editar(hallazgo1);
+            if (respuesta)
+            {
+                mostrarHallazgos();
+                limpiar();
+                //MessageBox.Show("Editado");
+            }
+        }
+
+        private void gridHallazgos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textIdE.Text = gridHallazgos.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textNombreHallazgo.Text = gridHallazgos.Rows[e.RowIndex].Cells[1].Value.ToString();
+            comboAtendido.Text = gridHallazgos.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+        }
+
+        private void btnEliminarHallazgo_Click(object sender, EventArgs e)
+        {
+            Hallazgo hallazgo1 = new Hallazgo()
+            {
+                idHallazgo = int.Parse(textIdE.Text),
+            };
+            bool respuesta = HallazgoLogica.Instancia.Eliminar(hallazgo1);
+            if (respuesta)
+            {
+                mostrarHallazgos();
+                limpiar();
+            }
+
+        }
     }
 }

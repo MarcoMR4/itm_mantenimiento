@@ -141,5 +141,42 @@ namespace mantenimiento_proyecto.Logica
             return respuesta;
         }
 
+       /* public List<Personal> ListarNombreApellido()
+        {
+            List<Personal> lista = new List<Personal>();
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "select nombres, apellidoPaterno, " +
+                    "apellidoMaterno " +
+                    "from Personal p inner join Area a on p.idArea=a.idArea";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Personal()
+                        {
+                            idPersonal = int.Parse(dr["idPersonal"].ToString()),
+                            nombres = dr["nombres"].ToString(),
+                            apellidoMaterno = dr["apellidoMaterno"].ToString(),
+                            cargo = dr["cargo"].ToString(),
+                            idArea = int.Parse(dr["idArea"].ToString()),
+                            nombreArea = dr["nombre"].ToString(),
+                            apellidoPaterno = dr["apellidoPaterno"].ToString()
+                        }
+                        );
+
+                    }
+                }
+
+                return lista;
+            }
+        }*/
+
     }
 }

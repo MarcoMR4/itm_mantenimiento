@@ -86,5 +86,50 @@ namespace mantenimiento_proyecto.Logica
             }
         }
 
+        public bool Editar(Hallazgo obj)
+        {
+            bool respuesta = true;
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "update Hallazgo set descripcion=@descripcion, atendido=@atendido where idHallazgo=@idHallazgo";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@idHallazgo", obj.idHallazgo));
+                cmd.Parameters.Add(new SQLiteParameter("@descripcion", obj.descripcion));
+                cmd.Parameters.Add(new SQLiteParameter("@atendido", obj.atendido));
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                if (cmd.ExecuteNonQuery() < 1)
+                {
+                    respuesta = false;
+                }
+
+            }
+            return respuesta;
+        }
+
+        public bool Eliminar(Hallazgo obj)
+        {
+            bool respuesta = true;
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "delete from Hallazgo where idHallazgo=@idHallazgo";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@idHallazgo", obj.idHallazgo));
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                if (cmd.ExecuteNonQuery() < 1)
+                {
+                    respuesta = false;
+                }
+
+            }
+            return respuesta;
+        }
     }
 }

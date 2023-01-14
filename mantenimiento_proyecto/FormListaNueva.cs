@@ -70,7 +70,7 @@ namespace mantenimiento_proyecto
         private void FormListaNueva_Load(object sender, EventArgs e)
         {
             idAreaSeleccionada = AreaLogica.Instancia.buscarArea(nombreAreaSeleccionada);
-            MessageBox.Show(idAreaSeleccionada.ToString());
+            //MessageBox.Show(idAreaSeleccionada.ToString());
             comboEspacios.DataSource = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
             comboEspacios.DisplayMember = "nombre";
 
@@ -82,7 +82,7 @@ namespace mantenimiento_proyecto
 
         private void comboAreas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(comboAreas.Text);
+            //MessageBox.Show(comboAreas.Text);
             nombreAreaSeleccionada = comboAreas.Text;
             idAreaSeleccionada = AreaLogica.Instancia.buscarArea(nombreAreaSeleccionada);
 

@@ -48,9 +48,10 @@
             this.textEspacio.AutoSize = true;
             this.textEspacio.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.textEspacio.ForeColor = System.Drawing.Color.Navy;
-            this.textEspacio.Location = new System.Drawing.Point(347, 31);
+            this.textEspacio.Location = new System.Drawing.Point(270, 25);
+            this.textEspacio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.textEspacio.Name = "textEspacio";
-            this.textEspacio.Size = new System.Drawing.Size(122, 35);
+            this.textEspacio.Size = new System.Drawing.Size(100, 29);
             this.textEspacio.TabIndex = 8;
             this.textEspacio.Text = "(nombre)";
             // 
@@ -59,29 +60,29 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(57, 31);
+            this.label1.Location = new System.Drawing.Point(44, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 35);
+            this.label1.Size = new System.Drawing.Size(222, 29);
             this.label1.TabIndex = 7;
             this.label1.Text = "Hallazgos del espacio:";
             // 
             // textIdE
             // 
-            this.textIdE.Location = new System.Drawing.Point(626, 266);
-            this.textIdE.Margin = new System.Windows.Forms.Padding(4);
+            this.textIdE.Location = new System.Drawing.Point(487, 215);
             this.textIdE.Name = "textIdE";
             this.textIdE.ReadOnly = true;
-            this.textIdE.Size = new System.Drawing.Size(127, 29);
+            this.textIdE.Size = new System.Drawing.Size(100, 25);
             this.textIdE.TabIndex = 73;
             // 
             // btnBorrar
             // 
             this.btnBorrar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnBorrar.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBorrar.Location = new System.Drawing.Point(912, 163);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBorrar.Location = new System.Drawing.Point(709, 132);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(125, 49);
+            this.btnBorrar.Size = new System.Drawing.Size(97, 40);
             this.btnBorrar.TabIndex = 71;
             this.btnBorrar.Text = "Limpiar campos";
             this.btnBorrar.UseVisualStyleBackColor = false;
@@ -90,10 +91,10 @@
             // 
             this.btnAgregarHallazgo.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnAgregarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarHallazgo.Location = new System.Drawing.Point(912, 109);
-            this.btnAgregarHallazgo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarHallazgo.Location = new System.Drawing.Point(709, 88);
+            this.btnAgregarHallazgo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarHallazgo.Name = "btnAgregarHallazgo";
-            this.btnAgregarHallazgo.Size = new System.Drawing.Size(125, 49);
+            this.btnAgregarHallazgo.Size = new System.Drawing.Size(97, 40);
             this.btnAgregarHallazgo.TabIndex = 69;
             this.btnAgregarHallazgo.Text = "Agregar ";
             this.btnAgregarHallazgo.UseVisualStyleBackColor = false;
@@ -103,33 +104,34 @@
             // 
             this.btnModificarHallazgo.BackColor = System.Drawing.Color.Khaki;
             this.btnModificarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnModificarHallazgo.Location = new System.Drawing.Point(782, 252);
-            this.btnModificarHallazgo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarHallazgo.Location = new System.Drawing.Point(608, 204);
+            this.btnModificarHallazgo.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarHallazgo.Name = "btnModificarHallazgo";
-            this.btnModificarHallazgo.Size = new System.Drawing.Size(125, 49);
+            this.btnModificarHallazgo.Size = new System.Drawing.Size(97, 40);
             this.btnModificarHallazgo.TabIndex = 72;
             this.btnModificarHallazgo.Text = "Modificar";
             this.btnModificarHallazgo.UseVisualStyleBackColor = false;
+            this.btnModificarHallazgo.Click += new System.EventHandler(this.btnModificarHallazgo_Click);
             // 
             // btnEliminarHallazgo
             // 
             this.btnEliminarHallazgo.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminarHallazgo.Location = new System.Drawing.Point(912, 252);
-            this.btnEliminarHallazgo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarHallazgo.Location = new System.Drawing.Point(709, 204);
+            this.btnEliminarHallazgo.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarHallazgo.Name = "btnEliminarHallazgo";
-            this.btnEliminarHallazgo.Size = new System.Drawing.Size(125, 49);
+            this.btnEliminarHallazgo.Size = new System.Drawing.Size(97, 40);
             this.btnEliminarHallazgo.TabIndex = 70;
             this.btnEliminarHallazgo.Text = "Eliminar ";
             this.btnEliminarHallazgo.UseVisualStyleBackColor = false;
+            this.btnEliminarHallazgo.Click += new System.EventHandler(this.btnEliminarHallazgo_Click);
             // 
             // textNombreHallazgo
             // 
             this.textNombreHallazgo.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textNombreHallazgo.Location = new System.Drawing.Point(419, 117);
-            this.textNombreHallazgo.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreHallazgo.Location = new System.Drawing.Point(326, 95);
             this.textNombreHallazgo.Name = "textNombreHallazgo";
-            this.textNombreHallazgo.Size = new System.Drawing.Size(424, 35);
+            this.textNombreHallazgo.Size = new System.Drawing.Size(331, 29);
             this.textNombreHallazgo.TabIndex = 68;
             // 
             // textNombre
@@ -137,32 +139,34 @@
             this.textNombre.AutoSize = true;
             this.textNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.textNombre.ForeColor = System.Drawing.Color.Black;
-            this.textNombre.Location = new System.Drawing.Point(179, 117);
+            this.textNombre.Location = new System.Drawing.Point(139, 95);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(233, 31);
+            this.textNombre.Size = new System.Drawing.Size(187, 25);
             this.textNombre.TabIndex = 67;
             this.textNombre.Text = "Nombre de hallazgo:";
             // 
             // gridHallazgos
             // 
             this.gridHallazgos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridHallazgos.Location = new System.Drawing.Point(78, 308);
-            this.gridHallazgos.Margin = new System.Windows.Forms.Padding(4);
+            this.gridHallazgos.Location = new System.Drawing.Point(61, 249);
             this.gridHallazgos.Name = "gridHallazgos";
             this.gridHallazgos.ReadOnly = true;
             this.gridHallazgos.RowHeadersWidth = 51;
             this.gridHallazgos.RowTemplate.Height = 27;
-            this.gridHallazgos.Size = new System.Drawing.Size(958, 295);
+            this.gridHallazgos.Size = new System.Drawing.Size(745, 239);
             this.gridHallazgos.TabIndex = 66;
+            this.gridHallazgos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHallazgos_CellContentDoubleClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(294, 191);
+            this.label2.Location = new System.Drawing.Point(229, 155);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 31);
+            this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 74;
             this.label2.Text = "Atendido:";
             // 
@@ -172,18 +176,19 @@
             this.comboAtendido.Items.AddRange(new object[] {
             "No",
             "Si"});
-            this.comboAtendido.Location = new System.Drawing.Point(419, 196);
+            this.comboAtendido.Location = new System.Drawing.Point(326, 159);
+            this.comboAtendido.Margin = new System.Windows.Forms.Padding(2);
             this.comboAtendido.Name = "comboAtendido";
-            this.comboAtendido.Size = new System.Drawing.Size(151, 29);
+            this.comboAtendido.Size = new System.Drawing.Size(118, 25);
             this.comboAtendido.TabIndex = 75;
             this.comboAtendido.Text = "No";
             // 
             // FormHallazgos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1092, 636);
+            this.ClientSize = new System.Drawing.Size(849, 515);
             this.Controls.Add(this.comboAtendido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textIdE);
@@ -196,7 +201,6 @@
             this.Controls.Add(this.gridHallazgos);
             this.Controls.Add(this.textEspacio);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHallazgos";
             this.Text = "FormHallazgos";
             this.Load += new System.EventHandler(this.FormHallazgos_Load);
