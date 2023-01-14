@@ -38,3 +38,4 @@ C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_manteni
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Form6.resources

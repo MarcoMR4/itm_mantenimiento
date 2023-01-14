@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboAreas = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textHallazgo = new System.Windows.Forms.TextBox();
             this.labelHallazgo = new System.Windows.Forms.Label();
             this.comboEspacios = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.labelNuevoEspacio = new System.Windows.Forms.Label();
-            this.textNuevoEspacio = new System.Windows.Forms.TextBox();
             this.btnCargarEspacio = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,21 +68,21 @@
             this.label1.Text = "Elaborar lista de verificación";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // comboBox5
+            // comboAreas
             // 
-            this.comboBox5.AutoCompleteCustomSource.AddRange(new string[] {
+            this.comboAreas.AutoCompleteCustomSource.AddRange(new string[] {
             "ene-jun",
             "ago-dic"});
-            this.comboBox5.DisplayMember = "enero-junio";
-            this.comboBox5.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.comboAreas.DisplayMember = "enero-junio";
+            this.comboAreas.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboAreas.FormattingEnabled = true;
+            this.comboAreas.Items.AddRange(new object[] {
             "Personal Registrado 1"});
-            this.comboBox5.Location = new System.Drawing.Point(200, 139);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(308, 30);
-            this.comboBox5.TabIndex = 19;
-            this.comboBox5.Text = "Seleccione en la lista";
+            this.comboAreas.Location = new System.Drawing.Point(200, 139);
+            this.comboAreas.Name = "comboAreas";
+            this.comboAreas.Size = new System.Drawing.Size(308, 30);
+            this.comboAreas.TabIndex = 19;
+            this.comboAreas.Text = "Seleccione en la lista";
             // 
             // label7
             // 
@@ -92,9 +90,10 @@
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(200, 111);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(203, 25);
+            this.label7.Size = new System.Drawing.Size(136, 25);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Jefe del área verificada:";
+            this.label7.Text = "Área verificada:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label4
             // 
@@ -108,7 +107,7 @@
             // textHallazgo
             // 
             this.textHallazgo.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textHallazgo.Location = new System.Drawing.Point(135, 455);
+            this.textHallazgo.Location = new System.Drawing.Point(137, 523);
             this.textHallazgo.Margin = new System.Windows.Forms.Padding(2);
             this.textHallazgo.Name = "textHallazgo";
             this.textHallazgo.Size = new System.Drawing.Size(470, 29);
@@ -119,7 +118,7 @@
             // 
             this.labelHallazgo.AutoSize = true;
             this.labelHallazgo.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelHallazgo.Location = new System.Drawing.Point(56, 454);
+            this.labelHallazgo.Location = new System.Drawing.Point(58, 522);
             this.labelHallazgo.Name = "labelHallazgo";
             this.labelHallazgo.Size = new System.Drawing.Size(84, 25);
             this.labelHallazgo.TabIndex = 22;
@@ -136,7 +135,7 @@
             this.comboEspacios.Items.AddRange(new object[] {
             "Edificio AG",
             "Edificio F"});
-            this.comboEspacios.Location = new System.Drawing.Point(252, 414);
+            this.comboEspacios.Location = new System.Drawing.Point(254, 482);
             this.comboEspacios.Name = "comboEspacios";
             this.comboEspacios.Size = new System.Drawing.Size(353, 30);
             this.comboEspacios.TabIndex = 24;
@@ -146,42 +145,24 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(56, 417);
+            this.label3.Location = new System.Drawing.Point(58, 485);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 25);
             this.label3.TabIndex = 23;
             this.label3.Text = "Espacio revisado:";
             // 
-            // labelNuevoEspacio
-            // 
-            this.labelNuevoEspacio.AutoSize = true;
-            this.labelNuevoEspacio.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNuevoEspacio.Location = new System.Drawing.Point(46, 319);
-            this.labelNuevoEspacio.Name = "labelNuevoEspacio";
-            this.labelNuevoEspacio.Size = new System.Drawing.Size(208, 25);
-            this.labelNuevoEspacio.TabIndex = 26;
-            this.labelNuevoEspacio.Text = "Nuevo espacio revisado:";
-            // 
-            // textNuevoEspacio
-            // 
-            this.textNuevoEspacio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textNuevoEspacio.Location = new System.Drawing.Point(254, 319);
-            this.textNuevoEspacio.Margin = new System.Windows.Forms.Padding(2);
-            this.textNuevoEspacio.Name = "textNuevoEspacio";
-            this.textNuevoEspacio.Size = new System.Drawing.Size(536, 29);
-            this.textNuevoEspacio.TabIndex = 25;
-            // 
             // btnCargarEspacio
             // 
-            this.btnCargarEspacio.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCargarEspacio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarEspacio.Location = new System.Drawing.Point(634, 352);
+            this.btnCargarEspacio.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCargarEspacio.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCargarEspacio.Location = new System.Drawing.Point(354, 189);
             this.btnCargarEspacio.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargarEspacio.Name = "btnCargarEspacio";
             this.btnCargarEspacio.Size = new System.Drawing.Size(154, 33);
             this.btnCargarEspacio.TabIndex = 27;
-            this.btnCargarEspacio.Text = "Agregar Espacio";
+            this.btnCargarEspacio.Text = "Ver Espacios";
             this.btnCargarEspacio.UseVisualStyleBackColor = false;
+            this.btnCargarEspacio.Click += new System.EventHandler(this.btnCargarEspacio_Click);
             // 
             // menuStrip1
             // 
@@ -196,7 +177,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 31);
             this.menuStrip1.TabIndex = 28;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -246,7 +227,7 @@
             this.comboAtendido.Items.AddRange(new object[] {
             "si",
             "no"});
-            this.comboAtendido.Location = new System.Drawing.Point(709, 451);
+            this.comboAtendido.Location = new System.Drawing.Point(711, 519);
             this.comboAtendido.Name = "comboAtendido";
             this.comboAtendido.Size = new System.Drawing.Size(79, 30);
             this.comboAtendido.TabIndex = 30;
@@ -256,7 +237,7 @@
             // 
             this.labelAtendido.AutoSize = true;
             this.labelAtendido.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAtendido.Location = new System.Drawing.Point(621, 454);
+            this.labelAtendido.Location = new System.Drawing.Point(623, 522);
             this.labelAtendido.Name = "labelAtendido";
             this.labelAtendido.Size = new System.Drawing.Size(87, 25);
             this.labelAtendido.TabIndex = 29;
@@ -290,7 +271,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Mantenimiento de equipo"});
-            this.comboBox1.Location = new System.Drawing.Point(477, 205);
+            this.comboBox1.Location = new System.Drawing.Point(499, 379);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(308, 30);
             this.comboBox1.TabIndex = 34;
@@ -300,7 +281,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(271, 205);
+            this.label2.Location = new System.Drawing.Point(293, 379);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 23);
             this.label2.TabIndex = 33;
@@ -316,7 +297,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Daniel Villamar Reyes"});
-            this.comboBox2.Location = new System.Drawing.Point(477, 241);
+            this.comboBox2.Location = new System.Drawing.Point(499, 415);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(308, 30);
             this.comboBox2.TabIndex = 36;
@@ -326,7 +307,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(303, 243);
+            this.label5.Location = new System.Drawing.Point(325, 417);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 23);
             this.label5.TabIndex = 35;
@@ -336,7 +317,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(401, 498);
+            this.button1.Location = new System.Drawing.Point(403, 566);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 33);
@@ -349,7 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1008, 585);
+            this.ClientSize = new System.Drawing.Size(1024, 630);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
@@ -361,14 +342,12 @@
             this.Controls.Add(this.labelAtendido);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnCargarEspacio);
-            this.Controls.Add(this.labelNuevoEspacio);
-            this.Controls.Add(this.textNuevoEspacio);
             this.Controls.Add(this.comboEspacios);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelHallazgo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textHallazgo);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.comboAreas);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
@@ -384,15 +363,13 @@
 
         #endregion
         private Label label1;
-        private ComboBox comboBox5;
+        private ComboBox comboAreas;
         private Label label7;
         private Label label4;
         private TextBox textHallazgo;
         private Label labelHallazgo;
         private ComboBox comboEspacios;
         private Label label3;
-        private Label labelNuevoEspacio;
-        private TextBox textNuevoEspacio;
         private Button btnCargarEspacio;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem inicioToolStripMenuItem;

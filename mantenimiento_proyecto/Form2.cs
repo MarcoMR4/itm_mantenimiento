@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mantenimiento_proyecto.Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace mantenimiento_proyecto
 {
     public partial class Form2 : Form
     {
+        public static int idAreaSeleccionada = 0;
+        public static string nombreAreaSeleccionada = ""; 
         public Form2()
         {
             InitializeComponent();
+            comboAreas.DataSource = AreaLogica.Instancia.Listar();
+            comboAreas.DisplayMember = "nombre";
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -49,6 +55,22 @@ namespace mantenimiento_proyecto
         private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCargarEspacio_Click(object sender, EventArgs e)
+        {
+            string nombreBuscar = comboAreas.Text;
+            //MessageBox.Show(nombreBuscar);
+            idAreaSeleccionada = AreaLogica.Instancia.buscarArea(nombreBuscar);
+            //MessageBox.Show("El id es: " + idAreaSeleccionada);
+            nombreAreaSeleccionada = nombreBuscar;
+            Form formulario = new Form6();
+            formulario.Show();
         }
     }
 }

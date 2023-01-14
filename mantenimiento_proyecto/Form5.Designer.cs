@@ -72,6 +72,7 @@
             this.gridAreas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAreas.Location = new System.Drawing.Point(65, 184);
             this.gridAreas.Name = "gridAreas";
+            this.gridAreas.ReadOnly = true;
             this.gridAreas.RowTemplate.Height = 27;
             this.gridAreas.Size = new System.Drawing.Size(462, 241);
             this.gridAreas.TabIndex = 3;

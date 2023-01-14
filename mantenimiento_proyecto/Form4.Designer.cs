@@ -41,8 +41,6 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.textCargo = new System.Windows.Forms.TextBox();
             this.labelCargo = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.comboArea = new System.Windows.Forms.ComboBox();
             this.labelArea = new System.Windows.Forms.Label();
             this.textAmaterno = new System.Windows.Forms.TextBox();
@@ -151,8 +149,6 @@
             this.groupBox1.Controls.Add(this.btnBorrar);
             this.groupBox1.Controls.Add(this.textCargo);
             this.groupBox1.Controls.Add(this.labelCargo);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboArea);
             this.groupBox1.Controls.Add(this.labelArea);
             this.groupBox1.Controls.Add(this.textAmaterno);
@@ -174,10 +170,10 @@
             // 
             this.btnBorrar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnBorrar.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBorrar.Location = new System.Drawing.Point(682, 222);
+            this.btnBorrar.Location = new System.Drawing.Point(461, 172);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(97, 40);
+            this.btnBorrar.Size = new System.Drawing.Size(151, 40);
             this.btnBorrar.TabIndex = 60;
             this.btnBorrar.Text = "Limpiar campos";
             this.btnBorrar.UseVisualStyleBackColor = false;
@@ -199,29 +195,6 @@
             this.labelCargo.Size = new System.Drawing.Size(65, 25);
             this.labelCargo.TabIndex = 58;
             this.labelCargo.Text = "Cargo:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "no",
-            "si"});
-            this.comboBox2.Location = new System.Drawing.Point(611, 134);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 33);
-            this.comboBox2.TabIndex = 57;
-            this.comboBox2.Text = "no";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(464, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 25);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "Es jefe del área:";
             // 
             // comboArea
             // 
@@ -297,7 +270,7 @@
             // 
             this.btnAgregarPersonal.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnAgregarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(553, 222);
+            this.btnAgregarPersonal.Location = new System.Drawing.Point(661, 172);
             this.btnAgregarPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPersonal.Name = "btnAgregarPersonal";
             this.btnAgregarPersonal.Size = new System.Drawing.Size(97, 40);
@@ -351,6 +324,7 @@
             // 
             this.textID.Location = new System.Drawing.Point(441, 343);
             this.textID.Name = "textID";
+            this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(214, 25);
             this.textID.TabIndex = 61;
             // 
@@ -392,8 +366,6 @@
         private DataGridView gridPersonal;
         private ToolStripMenuItem registrarDepartamentoToolStripMenuItem;
         private GroupBox groupBox1;
-        private ComboBox comboBox2;
-        private Label label6;
         private ComboBox comboArea;
         private Label labelArea;
         private TextBox textAmaterno;
