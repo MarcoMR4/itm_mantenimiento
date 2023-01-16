@@ -74,10 +74,7 @@ namespace mantenimiento_proyecto
             comboEspacios.DataSource = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
             comboEspacios.DisplayMember = "nombre";
 
-            ListaVerificacion listaNueva = new ListaVerificacion()
-            {
-                fecha = textFecha.Text,
-            };
+           
         }
 
         private void comboAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +91,7 @@ namespace mantenimiento_proyecto
         {
             nombreEspacioSeleccionado = comboEspacios.Text;
             idEspacioSeleccionado = EspacioLogica.Instancia.buscarEspacio(nombreEspacioSeleccionado);
-            MessageBox.Show(idEspacioSeleccionado.ToString());
+            //MessageBox.Show(idEspacioSeleccionado.ToString());
             Form formulario = new FormHallazgos();
             formulario.Show();
         }

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace mantenimiento_proyecto
 {
-    public partial class Form5 : Form
+    public partial class FormAreas : Form
     {
-        public Form5()
+        public FormAreas()
         {
             InitializeComponent();
             mostrarAreas();
@@ -74,7 +74,13 @@ namespace mantenimiento_proyecto
 
         private void gridAreas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            textArea.Text = gridAreas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textId.Text = gridAreas.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+        private void gridAreas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textArea.Text = gridAreas.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textId.Text = gridAreas.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -107,6 +113,11 @@ namespace mantenimiento_proyecto
                 mostrarAreas();
                 limpiar();
             }
+
+        }
+
+        private void FormAreas_Load(object sender, EventArgs e)
+        {
 
         }
     }

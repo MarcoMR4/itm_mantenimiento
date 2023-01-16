@@ -79,10 +79,10 @@
             // 
             this.btnBorrar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnBorrar.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBorrar.Location = new System.Drawing.Point(709, 132);
+            this.btnBorrar.Location = new System.Drawing.Point(637, 132);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(97, 40);
+            this.btnBorrar.Size = new System.Drawing.Size(169, 40);
             this.btnBorrar.TabIndex = 71;
             this.btnBorrar.Text = "Limpiar campos";
             this.btnBorrar.UseVisualStyleBackColor = false;

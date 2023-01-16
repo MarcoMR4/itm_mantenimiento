@@ -1,6 +1,6 @@
 ﻿namespace mantenimiento_proyecto
 {
-    partial class Form5
+    partial class FormAreas
     {
         /// <summary>
         /// Required designer variable.
@@ -58,13 +58,14 @@
             // 
             // btnGuardarArea
             // 
+            this.btnGuardarArea.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnGuardarArea.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGuardarArea.Location = new System.Drawing.Point(426, 126);
             this.btnGuardarArea.Name = "btnGuardarArea";
             this.btnGuardarArea.Size = new System.Drawing.Size(101, 31);
             this.btnGuardarArea.TabIndex = 2;
             this.btnGuardarArea.Text = "Guardar";
-            this.btnGuardarArea.UseVisualStyleBackColor = true;
+            this.btnGuardarArea.UseVisualStyleBackColor = false;
             this.btnGuardarArea.Click += new System.EventHandler(this.btnGuardarArea_Click);
             // 
             // gridAreas
@@ -80,13 +81,14 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.Khaki;
             this.btnEditar.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.Location = new System.Drawing.Point(307, 126);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(101, 31);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // textId
@@ -99,16 +101,17 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Salmon;
             this.btnEliminar.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.Location = new System.Drawing.Point(179, 125);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(101, 31);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // Form5
+            // FormAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,9 +124,10 @@
             this.Controls.Add(this.btnGuardarArea);
             this.Controls.Add(this.textArea);
             this.Controls.Add(this.labelArea);
-            this.Name = "Form5";
+            this.Name = "FormAreas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar area ";
+            this.Load += new System.EventHandler(this.FormAreas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAreas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

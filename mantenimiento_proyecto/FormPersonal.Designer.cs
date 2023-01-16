@@ -1,6 +1,6 @@
 ﻿namespace mantenimiento_proyecto
 {
-    partial class Form4
+    partial class FormPersonal
     {
         /// <summary>
         /// Required designer variable.
@@ -328,7 +328,7 @@
             this.textID.Size = new System.Drawing.Size(214, 25);
             this.textID.TabIndex = 61;
             // 
-            // Form4
+            // FormPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -341,10 +341,11 @@
             this.Controls.Add(this.gridPersonal);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form4";
+            this.Name = "FormPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar personal ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormPersonal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPersonal)).EndInit();

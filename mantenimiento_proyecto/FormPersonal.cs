@@ -15,9 +15,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace mantenimiento_proyecto
 {
-    public partial class Form4 : Form
+    public partial class FormPersonal : Form
     {
-        public Form4()
+        public FormPersonal()
         {
             InitializeComponent();
             //MessageBox.Show(PersonaLogica.Instancia.Listar().ToString());
@@ -70,7 +70,7 @@ namespace mantenimiento_proyecto
 
         private void registrarDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form5();
+            Form formulario = new FormAreas();
             formulario.Show();
         }
 
@@ -175,6 +175,11 @@ namespace mantenimiento_proyecto
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void FormPersonal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

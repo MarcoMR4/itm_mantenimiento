@@ -13,6 +13,8 @@ namespace mantenimiento_proyecto
 {
     public partial class FormProgramaAnual : Form
     {
+        public static string anioPlan,periodoPlan,nombreAreaElegida; 
+       
         public FormProgramaAnual()
         {
             InitializeComponent();
@@ -44,7 +46,9 @@ namespace mantenimiento_proyecto
         {
             comboAprobo.DataSource = PersonaLogica.Instancia.Listar();
             comboAprobo.ValueMember = "nombres";
-            //comboAprobo.ValueMember += "apellidoPaterno";
+            comboAreas.DataSource = AreaLogica.Instancia.Listar();
+            comboAreas.ValueMember = "nombre";
+            nombreAreaElegida = comboAreas.Text;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -76,6 +80,33 @@ namespace mantenimiento_proyecto
         }
 
         private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            anioPlan = numericAnio.ToString();
+            periodoPlan = comboPeriodos.Text;
+        }
+
+        private void comboAreas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nombreAreaElegida = comboAreas.Text;
+        }
+
+        private void btnCargarServicio_Click(object sender, EventArgs e)
+        {
+            if (periodoPlan != "") 
+            {
+                periodoPlan= comboPeriodos.Text;
+                anioPlan= numericAnio.Value.ToString();
+                FormServicios formService = new FormServicios();
+                formService.Show();
+            }
+        }
+
+        private void comboAprobo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

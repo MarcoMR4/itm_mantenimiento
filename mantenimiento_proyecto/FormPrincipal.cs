@@ -28,7 +28,7 @@ namespace mantenimiento_proyecto
 
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form4();
+            Form formulario = new FormPersonal();
             formulario.Show();
             this.Hide();
         }

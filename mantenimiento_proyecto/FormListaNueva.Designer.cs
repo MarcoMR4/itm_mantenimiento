@@ -132,7 +132,7 @@
             this.btnCargarEspacio.BackColor = System.Drawing.Color.Gainsboro;
             this.btnCargarEspacio.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCargarEspacio.Location = new System.Drawing.Point(631, 215);
-            this.btnCargarEspacio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCargarEspacio.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargarEspacio.Name = "btnCargarEspacio";
             this.btnCargarEspacio.Size = new System.Drawing.Size(154, 33);
             this.btnCargarEspacio.TabIndex = 27;
@@ -266,7 +266,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(631, 360);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 33);
             this.button1.TabIndex = 37;
@@ -278,7 +278,7 @@
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.Gainsboro;
             this.btnImprimir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnImprimir.Location = new System.Drawing.Point(478, 586);
+            this.btnImprimir.Location = new System.Drawing.Point(590, 586);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(154, 33);
@@ -290,7 +290,7 @@
             // 
             this.btnGuardarLista.BackColor = System.Drawing.Color.Gainsboro;
             this.btnGuardarLista.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarLista.Location = new System.Drawing.Point(273, 586);
+            this.btnGuardarLista.Location = new System.Drawing.Point(400, 586);
             this.btnGuardarLista.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarLista.Name = "btnGuardarLista";
             this.btnGuardarLista.Size = new System.Drawing.Size(154, 33);

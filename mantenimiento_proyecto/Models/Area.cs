@@ -10,7 +10,6 @@ namespace mantenimiento_proyecto.Models
     {
         public int idArea { get; set; }
         public string nombre { get; set; }
-       
         
     }
 

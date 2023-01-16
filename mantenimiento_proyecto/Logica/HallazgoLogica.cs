@@ -36,13 +36,13 @@ namespace mantenimiento_proyecto.Logica
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "insert into Hallazgo(descripcion,idEspacio,atendido, idListaVerificacion) values (@descripcion,@idEspacio,@atendido,@idLista)";
+                string query = "insert into Hallazgo2(descripcion,idEspacio,atendido) values (@descripcion,@idEspacio,@atendido)";
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@descripcion", obj.descripcion));
                 cmd.Parameters.Add(new SQLiteParameter("@idEspacio", obj.idEspacio));
                 cmd.Parameters.Add(new SQLiteParameter("@atendido", obj.atendido));
-                cmd.Parameters.Add(new SQLiteParameter("@idLista", 1));
+                
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 if (cmd.ExecuteNonQuery() < 1)
@@ -61,7 +61,7 @@ namespace mantenimiento_proyecto.Logica
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "select * from Hallazgo where idEspacio=@idEspacio";
+                string query = "select * from Hallazgo2 where idEspacio=@idEspacio";
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@idEspacio", idEspacio1));
@@ -93,7 +93,7 @@ namespace mantenimiento_proyecto.Logica
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "update Hallazgo set descripcion=@descripcion, atendido=@atendido where idHallazgo=@idHallazgo";
+                string query = "update Hallazgo2 set descripcion=@descripcion, atendido=@atendido where idHallazgo=@idHallazgo";
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@idHallazgo", obj.idHallazgo));
@@ -117,7 +117,7 @@ namespace mantenimiento_proyecto.Logica
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "delete from Hallazgo where idHallazgo=@idHallazgo";
+                string query = "delete from Hallazgo2 where idHallazgo=@idHallazgo";
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@idHallazgo", obj.idHallazgo));
