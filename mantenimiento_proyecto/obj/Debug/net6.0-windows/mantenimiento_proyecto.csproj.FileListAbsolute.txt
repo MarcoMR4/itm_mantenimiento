@@ -41,3 +41,8 @@ C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_manteni
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.FormAreas.resources
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.FormPersonal.resources
 C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\obj\Debug\net6.0-windows\mantenimiento_proyecto.Logica.FormServicios.resources
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\itextsharp.dll
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\itextsharp.xmlworker.dll
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\System.Text.Encoding.CodePages.dll
+C:\Users\darks\OneDrive\Documentos\SERVICIO_SOCIAL\Servicio_proyecto\itm_mantenimiento\mantenimiento_proyecto\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

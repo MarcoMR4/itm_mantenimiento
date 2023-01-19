@@ -33,8 +33,6 @@
             this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listasDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programaAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -50,13 +48,11 @@
             this.inicioToolStripMenuItem,
             this.listaDeVerificaciónToolStripMenuItem,
             this.planAnualToolStripMenuItem,
-            this.registrarPersonalToolStripMenuItem,
-            this.listasDeVerificaciónToolStripMenuItem,
-            this.programaAnualToolStripMenuItem});
+            this.registrarPersonalToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(906, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1043, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,18 +84,6 @@
             this.registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
             this.registrarPersonalToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonalToolStripMenuItem_Click);
             // 
-            // listasDeVerificaciónToolStripMenuItem
-            // 
-            this.listasDeVerificaciónToolStripMenuItem.Name = "listasDeVerificaciónToolStripMenuItem";
-            this.listasDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(158, 27);
-            this.listasDeVerificaciónToolStripMenuItem.Text = "listas de verificación";
-            // 
-            // programaAnualToolStripMenuItem
-            // 
-            this.programaAnualToolStripMenuItem.Name = "programaAnualToolStripMenuItem";
-            this.programaAnualToolStripMenuItem.Size = new System.Drawing.Size(134, 27);
-            this.programaAnualToolStripMenuItem.Text = "Programa anual";
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -118,25 +102,25 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::mantenimiento_proyecto.Properties.Resources.logo4;
-            this.pictureBox1.Location = new System.Drawing.Point(341, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(175, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(521, 342);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(906, 472);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1043, 580);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pictureBox1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -156,8 +140,6 @@
         private ToolStripMenuItem planAnualToolStripMenuItem;
         private Label label1;
         private ToolStripMenuItem registrarPersonalToolStripMenuItem;
-        private ToolStripMenuItem listasDeVerificaciónToolStripMenuItem;
-        private ToolStripMenuItem programaAnualToolStripMenuItem;
         private PictureBox pictureBox1;
     }
 }

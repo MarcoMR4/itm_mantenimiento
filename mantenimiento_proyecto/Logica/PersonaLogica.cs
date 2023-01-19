@@ -141,20 +141,22 @@ namespace mantenimiento_proyecto.Logica
             return respuesta;
         }
 
-       /* public List<Personal> ListarNombreApellido()
+        public List<Personal> listarPorArea(string area1)
         {
+            MessageBox.Show("entro: "+area1);
             List<Personal> lista = new List<Personal>();
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "select nombres, apellidoPaterno, " +
-                    "apellidoMaterno " +
-                    "from Personal p inner join Area a on p.idArea=a.idArea";
+                string query = "select * from Personal p inner join Area a on p.idArea=a.idArea where nombre=@area1";
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@area1", area1));
                 cmd.CommandType = System.Data.CommandType.Text;
 
+
+               
                 using (SQLiteDataReader dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
@@ -176,7 +178,44 @@ namespace mantenimiento_proyecto.Logica
 
                 return lista;
             }
-        }*/
+        }
+
+        /* public List<Personal> ListarNombreApellido()
+         {
+             List<Personal> lista = new List<Personal>();
+
+             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+             {
+                 conexion.Open();
+                 string query = "select nombres, apellidoPaterno, " +
+                     "apellidoMaterno " +
+                     "from Personal p inner join Area a on p.idArea=a.idArea";
+
+                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                 cmd.CommandType = System.Data.CommandType.Text;
+
+                 using (SQLiteDataReader dr = cmd.ExecuteReader())
+                 {
+                     while (dr.Read())
+                     {
+                         lista.Add(new Personal()
+                         {
+                             idPersonal = int.Parse(dr["idPersonal"].ToString()),
+                             nombres = dr["nombres"].ToString(),
+                             apellidoMaterno = dr["apellidoMaterno"].ToString(),
+                             cargo = dr["cargo"].ToString(),
+                             idArea = int.Parse(dr["idArea"].ToString()),
+                             nombreArea = dr["nombre"].ToString(),
+                             apellidoPaterno = dr["apellidoPaterno"].ToString()
+                         }
+                         );
+
+                     }
+                 }
+
+                 return lista;
+             }
+         }*/
 
     }
 }

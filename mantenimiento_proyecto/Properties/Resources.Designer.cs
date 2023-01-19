@@ -61,32 +61,34 @@ namespace mantenimiento_proyecto.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a 
+        ///&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD
+        ///XHTML 1.0 Transitional//EN&quot;
+        ///          &quot;http://www.w3.org/TR/xhtml1/DTD/
+        ///xhtml1-transitional.dtd&quot;&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/meta&gt;
+        ///
+        ///    &lt;title&gt;listaVerificacion1&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        .c1 {
+        ///            margin-top: 10%;
+        ///            margin-left: 10%;
+        ///        }
+        ///
+        ///        .tabla1 {
+        ///            width: 94%;
+        ///            border: 0.2px black solid;
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///        .celda1 {
+        ///            b [resto de la cadena truncado]&quot;;.
         /// </summary>
-        internal static System.Drawing.Bitmap logo1 {
+        internal static string listaV1 {
             get {
-                object obj = ResourceManager.GetObject("logo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo2 {
-            get {
-                object obj = ResourceManager.GetObject("logo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo3 {
-            get {
-                object obj = ResourceManager.GetObject("logo3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("listaV1", resourceCulture);
             }
         }
         
@@ -96,6 +98,26 @@ namespace mantenimiento_proyecto.Properties {
         internal static System.Drawing.Bitmap logo4 {
             get {
                 object obj = ResourceManager.GetObject("logo4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoITM {
+            get {
+                object obj = ResourceManager.GetObject("logoITM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoTecNM {
+            get {
+                object obj = ResourceManager.GetObject("logoTecNM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

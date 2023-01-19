@@ -45,11 +45,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboJefeElabora = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGuardarLista = new System.Windows.Forms.Button();
+            this.comboJefeArea = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             this.comboAreas.FormattingEnabled = true;
             this.comboAreas.Items.AddRange(new object[] {
             "Personal Registrado 1"});
-            this.comboAreas.Location = new System.Drawing.Point(200, 139);
+            this.comboAreas.Location = new System.Drawing.Point(76, 135);
             this.comboAreas.Name = "comboAreas";
             this.comboAreas.Size = new System.Drawing.Size(308, 30);
             this.comboAreas.TabIndex = 19;
@@ -85,7 +87,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(200, 111);
+            this.label7.Location = new System.Drawing.Point(248, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(136, 25);
             this.label7.TabIndex = 18;
@@ -235,21 +237,21 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Departamento que elabora:";
             // 
-            // comboBox2
+            // comboJefeElabora
             // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            this.comboJefeElabora.AutoCompleteCustomSource.AddRange(new string[] {
             "ene-jun",
             "ago-dic"});
-            this.comboBox2.DisplayMember = "enero-junio";
-            this.comboBox2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboJefeElabora.DisplayMember = "enero-junio";
+            this.comboJefeElabora.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboJefeElabora.FormattingEnabled = true;
+            this.comboJefeElabora.Items.AddRange(new object[] {
             "Daniel Villamar Reyes"});
-            this.comboBox2.Location = new System.Drawing.Point(673, 526);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(308, 30);
-            this.comboBox2.TabIndex = 36;
-            this.comboBox2.Text = "Daniel Villamar Reyes";
+            this.comboJefeElabora.Location = new System.Drawing.Point(673, 526);
+            this.comboJefeElabora.Name = "comboJefeElabora";
+            this.comboJefeElabora.Size = new System.Drawing.Size(308, 30);
+            this.comboJefeElabora.TabIndex = 36;
+            this.comboJefeElabora.Text = "Daniel Villamar Reyes";
             // 
             // label5
             // 
@@ -283,8 +285,9 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(154, 33);
             this.btnImprimir.TabIndex = 38;
-            this.btnImprimir.Text = "Imprimir ";
+            this.btnImprimir.Text = "ImprimirPrueba";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnGuardarLista
             // 
@@ -298,16 +301,44 @@
             this.btnGuardarLista.Text = "Guardar lista ";
             this.btnGuardarLista.UseVisualStyleBackColor = false;
             // 
+            // comboJefeArea
+            // 
+            this.comboJefeArea.AutoCompleteCustomSource.AddRange(new string[] {
+            "ene-jun",
+            "ago-dic"});
+            this.comboJefeArea.DisplayMember = "enero-junio";
+            this.comboJefeArea.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboJefeArea.FormattingEnabled = true;
+            this.comboJefeArea.Items.AddRange(new object[] {
+            "Personal Registrado 1"});
+            this.comboJefeArea.Location = new System.Drawing.Point(76, 215);
+            this.comboJefeArea.Name = "comboJefeArea";
+            this.comboJefeArea.Size = new System.Drawing.Size(308, 30);
+            this.comboJefeArea.TabIndex = 41;
+            this.comboJefeArea.SelectedIndexChanged += new System.EventHandler(this.comboJefeArea_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(181, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(203, 25);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Jefe del área verificada:";
+            // 
             // FormListaNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1024, 630);
+            this.Controls.Add(this.comboJefeArea);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnGuardarLista);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboJefeElabora);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -350,11 +381,13 @@
         private Label label8;
         private ComboBox comboBox1;
         private Label label2;
-        private ComboBox comboBox2;
+        private ComboBox comboJefeElabora;
         private Label label5;
         private ToolStripMenuItem crearListaDeVerificaciónToolStripMenuItem;
         private Button button1;
         private Button btnImprimir;
         private Button btnGuardarLista;
+        private ComboBox comboJefeArea;
+        private Label label6;
     }
 }

@@ -8,10 +8,21 @@
     ".NETCoreApp,Version=v6.0": {
       "mantenimiento_proyecto/1.0.0": {
         "dependencies": {
-          "System.Data.SQLite": "1.0.117"
+          "System.Data.SQLite": "1.0.117",
+          "System.Text.Encoding.CodePages": "7.0.0",
+          "iTextSharp": "5.5.13.3",
+          "itextsharp.xmlworker": "5.5.13.3"
         },
         "runtime": {
           "mantenimiento_proyecto.dll": {}
+        }
+      },
+      "BouncyCastle/1.8.9": {
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.9.0",
+            "fileVersion": "1.8.20343.1"
+          }
         }
       },
       "EntityFramework/6.4.4": {
@@ -30,6 +41,28 @@
           "lib/netstandard2.1/EntityFramework.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.400.420.21404"
+          }
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {
+            "assemblyVersion": "5.5.13.3",
+            "fileVersion": "5.5.13.3"
+          }
+        }
+      },
+      "itextsharp.xmlworker/5.5.13.3": {
+        "dependencies": {
+          "iTextSharp": "5.5.13.3"
+        },
+        "runtime": {
+          "lib/itextsharp.xmlworker.dll": {
+            "assemblyVersion": "5.5.13.3",
+            "fileVersion": "5.5.13.3"
           }
         }
       },
@@ -173,6 +206,7 @@
           "Microsoft.Win32.SystemEvents": "4.7.0"
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Security.AccessControl/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -187,6 +221,25 @@
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
+      "System.Text.Encoding.CodePages/7.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
@@ -200,12 +253,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BouncyCastle/1.8.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "path": "bouncycastle/1.8.9",
+      "hashPath": "bouncycastle.1.8.9.nupkg.sha512"
+    },
     "EntityFramework/6.4.4": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "path": "entityframework/6.4.4",
       "hashPath": "entityframework.6.4.4.nupkg.sha512"
+    },
+    "iTextSharp/5.5.13.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
+      "path": "itextsharp/5.5.13.3",
+      "hashPath": "itextsharp.5.5.13.3.nupkg.sha512"
+    },
+    "itextsharp.xmlworker/5.5.13.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tRxeolUZl5863E/IHVb+5riZwsHw8uNiP0uku0gO1nktR2M9DCJS+U9EoLV3CFr0VuxoxQF/sLOffa8BP0hJzg==",
+      "path": "itextsharp.xmlworker/5.5.13.3",
+      "hashPath": "itextsharp.xmlworker.5.5.13.3.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -326,6 +400,13 @@
       "path": "system.drawing.common/4.7.0",
       "hashPath": "system.drawing.common.4.7.0.nupkg.sha512"
     },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
     "System.Security.AccessControl/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -353,6 +434,13 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LSyCblMpvOe0N3E+8e0skHcrIhgV2huaNcjUUEa8hRtgEAm36aGkRoC8Jxlb6Ra6GSfF29ftduPNywin8XolzQ==",
+      "path": "system.text.encoding.codepages/7.0.0",
+      "hashPath": "system.text.encoding.codepages.7.0.0.nupkg.sha512"
     },
     "System.Windows.Extensions/4.7.0": {
       "type": "package",

@@ -23,7 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="itextsharp.xmlworker" Version="5.5.13.3" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
