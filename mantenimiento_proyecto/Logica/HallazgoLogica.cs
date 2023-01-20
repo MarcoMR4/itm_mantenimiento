@@ -131,5 +131,38 @@ namespace mantenimiento_proyecto.Logica
             }
             return respuesta;
         }
+
+        public List<Hallazgo> ListarEspacio(int idEspacio1, int idA1)
+        {
+            List<Hallazgo> lista = new List<Hallazgo>();
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "select h.descripcion, e.nombre, h.atendido, h.idHallazgo from Hallazgo2 h inner join Espacio e inner join Area a\r\non (h.idEspacio = e.idEspacio) & (e.idArea = a.idArea) where a.idArea=@idArea1";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@idEspacio", idEspacio1));
+                cmd.Parameters.Add(new SQLiteParameter("@idArea1", idA1));
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Hallazgo()
+                        {
+                            idHallazgo = int.Parse(dr["idHallazgo"].ToString()),
+                            descripcion = dr["descripcion"].ToString(),
+                            atendido = dr["atendido"].ToString(),
+                            nombreEspacio = dr["nombre"].ToString()
+                        });
+                    }
+                }
+
+                return lista;
+            }
+        }
     }
 }

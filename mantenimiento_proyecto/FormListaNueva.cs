@@ -14,6 +14,7 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
+using mantenimiento_proyecto.Properties;
 
 namespace mantenimiento_proyecto
 {
@@ -115,18 +116,59 @@ namespace mantenimiento_proyecto
 
             paginahtmlTexto = paginahtmlTexto.Replace("@jefeElabora", comboJefeElabora.Text);
             paginahtmlTexto = paginahtmlTexto.Replace("@jefeArea", comboJefeArea.Text);
-            paginahtmlTexto = paginahtmlTexto.Replace("@fecha", textFecha.Text);
+            paginahtmlTexto = paginahtmlTexto.Replace("@fecha", DateTime.Now.ToString("dd/MM/yyyy"));
+
+            string filas = string.Empty;
+
+            List<Hallazgo> collection = new List<Hallazgo>();
+                                               //pasar idespacio e idarea 
+            collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado,idAreaSeleccionada);
+
+            //agregar filas a la tabla 
+            foreach (var fila in collection)
+            {
+                //MessageBox.Show(fila.descripcion);
+                filas += "<tr>";
+                filas += "<td class=\"celda1\">" + fila.nombreEspacio+"</td>";
+                filas += "<td class=\"celda1\">" + fila.descripcion+"</td>";
+                if (fila.atendido == "No")
+                {
+                    filas += "<td align=\"center\" class=\"celda1\"></td>";
+                    filas += "<td align=\"center\" class=\"celda1\">X</td>";
+                }
+                else
+                {
+                    filas += "<td align=\"center\" class=\"celda1\">X</td>";
+                    filas += "<td align=\"center\" class=\"celda1\"></td>";
+                }
+                filas += "</tr>";
+            }
+
+            paginahtmlTexto = paginahtmlTexto.Replace("@filas", filas);
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
                 using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create)) 
                 {
-                    Document listaPdf = new Document(PageSize.A4);
+                    Document listaPdf = new Document(PageSize.LETTER);
 
                     PdfWriter writer = PdfWriter.GetInstance(listaPdf, stream);
 
                     listaPdf.Open();
                     listaPdf.Add(new Phrase(""));
+
+                    //logo1
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logoTecNM, System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(80, 60);
+                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                    img.SetAbsolutePosition(listaPdf.LeftMargin, listaPdf.Top -60);
+                    listaPdf.Add(img);
+                    //logo2
+                    iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(Properties.Resources.logoITM, System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(10, 10);
+                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                    img.SetAbsolutePosition(80, listaPdf.Top - 60);
+                    //listaPdf.Add(img2);
 
                     //html 
                     using (StringReader sr = new StringReader(paginahtmlTexto))
