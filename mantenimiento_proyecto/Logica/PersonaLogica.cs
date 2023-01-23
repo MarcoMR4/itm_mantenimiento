@@ -143,7 +143,7 @@ namespace mantenimiento_proyecto.Logica
 
         public List<Personal> listarPorArea(string area1)
         {
-            MessageBox.Show("entro: "+area1);
+            //MessageBox.Show("entro: "+area1);
             List<Personal> lista = new List<Personal>();
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
