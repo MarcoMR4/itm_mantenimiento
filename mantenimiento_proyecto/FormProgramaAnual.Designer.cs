@@ -39,17 +39,18 @@
             this.planAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numericAnio = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fechaElaboracion = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboAreas = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboElaboro = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboAprobo = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCargarServicio = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).BeginInit();
             this.SuspendLayout();
@@ -178,18 +179,18 @@
             this.numericAnio.Size = new System.Drawing.Size(120, 25);
             this.numericAnio.TabIndex = 19;
             this.numericAnio.Value = new decimal(new int[] {
-            2022,
+            2023,
             0,
             0,
             0});
             this.numericAnio.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // dateTimePicker1
+            // fechaElaboracion
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(683, 187);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 25);
-            this.dateTimePicker1.TabIndex = 32;
+            this.fechaElaboracion.Location = new System.Drawing.Point(683, 187);
+            this.fechaElaboracion.Name = "fechaElaboracion";
+            this.fechaElaboracion.Size = new System.Drawing.Size(258, 25);
+            this.fechaElaboracion.TabIndex = 32;
             // 
             // label1
             // 
@@ -248,21 +249,21 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "Área a tratar:";
             // 
-            // comboBox2
+            // comboElaboro
             // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            this.comboElaboro.AutoCompleteCustomSource.AddRange(new string[] {
             "ene-jun",
             "ago-dic"});
-            this.comboBox2.DisplayMember = "enero-junio";
-            this.comboBox2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboElaboro.DisplayMember = "enero-junio";
+            this.comboElaboro.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboElaboro.FormattingEnabled = true;
+            this.comboElaboro.Items.AddRange(new object[] {
             "Daniel Villamar Reyes"});
-            this.comboBox2.Location = new System.Drawing.Point(157, 187);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(308, 30);
-            this.comboBox2.TabIndex = 39;
-            this.comboBox2.Text = "Daniel Villamar Reyes";
+            this.comboElaboro.Location = new System.Drawing.Point(157, 187);
+            this.comboElaboro.Name = "comboElaboro";
+            this.comboElaboro.Size = new System.Drawing.Size(308, 30);
+            this.comboElaboro.TabIndex = 39;
+            this.comboElaboro.Text = "Daniel Villamar Reyes";
             // 
             // label9
             // 
@@ -315,15 +316,29 @@
             this.btnCargarServicio.UseVisualStyleBackColor = false;
             this.btnCargarServicio.Click += new System.EventHandler(this.btnCargarServicio_Click);
             // 
+            // btnGenerar
+            // 
+            this.btnGenerar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnGenerar.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGenerar.Location = new System.Drawing.Point(400, 496);
+            this.btnGenerar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(175, 40);
+            this.btnGenerar.TabIndex = 42;
+            this.btnGenerar.Text = "Generar documento";
+            this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
             // FormProgramaAnual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1017, 566);
+            this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.comboAprobo);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboElaboro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboAreas);
             this.Controls.Add(this.btnCargarServicio);
@@ -331,7 +346,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.fechaElaboracion);
             this.Controls.Add(this.numericAnio);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.labelServicio);
@@ -364,16 +379,17 @@
         private ToolStripMenuItem planAnualToolStripMenuItem;
         private ToolStripMenuItem registrarPersonalToolStripMenuItem;
         private NumericUpDown numericAnio;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker fechaElaboracion;
         private Label label1;
         private Label label4;
         private DateTimePicker dateTimePicker2;
         private ComboBox comboAreas;
         private Label label8;
-        private ComboBox comboBox2;
+        private ComboBox comboElaboro;
         private Label label9;
         private ComboBox comboAprobo;
         private Label label10;
         private Button btnCargarServicio;
+        private Button btnGenerar;
     }
 }

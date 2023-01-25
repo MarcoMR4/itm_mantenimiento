@@ -156,7 +156,7 @@ namespace mantenimiento_proyecto
 
                     PdfWriter writer = PdfWriter.GetInstance(listaPdf, stream);
 
-                    PageEventHelper pageEventHelper = new PageEventHelper();
+                    PageEventHelper2 pageEventHelper = new PageEventHelper2();
                     writer.PageEvent = pageEventHelper;
 
                     listaPdf.Open();
@@ -172,7 +172,11 @@ namespace mantenimiento_proyecto
                     listaPdf.NewPage();//page break OR New Page
 
                     listaPdf.Add(new Paragraph("This is a second page."));
-               
+
+                    listaPdf.NewPage();//page break OR New Page
+
+                    listaPdf.Add(new Paragraph("This is a third page."));
+
 
                     //encabezado 
                     /*
@@ -189,8 +193,8 @@ namespace mantenimiento_proyecto
                     img2.SetAbsolutePosition(listaPdf.RightMargin +420, listaPdf.Top -60);
                     listaPdf.Add(img2);
                     */
-                    
-                    
+
+
                     listaPdf.Close();
                     stream.Close();
 
@@ -211,15 +215,17 @@ namespace mantenimiento_proyecto
     }
 }
 
-public class PageEventHelper : PdfPageEventHelper
+public class PageEventHelper2 : PdfPageEventHelper
 {
     PdfContentByte cb;
     PdfTemplate template;
     BaseFont bf = null;
+    int totalPages = 0;
+    string textPag;
     public override void OnOpenDocument(PdfWriter myPDFWriter, Document document)
     {
         cb = myPDFWriter.DirectContent;
-        template = cb.CreateTemplate(50, 50);
+        template = cb.CreateTemplate(580, 700);
         bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
     }
 
@@ -232,12 +238,13 @@ public class PageEventHelper : PdfPageEventHelper
         //no. de pagina 
         int pageN = writer.PageNumber;
         iTextSharp.text.Rectangle pageSize = listaPdf.PageSize;
-        String text = "Página \b" + pageN.ToString()+ "\b de ";
+        textPag = "Página " + pageN.ToString()+ " de";
         cb.BeginText();
         cb.SetFontAndSize(bf, 9);
         //cb.SetRGBColorFill(50, 50, 200);
-        cb.SetTextMatrix(listaPdf.RightMargin + 450, pageSize.GetTop(120));
-        cb.ShowText(text);
+        //cb.SetTextMatrix(listaPdf.RightMargin + 450, pageSize.GetTop(120));
+        cb.SetTextMatrix(listaPdf.RightMargin + 450, listaPdf.Top - 70); ;
+        cb.ShowText(textPag);
         cb.EndText();
 
         cb.AddTemplate(template, listaPdf.LeftMargin, pageSize.GetBottom(listaPdf.BottomMargin));
@@ -328,6 +335,7 @@ public class PageEventHelper : PdfPageEventHelper
         cb.SetTextMatrix(listaPdf.RightMargin + 450, 30);
         cb.ShowText(text2);
         cb.EndText();
+        
 
 
         //html 
@@ -338,7 +346,7 @@ public class PageEventHelper : PdfPageEventHelper
             XMLWorkerHelper.GetInstance().ParseXHtml(myPDFWriter, listaPdf, sr);
         }*/
 
-
+        totalPages++;
     }
 
     public override void OnCloseDocument(PdfWriter writer, Document document)
@@ -346,10 +354,13 @@ public class PageEventHelper : PdfPageEventHelper
         base.OnCloseDocument(writer, document);
         iTextSharp.text.Rectangle pageSize = document.PageSize;
         template.BeginText();
-        template.SetFontAndSize(bf, 8);
-        template.SetTextMatrix(document.RightMargin + 450, pageSize.GetTop(110));
-        template.ShowText("" + (writer.PageNumber - 1));
+        template.SetFontAndSize(bf, 9);
+        template.SetTextMatrix(document.RightMargin + 465, document.Top - 106);
+        template.ShowText(" " + (writer.PageNumber));
         template.EndText();
+
+      
+
     }
 
     /* 

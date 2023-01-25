@@ -91,6 +91,35 @@ namespace mantenimiento_proyecto.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD
+        ///XHTML 1.0 Transitional//EN&quot;
+        ///          &quot;http://www.w3.org/TR/xhtml1/DTD/
+        ///xhtml1-transitional.dtd&quot;&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/meta&gt;
+        ///
+        ///    &lt;title&gt;listaVerificacion1&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        .c1 {
+        ///           width: 20%; 
+        ///        }
+        ///
+        ///        .tablaEncabezado {
+        ///            margin-left: 5%;
+        ///            width: 96%;
+        ///            height: 27%;
+        ///            border-bottom: darkred solid 2.5px;
+        ///            border-top: darkred solid 2.5px;
+        ///    [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string encabezadoPrograma {
+            get {
+                return ResourceManager.GetString("encabezadoPrograma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a 
         ///&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD
         ///XHTML 1.0 Transitional//EN&quot;
@@ -153,33 +182,34 @@ namespace mantenimiento_proyecto.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///   Busca una cadena traducida similar a 
+        ///&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD
+        ///XHTML 1.0 Transitional//EN&quot;
+        ///          &quot;http://www.w3.org/TR/xhtml1/DTD/
+        ///xhtml1-transitional.dtd&quot;&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/meta&gt;
+        ///
+        ///    &lt;title&gt;listaVerificacion1&lt;/title&gt;
         ///    &lt;style&gt;
-        ///        .izq{
-        ///            text-align: left;
+        ///        .c1 {
+        ///            margin-top: 10%;
+        ///            margin-left: 10%;
         ///        }
-        ///        .der{
-        ///            text-align: right;
+        ///
+        ///        .tabla1 {
+        ///            width: 97%;
+        ///            border: 0.2px black solid;
+        ///            border-collapse: collapse;
         ///        }
-        ///    &lt;/style&gt;
-        ///   
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///    &lt;table width=&quot;95%&quot;&gt;
-        ///        &lt;tr&gt;
-        ///            &lt;td class=&quot;izq&quot;&gt;ITMORELIA-IT-AD-002-01&lt;/td&gt;
-        ///            &lt;td class=&quot;der&quot;&gt;	Rev. 1&lt;/td&gt;
-        ///        &lt;/tr&gt;
-        ///    &lt;/table&gt;
-        ///    
-        ///&lt;/body&gt;
-        ///&lt;/html&gt;.
+        ///
+        ///        .celda1 {
+        ///            b [resto de la cadena truncado]&quot;;.
         /// </summary>
-        internal static string Pielista {
+        internal static string programaV1 {
             get {
-                return ResourceManager.GetString("Pielista", resourceCulture);
+                return ResourceManager.GetString("programaV1", resourceCulture);
             }
         }
     }

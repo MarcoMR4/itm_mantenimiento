@@ -1,0 +1,121 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD
+XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/
+xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+
+    <title>listaVerificacion1</title>
+    <style>
+        .c1 {
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+
+        .tabla1 {
+            width: 97%;
+            border: 0.2px black solid;
+            border-collapse: collapse;
+        }
+
+        .celda1 {
+            border: 0.2px black solid;
+            border-collapse: collapse;
+            padding: 5%;
+            font-size: 90%;
+        }
+
+        .celda2 {
+            border: 0.2px black solid;
+            border-collapse: collapse;
+            padding: 4%;
+            font-size: 75%;
+            max-width: max-content;
+        }
+
+        .p1 {
+            margin-bottom: 5%;
+        }
+        .fecha{
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <div class="c1">
+        <b>
+            <P>
+                Semestre: <u> @periodo </u>   &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;    Año: <u> @anio </u>
+            </P>
+        </b>
+    </div>
+
+    <br />
+
+    <table class="tabla1">
+        <tr>
+        </tr>
+        <thead>
+            <tr>
+                <th class="celda1" align="center" >NO.</th>
+                <th rowspan="3" class="celda1" align="center" width="40%">SERVICIO</th>
+                <th  class="celda2" align="center" >TIPO</th>
+                <th  class="celda1" align="center" >E</th>
+                <th  class="celda2" align="center" >ENE</th>
+                <th  class="celda2" align="center" >FEB</th>
+                <th  class="celda2" align="center" >MAR</th>
+                <th  class="celda2" align="center" >ABR</th>
+                <th  class="celda2" align="center" >MAY</th>
+                <th  class="celda2" align="center" >JUN</th>
+                <th  class="celda2" align="center" >JUL</th>
+                <th  class="celda2" align="center" >AGO</th>
+                <th  class="celda2" align="center" >SEP</th>
+                <th  class="celda2" align="center" >OCT</th>
+                <th  class="celda2" align="center" >NOV</th>
+                <th  class="celda2" align="center" >DIC</th>
+            </tr>
+            <tr>
+
+               
+            </tr>
+        </thead>
+        <tbody>
+            
+            @filas
+        </tbody>
+
+    </table>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+        <b>
+            <p>FECHA DE ELABORACIÓN: <u> @fecha </u>       
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                ELABORÓ:<u> @elaboro </u></p>
+                <br />
+                <br />
+                <br />
+                <p>FECHA DE APROBACIÓN: <u> @fecha2 </u>       
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                APROBÓ:<u> @aprobo </u></p>
+
+        </b>
+      
+    </div>
+
+
+   
+</body>
+</html>
