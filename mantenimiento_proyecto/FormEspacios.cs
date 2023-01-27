@@ -59,6 +59,9 @@ namespace mantenimiento_proyecto
         {
             gridEspacios.DataSource = null;
             gridEspacios.DataSource = EspacioLogica.Instancia.Listar(idArea2);
+
+            this.gridEspacios.Columns["idEspacio"].Visible = false;
+            this.gridEspacios.Columns["idArea"].Visible = false;
         }
 
         public void limpiar() 
@@ -74,41 +77,73 @@ namespace mantenimiento_proyecto
 
         private void btnModificarEspacio_Click_1(object sender, EventArgs e)
         {
-            //MessageBox.Show("Entro");
-            Espacio espacio1 = new Espacio()
+            try
             {
-                idEspacio = int.Parse(textIdE.Text),
-                nombre = textNombreE.Text,
-            };
-            bool respuesta = EspacioLogica.Instancia.Editar(espacio1);
-            if (respuesta)
-            {
-                mostrarEspacios();
-                limpiar();
-                //MessageBox.Show("Editado");
+                Espacio espacio1 = new Espacio()
+                {
+                    idEspacio = int.Parse(textIdE.Text),
+                    nombre = textNombre.Text,
+                };
+                bool respuesta = EspacioLogica.Instancia.Editar(espacio1);
+                if (respuesta)
+                {
+                    mostrarEspacios();
+                    limpiar();
+                }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione un espacio de la tabla");
+            }
+
         }
 
         private void btnEliminarEspacio_Click(object sender, EventArgs e)
         {
-            Espacio espacio1 = new Espacio()
+            try
             {
-                idEspacio = int.Parse(textIdE.Text),
-                nombre = textNombre.Text,
-            };
-            bool respuesta = EspacioLogica.Instancia.Eliminar(espacio1);
-            if (respuesta)
-            {
-                mostrarEspacios();
-                limpiar();
+                Espacio espacio1 = new Espacio()
+                {
+                    idEspacio = int.Parse(textIdE.Text),
+                    nombre = textNombre.Text,
+                };
+                bool respuesta = EspacioLogica.Instancia.Eliminar(espacio1);
+                if (respuesta)
+                {
+                    mostrarEspacios();
+                    limpiar();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione un espacio de la tabla");
+            }
+            
         }
 
         private void gridEspacios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textIdE.Text = gridEspacios.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textNombreE.Text = gridEspacios.Rows[e.RowIndex].Cells[1].Value.ToString();
+            validarCelda(sender, e);
+        }
+
+        private void gridEspacios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            validarCelda(sender,e);
+        }
+
+        private void validarCelda(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textIdE.Text = gridEspacios.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textNombreE.Text = gridEspacios.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, debe seleccionar una fila válida \n\n\n" + ex.Message);
+                this.Close();
+            }
+
 
         }
     }

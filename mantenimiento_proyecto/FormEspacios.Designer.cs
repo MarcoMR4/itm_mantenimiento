@@ -67,13 +67,18 @@
             // 
             // gridEspacios
             // 
+            this.gridEspacios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridEspacios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridEspacios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEspacios.Location = new System.Drawing.Point(43, 239);
+            this.gridEspacios.Location = new System.Drawing.Point(43, 253);
             this.gridEspacios.Name = "gridEspacios";
             this.gridEspacios.ReadOnly = true;
+            this.gridEspacios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gridEspacios.RowHeadersWidth = 70;
             this.gridEspacios.RowTemplate.Height = 27;
-            this.gridEspacios.Size = new System.Drawing.Size(745, 239);
+            this.gridEspacios.Size = new System.Drawing.Size(544, 244);
             this.gridEspacios.TabIndex = 7;
+            this.gridEspacios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEspacios_CellClick);
             this.gridEspacios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEspacios_CellContentClick);
             // 
             // textNombre
@@ -156,12 +161,12 @@
             this.textIdE.Size = new System.Drawing.Size(100, 25);
             this.textIdE.TabIndex = 65;
             // 
-            // Form6
+            // FormEspacios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(811, 490);
+            this.ClientSize = new System.Drawing.Size(828, 501);
             this.Controls.Add(this.textIdE);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAgregarEspacio);
@@ -172,7 +177,7 @@
             this.Controls.Add(this.gridEspacios);
             this.Controls.Add(this.area);
             this.Controls.Add(this.label1);
-            this.Name = "Form6";
+            this.Name = "FormEspacios";
             this.Text = "Espacios";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridEspacios)).EndInit();

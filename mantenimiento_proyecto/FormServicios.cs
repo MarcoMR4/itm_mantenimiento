@@ -20,6 +20,19 @@ namespace mantenimiento_proyecto.Logica
             textPeriodo.Text = FormProgramaAnual.periodoPlan;
             textServicio.Text = FormProgramaAnual.nombreAreaElegida;
             mostrarServicios();
+
+            mesesLista.Items.Add("enero");
+            mesesLista.Items.Add("febrero");
+            mesesLista.Items.Add("marzo");
+            mesesLista.Items.Add("abril");
+            mesesLista.Items.Add("mayo");
+            mesesLista.Items.Add("junio");
+            mesesLista.Items.Add("julio");
+            mesesLista.Items.Add("agosto");
+            mesesLista.Items.Add("septiembre");
+            mesesLista.Items.Add("octubre");
+            mesesLista.Items.Add("noviembre");
+            mesesLista.Items.Add("diciembre");
         }
 
         private void btnAgregarHallazgo_Click(object sender, EventArgs e)
@@ -92,6 +105,35 @@ namespace mantenimiento_proyecto.Logica
         public void mostrarServicios()
         {
            gridServicios.DataSource = ServicioLogica.Instancia.Listar(encontrarId());
+           this.gridServicios.Columns["idServicio"].Visible = false;
+           this.gridServicios.Columns["idArea"].Visible = false;
+           this.gridServicios.Columns["periodo"].Visible = false;
+           this.gridServicios.Columns["anio"].Visible = false;
+        }
+
+        private void FormServicios_Load(object sender, EventArgs e)
+        {
+           var h = mesesLista.Items[0].ToString();
+            //MessageBox.Show(h);
+
+            if (textPeriodo.Text == "enero-junio")
+            {
+                mesesLista.Items.Remove("julio");
+                mesesLista.Items.Remove("agosto");
+                mesesLista.Items.Remove("septiembre");
+                mesesLista.Items.Remove("octubre");
+                mesesLista.Items.Remove("noviembre");
+                mesesLista.Items.Remove("diciembre");
+            }
+            else 
+            {
+                mesesLista.Items.Remove("enero");
+                mesesLista.Items.Remove("febrero");
+                mesesLista.Items.Remove("marzo");
+                mesesLista.Items.Remove("abril");
+                mesesLista.Items.Remove("mayo");
+                mesesLista.Items.Remove("junio");
+            }
         }
     }
 }

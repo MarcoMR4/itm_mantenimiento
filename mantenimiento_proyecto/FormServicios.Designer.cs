@@ -42,7 +42,7 @@
             this.textPeriodo = new System.Windows.Forms.TextBox();
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.mesesLista = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridServicios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,26 +204,13 @@
             this.label6.TabIndex = 81;
             this.label6.Text = "Tipo de Servicio";
             // 
-            // checkedListBox1
+            // mesesLista
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Enero ",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo ",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre ",
-            "Octubre ",
-            "Noviembre ",
-            "Diciembre "});
-            this.checkedListBox1.Location = new System.Drawing.Point(22, 78);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 244);
-            this.checkedListBox1.TabIndex = 83;
+            this.mesesLista.FormattingEnabled = true;
+            this.mesesLista.Location = new System.Drawing.Point(22, 78);
+            this.mesesLista.Name = "mesesLista";
+            this.mesesLista.Size = new System.Drawing.Size(120, 244);
+            this.mesesLista.TabIndex = 83;
             // 
             // FormServicios
             // 
@@ -231,7 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1016, 585);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.mesesLista);
             this.Controls.Add(this.comboTipo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textPeriodo);
@@ -248,6 +235,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormServicios";
             this.Text = "Agregar Servicios ";
+            this.Load += new System.EventHandler(this.FormServicios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridServicios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -270,6 +258,6 @@
         private TextBox textPeriodo;
         private ComboBox comboTipo;
         private Label label6;
-        private CheckedListBox checkedListBox1;
+        private CheckedListBox mesesLista;
     }
 }

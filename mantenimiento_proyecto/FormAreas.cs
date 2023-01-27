@@ -74,13 +74,11 @@ namespace mantenimiento_proyecto
 
         private void gridAreas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textArea.Text = gridAreas.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textId.Text = gridAreas.Rows[e.RowIndex].Cells[0].Value.ToString();
+            validarCelda(sender, e);
         }
         private void gridAreas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            textArea.Text = gridAreas.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textId.Text = gridAreas.Rows[e.RowIndex].Cells[0].Value.ToString();
+            validarCelda(sender, e);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -118,6 +116,28 @@ namespace mantenimiento_proyecto
 
         private void FormAreas_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void gridAreas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            validarCelda(sender, e);
+            
+        }
+
+        private void validarCelda(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textArea.Text = gridAreas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textId.Text = gridAreas.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, debe seleccionar una fila válida \n\n\n"+ex.Message);
+                this.Close();
+            }
+            
 
         }
     }

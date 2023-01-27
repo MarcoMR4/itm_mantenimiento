@@ -84,6 +84,7 @@ namespace mantenimiento_proyecto
             comboEspacios.DisplayMember = "nombre";
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombres";
+            comboJefeArea.DisplayMember = "apellidoPaterno";
         }
 
         private void comboAreas_SelectedIndexChanged(object sender, EventArgs e)

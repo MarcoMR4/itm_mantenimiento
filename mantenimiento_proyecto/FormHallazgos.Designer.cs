@@ -156,6 +156,7 @@
             this.gridHallazgos.RowTemplate.Height = 27;
             this.gridHallazgos.Size = new System.Drawing.Size(745, 239);
             this.gridHallazgos.TabIndex = 66;
+            this.gridHallazgos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHallazgos_CellClick);
             this.gridHallazgos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHallazgos_CellContentDoubleClick);
             // 
             // label2

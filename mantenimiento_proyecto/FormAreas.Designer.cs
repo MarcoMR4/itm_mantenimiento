@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelArea = new System.Windows.Forms.Label();
             this.textArea = new System.Windows.Forms.TextBox();
             this.btnGuardarArea = new System.Windows.Forms.Button();
@@ -70,13 +71,30 @@
             // 
             // gridAreas
             // 
+            this.gridAreas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridAreas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridAreas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridAreas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAreas.Location = new System.Drawing.Point(65, 184);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridAreas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.gridAreas.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.gridAreas.Location = new System.Drawing.Point(41, 205);
+            this.gridAreas.MultiSelect = false;
             this.gridAreas.Name = "gridAreas";
             this.gridAreas.ReadOnly = true;
             this.gridAreas.RowTemplate.Height = 27;
-            this.gridAreas.Size = new System.Drawing.Size(462, 241);
+            this.gridAreas.Size = new System.Drawing.Size(458, 220);
             this.gridAreas.TabIndex = 3;
+            this.gridAreas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAreas_CellClick);
             this.gridAreas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAreas_CellContentClick);
             // 
             // btnEditar

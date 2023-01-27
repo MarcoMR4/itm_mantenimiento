@@ -140,8 +140,9 @@
             this.gridPersonal.RowHeadersWidth = 51;
             this.gridPersonal.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridPersonal.RowTemplate.Height = 31;
-            this.gridPersonal.Size = new System.Drawing.Size(821, 207);
+            this.gridPersonal.Size = new System.Drawing.Size(876, 207);
             this.gridPersonal.TabIndex = 30;
+            this.gridPersonal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPersonal_CellClick);
             this.gridPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1

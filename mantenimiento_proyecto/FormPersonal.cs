@@ -24,6 +24,7 @@ namespace mantenimiento_proyecto
             mostrarPersonal();
             comboArea.DataSource = AreaLogica.Instancia.Listar();
             comboArea.DisplayMember = "idArea";
+            
             //comboBox.ValueMember = "Index";
         }
 
@@ -61,11 +62,7 @@ namespace mantenimiento_proyecto
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textID.Text = gridPersonal.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textNombre.Text = gridPersonal.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textApaterno.Text = gridPersonal.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textAmaterno.Text = gridPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();
-            textCargo.Text = gridPersonal.Rows[e.RowIndex].Cells[4].Value.ToString();
+            validarCelda(sender, e);
         }
 
         private void registrarDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,6 +107,8 @@ namespace mantenimiento_proyecto
         {
             gridPersonal.DataSource = null;
             gridPersonal.DataSource = PersonaLogica.Instancia.Listar();
+            this.gridPersonal.Columns["idPersonal"].Visible = false;
+            this.gridPersonal.Columns["idArea"].Visible = false;
         }
 
         public bool validarDatos()
@@ -179,6 +178,30 @@ namespace mantenimiento_proyecto
 
         private void FormPersonal_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void gridPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            validarCelda(sender, e);
+        }
+
+        private void validarCelda(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textID.Text = gridPersonal.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textNombre.Text = gridPersonal.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textApaterno.Text = gridPersonal.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textAmaterno.Text = gridPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textCargo.Text = gridPersonal.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, debe seleccionar una fila válida \n\n\n" + ex.Message);
+                //this.Close();
+            }
+
 
         }
     }

@@ -32,28 +32,40 @@ namespace mantenimiento_proyecto.Logica
         public bool Guardar(Personal obj)
         {
             bool respuesta = true;
-
-            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            try
             {
-                conexion.Open();
-                string query = "insert into Personal(nombres,apellidoPaterno,apellidoMaterno,cargo,idArea) values (@nombres,@apellidoPaterno,@apellidoMaterno,@cargo,@idArea)";
+               
 
-                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.Parameters.Add(new SQLiteParameter("@nombres", obj.nombres));
-                cmd.Parameters.Add(new SQLiteParameter("@apellidoPaterno", obj.apellidoPaterno));
-                cmd.Parameters.Add(new SQLiteParameter("@apellidoMaterno", obj.apellidoMaterno));
-                cmd.Parameters.Add(new SQLiteParameter("@cargo", obj.cargo));
-                cmd.Parameters.Add(new SQLiteParameter("@idArea", obj.idArea));
-
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                if (cmd.ExecuteNonQuery() < 1)
+                using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
-                    respuesta = false;
-                }
+                    conexion.Open();
+                    string query = "insert into Personal(nombres,apellidoPaterno,apellidoMaterno,cargo,idArea) values (@nombres,@apellidoPaterno,@apellidoMaterno,@cargo,@idArea)";
 
+                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@nombres", obj.nombres));
+                    cmd.Parameters.Add(new SQLiteParameter("@apellidoPaterno", obj.apellidoPaterno));
+                    cmd.Parameters.Add(new SQLiteParameter("@apellidoMaterno", obj.apellidoMaterno));
+                    cmd.Parameters.Add(new SQLiteParameter("@cargo", obj.cargo));
+                    cmd.Parameters.Add(new SQLiteParameter("@idArea", obj.idArea));
+
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    if (cmd.ExecuteNonQuery() < 1)
+                    {
+                        respuesta = false;
+                    }
+
+                }
+                return respuesta;
             }
-            return respuesta;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar en la BD \n\n\n" + ex);
+                Console.WriteLine(ex.ToString());
+                respuesta = false;
+                return respuesta;
+            }
+
         }
 
         public List<Personal> Listar()
@@ -62,29 +74,37 @@ namespace mantenimiento_proyecto.Logica
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
-                conexion.Open();
-                string query = "select * from Personal p inner join Area a on p.idArea=a.idArea";
-
-                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                try
                 {
-                    while (dr.Read())
+                    conexion.Open();
+                    string query = "select * from Personal p inner join Area a on p.idArea=a.idArea";
+
+                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    using (SQLiteDataReader dr = cmd.ExecuteReader())
                     {
-                        lista.Add(new Personal()
+                        while (dr.Read())
                         {
-                            idPersonal = int.Parse(dr["idPersonal"].ToString()),
-                            nombres = dr["nombres"].ToString(),
-                            apellidoMaterno = dr["apellidoMaterno"].ToString(),
-                            cargo = dr["cargo"].ToString(),
-                            idArea = int.Parse(dr["idArea"].ToString()),
-                            nombreArea = dr["nombre"].ToString(),
-                            apellidoPaterno = dr["apellidoPaterno"].ToString()
+                            lista.Add(new Personal()
+                            {
+                                idPersonal = int.Parse(dr["idPersonal"].ToString()),
+                                nombres = dr["nombres"].ToString(),
+                                apellidoMaterno = dr["apellidoMaterno"].ToString(),
+                                cargo = dr["cargo"].ToString(),
+                                idArea = int.Parse(dr["idArea"].ToString()),
+                                nombreArea = dr["nombre"].ToString(),
+                                apellidoPaterno = dr["apellidoPaterno"].ToString()
+                            }
+                            );
+
                         }
-                        ) ;
-                        
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al leer los datos de la BD \n\n\n"+ex.ToString());
+                    
                 }
 
                 return lista;
@@ -95,49 +115,67 @@ namespace mantenimiento_proyecto.Logica
         {
             bool respuesta = true;
 
-            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            try
             {
-                conexion.Open();
-                string query = "update Personal set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,cargo=@cargo,idArea=@idArea where idPersonal=@idPersonal";
-
-                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.Parameters.Add(new SQLiteParameter("@idPersonal", obj.idPersonal));
-                cmd.Parameters.Add(new SQLiteParameter("@nombres", obj.nombres));
-                cmd.Parameters.Add(new SQLiteParameter("@apellidoPaterno", obj.apellidoPaterno));
-                cmd.Parameters.Add(new SQLiteParameter("@apellidoMaterno", obj.apellidoMaterno));
-                cmd.Parameters.Add(new SQLiteParameter("@cargo", obj.cargo));
-                cmd.Parameters.Add(new SQLiteParameter("@idArea", obj.idArea));
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                if (cmd.ExecuteNonQuery() < 1)
+                using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
-                    respuesta = false;
-                }
+                    conexion.Open();
+                    string query = "update Personal set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,cargo=@cargo,idArea=@idArea where idPersonal=@idPersonal";
 
+                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@idPersonal", obj.idPersonal));
+                    cmd.Parameters.Add(new SQLiteParameter("@nombres", obj.nombres));
+                    cmd.Parameters.Add(new SQLiteParameter("@apellidoPaterno", obj.apellidoPaterno));
+                    cmd.Parameters.Add(new SQLiteParameter("@apellidoMaterno", obj.apellidoMaterno));
+                    cmd.Parameters.Add(new SQLiteParameter("@cargo", obj.cargo));
+                    cmd.Parameters.Add(new SQLiteParameter("@idArea", obj.idArea));
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    if (cmd.ExecuteNonQuery() < 1)
+                    {
+                        respuesta = false;
+                    }
+
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al editar datos \n\n\n"+ex);
+                respuesta = false;
+            }
+
+           
             return respuesta;
         }
-
 
         public bool Eliminar(Personal obj)
         {
             bool respuesta = true;
 
-            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            try
             {
-                conexion.Open();
-                string query = "delete from Personal where idPersonal=@idPersonal";
-
-                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.Parameters.Add(new SQLiteParameter("@idPersonal", obj.idPersonal));
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                if (cmd.ExecuteNonQuery() < 1)
+                using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
-                    respuesta = false;
-                }
+                    conexion.Open();
+                    string query = "delete from Personal where idPersonal=@idPersonal";
 
+                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@idPersonal", obj.idPersonal));
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    if (cmd.ExecuteNonQuery() < 1)
+                    {
+                        respuesta = false;
+                    }
+
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar datos \n\n\n" + ex);
+                respuesta = false;
+            }
+
             return respuesta;
         }
 
@@ -148,36 +186,42 @@ namespace mantenimiento_proyecto.Logica
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
-                conexion.Open();
-                string query = "select * from Personal p inner join Area a on p.idArea=a.idArea where nombre=@area1";
-
-                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.Parameters.Add(new SQLiteParameter("@area1", area1));
-                cmd.CommandType = System.Data.CommandType.Text;
-
-
-               
-                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                try
                 {
-                    while (dr.Read())
-                    {
-                        lista.Add(new Personal()
-                        {
-                            idPersonal = int.Parse(dr["idPersonal"].ToString()),
-                            nombres = dr["nombres"].ToString(),
-                            apellidoMaterno = dr["apellidoMaterno"].ToString(),
-                            cargo = dr["cargo"].ToString(),
-                            idArea = int.Parse(dr["idArea"].ToString()),
-                            nombreArea = dr["nombre"].ToString(),
-                            apellidoPaterno = dr["apellidoPaterno"].ToString()
-                        }
-                        );
+                    conexion.Open();
+                    string query = "select * from Personal p inner join Area a on p.idArea=a.idArea where nombre=@area1";
 
+                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@area1", area1));
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    using (SQLiteDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Personal()
+                            {
+                                idPersonal = int.Parse(dr["idPersonal"].ToString()),
+                                nombres = dr["nombres"].ToString(),
+                                apellidoMaterno = dr["apellidoMaterno"].ToString(),
+                                cargo = dr["cargo"].ToString(),
+                                idArea = int.Parse(dr["idArea"].ToString()),
+                                nombreArea = dr["nombre"].ToString(),
+                                apellidoPaterno = dr["apellidoPaterno"].ToString()
+                            }
+                            );
+
+                        }
                     }
                 }
-
-                return lista;
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al consultar datos \n\n\n"+ex);
+                    
+                }
+                
             }
+            return lista;
         }
 
         /* public List<Personal> ListarNombreApellido()

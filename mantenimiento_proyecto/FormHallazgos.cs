@@ -46,10 +46,14 @@ namespace mantenimiento_proyecto.Logica
 
         public void mostrarHallazgos()
         {
+
             string espacioBuscar = textEspacio.Text;
             int idHallado = EspacioLogica.Instancia.buscarEspacio(espacioBuscar);
             gridHallazgos.DataSource = HallazgoLogica.Instancia.Listar(idHallado);
-        
+            this.gridHallazgos.Columns["idHallazgo"].Visible = false;
+            this.gridHallazgos.Columns["idListaVerificacion"].Visible = false;
+            this.gridHallazgos.Columns["nombreEspacio"].Visible = false;
+            this.gridHallazgos.Columns["idEspacio"].Visible = false;
         }
 
         public void limpiar()
@@ -77,10 +81,7 @@ namespace mantenimiento_proyecto.Logica
 
         private void gridHallazgos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            textIdE.Text = gridHallazgos.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textNombreHallazgo.Text = gridHallazgos.Rows[e.RowIndex].Cells[1].Value.ToString();
-            comboAtendido.Text = gridHallazgos.Rows[e.RowIndex].Cells[3].Value.ToString();
-
+            validarCelda(sender, e);
         }
 
         private void btnEliminarHallazgo_Click(object sender, EventArgs e)
@@ -95,6 +96,28 @@ namespace mantenimiento_proyecto.Logica
                 mostrarHallazgos();
                 limpiar();
             }
+
+        }
+
+        private void gridHallazgos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            validarCelda(sender, e);
+        }
+
+        private void validarCelda(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                textIdE.Text = gridHallazgos.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textNombreHallazgo.Text = gridHallazgos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                comboAtendido.Text = gridHallazgos.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, debe seleccionar una fila válida \n\n\n" + ex.Message);
+                //this.Close();
+            }
+
 
         }
     }
