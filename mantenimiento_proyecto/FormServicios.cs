@@ -1,4 +1,5 @@
-﻿using mantenimiento_proyecto.Models;
+﻿using iTextSharp.text;
+using mantenimiento_proyecto.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,15 +42,47 @@ namespace mantenimiento_proyecto.Logica
             {
                 string t1 = comboTipo.Text;
                 int idArea1 = encontrarId();
-                MessageBox.Show(idArea1.ToString());
+                //MessageBox.Show(idArea1.ToString());
                 Servicio s1 = new Servicio()
                 {
                     descripcion = textDescripcion.Text,
                     tipoServicio = tipoServicio(t1).ToString(),
                     anio = int.Parse(textAnio.Text),
                     periodo = textPeriodo.Text,
-                    idArea = idArea1
+                    idArea = idArea1,
                 };
+
+                foreach (var item in mesesLista.CheckedItems)
+                {
+                    //MessageBox.Show("Item: "+item.ToString());
+                    if (item.ToString() == "enero")
+                    { s1.enero = 1; }
+                    if (item.ToString() == "febrero")
+                    { s1.febrero = 1; }
+                    if (item.ToString() == "marzo")
+                    { s1.marzo = 1; }
+                    if (item.ToString() == "abril")
+                    { s1.abril = 1; }
+                    if (item.ToString() == "mayo")
+                    { s1.mayo = 1; }
+                    if (item.ToString() == "junio")
+                    { s1.junio = 1; }
+
+                    if (item.ToString() == "julio")
+                    { s1.julio = 1; }
+                    if (item.ToString() == "agosto")
+                    { s1.agosto = 1; }
+                    if (item.ToString() == "septiembre")
+                    { s1.septiembre = 1; }
+                    if (item.ToString() == "octubre")
+                    { s1.octubre = 1; }
+                    if (item.ToString() == "noviembre")
+                    { s1.noviembre = 1; }
+                    if (item.ToString() == "diciembre")
+                    { s1.diciembre = 1; }
+
+                }
+                
                 //guardar en BD 
                 bool respuesta = ServicioLogica.Instancia.Guardar(s1);
                 if(respuesta) 

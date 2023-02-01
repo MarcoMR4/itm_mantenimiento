@@ -34,26 +34,46 @@ namespace mantenimiento_proyecto.Logica
         {
             bool respuesta = true;
 
-            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            try
             {
-                conexion.Open();
-                string query = "insert into Servicio2(descripcion,tipo,periodo,anio,idArea) values (@descripcion,@tipo,@periodo,@anio,@idArea)";
-
-                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                cmd.Parameters.Add(new SQLiteParameter("@descripcion", obj.descripcion));
-                cmd.Parameters.Add(new SQLiteParameter("@tipo", obj.tipoServicio));
-                cmd.Parameters.Add(new SQLiteParameter("@periodo", obj.periodo));
-                cmd.Parameters.Add(new SQLiteParameter("@anio", obj.anio));
-                cmd.Parameters.Add(new SQLiteParameter("@idArea", obj.idArea));
-
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                if (cmd.ExecuteNonQuery() < 1)
+                using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
-                    respuesta = false;
-                }
+                    conexion.Open();
+                    string query = "insert into Servicio2(descripcion,tipo,periodo,anio,idArea,enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre) " +
+                        "values (@descripcion,@tipo,@periodo,@anio,@idArea,@enero,@febrero,@marzo,@abril,@mayo,@junio,@julio,@agosto,@septiembre,@octubre,@noviembre,@diciembre)";
 
+                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@descripcion", obj.descripcion));
+                    cmd.Parameters.Add(new SQLiteParameter("@tipo", obj.tipoServicio));
+                    cmd.Parameters.Add(new SQLiteParameter("@periodo", obj.periodo));
+                    cmd.Parameters.Add(new SQLiteParameter("@anio", obj.anio));
+                    cmd.Parameters.Add(new SQLiteParameter("@idArea", obj.idArea));
+                    cmd.Parameters.Add(new SQLiteParameter("@enero", obj.enero));
+                    cmd.Parameters.Add(new SQLiteParameter("@febrero", obj.febrero));
+                    cmd.Parameters.Add(new SQLiteParameter("@marzo", obj.marzo));
+                    cmd.Parameters.Add(new SQLiteParameter("@abril", obj.abril));
+                    cmd.Parameters.Add(new SQLiteParameter("@mayo", obj.mayo));
+                    cmd.Parameters.Add(new SQLiteParameter("@junio", obj.junio));
+                    cmd.Parameters.Add(new SQLiteParameter("@julio", obj.julio));
+                    cmd.Parameters.Add(new SQLiteParameter("@agosto", obj.agosto));
+                    cmd.Parameters.Add(new SQLiteParameter("@septiembre", obj.septiembre));
+                    cmd.Parameters.Add(new SQLiteParameter("@octubre", obj.octubre));
+                    cmd.Parameters.Add(new SQLiteParameter("@noviembre", obj.noviembre));
+                    cmd.Parameters.Add(new SQLiteParameter("@diciembre", obj.diciembre));
+
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    if (cmd.ExecuteNonQuery() < 1)
+                    {
+                        respuesta = false;
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar guardar los datos \n\n\n"+ex);
+            }
+          
             return respuesta;
         }
 

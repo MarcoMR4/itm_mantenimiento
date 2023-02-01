@@ -59,7 +59,7 @@
             // 
             this.labelPeriodo.AutoSize = true;
             this.labelPeriodo.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPeriodo.Location = new System.Drawing.Point(455, 106);
+            this.labelPeriodo.Location = new System.Drawing.Point(463, 89);
             this.labelPeriodo.Name = "labelPeriodo";
             this.labelPeriodo.Size = new System.Drawing.Size(73, 25);
             this.labelPeriodo.TabIndex = 2;
@@ -77,7 +77,7 @@
             this.comboPeriodos.Items.AddRange(new object[] {
             "enero-junio",
             "agosto-diciembre"});
-            this.comboPeriodos.Location = new System.Drawing.Point(531, 106);
+            this.comboPeriodos.Location = new System.Drawing.Point(557, 89);
             this.comboPeriodos.Name = "comboPeriodos";
             this.comboPeriodos.Size = new System.Drawing.Size(177, 30);
             this.comboPeriodos.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(41, 45);
+            this.label2.Location = new System.Drawing.Point(41, 40);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(421, 29);
@@ -100,7 +100,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(762, 104);
+            this.label3.Location = new System.Drawing.Point(776, 89);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 26);
@@ -112,7 +112,7 @@
             // 
             this.labelServicio.AutoSize = true;
             this.labelServicio.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelServicio.Location = new System.Drawing.Point(716, 394);
+            this.labelServicio.Location = new System.Drawing.Point(716, 348);
             this.labelServicio.Name = "labelServicio";
             this.labelServicio.Size = new System.Drawing.Size(89, 25);
             this.labelServicio.TabIndex = 10;
@@ -164,7 +164,7 @@
             // 
             // numericAnio
             // 
-            this.numericAnio.Location = new System.Drawing.Point(810, 105);
+            this.numericAnio.Location = new System.Drawing.Point(833, 92);
             this.numericAnio.Maximum = new decimal(new int[] {
             2030,
             0,
@@ -176,7 +176,7 @@
             0,
             0});
             this.numericAnio.Name = "numericAnio";
-            this.numericAnio.Size = new System.Drawing.Size(120, 25);
+            this.numericAnio.Size = new System.Drawing.Size(120, 23);
             this.numericAnio.TabIndex = 19;
             this.numericAnio.Value = new decimal(new int[] {
             2023,
@@ -187,16 +187,16 @@
             // 
             // fechaElaboracion
             // 
-            this.fechaElaboracion.Location = new System.Drawing.Point(683, 187);
+            this.fechaElaboracion.Location = new System.Drawing.Point(695, 165);
             this.fechaElaboracion.Name = "fechaElaboracion";
-            this.fechaElaboracion.Size = new System.Drawing.Size(258, 25);
+            this.fechaElaboracion.Size = new System.Drawing.Size(258, 23);
             this.fechaElaboracion.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(511, 189);
+            this.label1.Location = new System.Drawing.Point(508, 167);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 23);
@@ -207,7 +207,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(511, 230);
+            this.label4.Location = new System.Drawing.Point(508, 204);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(164, 23);
@@ -216,9 +216,9 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(683, 228);
+            this.dateTimePicker2.Location = new System.Drawing.Point(695, 202);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(258, 25);
+            this.dateTimePicker2.Size = new System.Drawing.Size(258, 23);
             this.dateTimePicker2.TabIndex = 34;
             // 
             // comboAreas
@@ -232,7 +232,7 @@
             this.comboAreas.Items.AddRange(new object[] {
             "enero-junio",
             "agosto-diciembre"});
-            this.comboAreas.Location = new System.Drawing.Point(645, 307);
+            this.comboAreas.Location = new System.Drawing.Point(645, 271);
             this.comboAreas.Name = "comboAreas";
             this.comboAreas.Size = new System.Drawing.Size(308, 30);
             this.comboAreas.TabIndex = 37;
@@ -243,7 +243,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(531, 307);
+            this.label8.Location = new System.Drawing.Point(531, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 25);
             this.label8.TabIndex = 36;
@@ -259,7 +259,7 @@
             this.comboElaboro.FormattingEnabled = true;
             this.comboElaboro.Items.AddRange(new object[] {
             "Daniel Villamar Reyes"});
-            this.comboElaboro.Location = new System.Drawing.Point(157, 187);
+            this.comboElaboro.Location = new System.Drawing.Point(157, 165);
             this.comboElaboro.Name = "comboElaboro";
             this.comboElaboro.Size = new System.Drawing.Size(308, 30);
             this.comboElaboro.TabIndex = 39;
@@ -269,7 +269,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(83, 189);
+            this.label9.Location = new System.Drawing.Point(83, 167);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 23);
             this.label9.TabIndex = 38;
@@ -286,7 +286,7 @@
             this.comboAprobo.Items.AddRange(new object[] {
             "Hugo Fernando Hernandez Lopez ",
             "Juan Manuel Treviño Cruz "});
-            this.comboAprobo.Location = new System.Drawing.Point(154, 229);
+            this.comboAprobo.Location = new System.Drawing.Point(154, 202);
             this.comboAprobo.Name = "comboAprobo";
             this.comboAprobo.Size = new System.Drawing.Size(308, 30);
             this.comboAprobo.TabIndex = 41;
@@ -297,7 +297,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(83, 232);
+            this.label10.Location = new System.Drawing.Point(83, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 23);
             this.label10.TabIndex = 40;
@@ -307,10 +307,10 @@
             // 
             this.btnCargarServicio.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCargarServicio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarServicio.Location = new System.Drawing.Point(825, 388);
+            this.btnCargarServicio.Location = new System.Drawing.Point(825, 342);
             this.btnCargarServicio.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargarServicio.Name = "btnCargarServicio";
-            this.btnCargarServicio.Size = new System.Drawing.Size(128, 39);
+            this.btnCargarServicio.Size = new System.Drawing.Size(128, 34);
             this.btnCargarServicio.TabIndex = 18;
             this.btnCargarServicio.Text = "Cargar servicio";
             this.btnCargarServicio.UseVisualStyleBackColor = false;
@@ -320,10 +320,10 @@
             // 
             this.btnGenerar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnGenerar.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGenerar.Location = new System.Drawing.Point(400, 496);
+            this.btnGenerar.Location = new System.Drawing.Point(400, 438);
             this.btnGenerar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(175, 40);
+            this.btnGenerar.Size = new System.Drawing.Size(175, 35);
             this.btnGenerar.TabIndex = 42;
             this.btnGenerar.Text = "Generar documento";
             this.btnGenerar.UseVisualStyleBackColor = false;
@@ -331,10 +331,10 @@
             // 
             // FormProgramaAnual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1017, 566);
+            this.ClientSize = new System.Drawing.Size(1017, 499);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.comboAprobo);
             this.Controls.Add(this.label10);
