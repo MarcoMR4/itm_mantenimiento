@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textDescripcion = new System.Windows.Forms.TextBox();
             this.textNombre = new System.Windows.Forms.Label();
-            this.btnAgregarHallazgo = new System.Windows.Forms.Button();
-            this.btnModificarHallazgo = new System.Windows.Forms.Button();
-            this.btnEliminarHallazgo = new System.Windows.Forms.Button();
+            this.btnAgregarServicio = new System.Windows.Forms.Button();
+            this.btnModificarServicio = new System.Windows.Forms.Button();
+            this.btnEliminarServicio = new System.Windows.Forms.Button();
             this.gridServicios = new System.Windows.Forms.DataGridView();
             this.labelAnio = new System.Windows.Forms.Label();
             this.labelPeriodo = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.mesesLista = new System.Windows.Forms.CheckedListBox();
+            this.textId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridServicios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,42 +91,44 @@
             this.textNombre.TabIndex = 69;
             this.textNombre.Text = "Descripción del servicio:";
             // 
-            // btnAgregarHallazgo
+            // btnAgregarServicio
             // 
-            this.btnAgregarHallazgo.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnAgregarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarHallazgo.Location = new System.Drawing.Point(658, 198);
-            this.btnAgregarHallazgo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregarHallazgo.Name = "btnAgregarHallazgo";
-            this.btnAgregarHallazgo.Size = new System.Drawing.Size(97, 35);
-            this.btnAgregarHallazgo.TabIndex = 73;
-            this.btnAgregarHallazgo.Text = "Agregar ";
-            this.btnAgregarHallazgo.UseVisualStyleBackColor = false;
-            this.btnAgregarHallazgo.Click += new System.EventHandler(this.btnAgregarHallazgo_Click);
+            this.btnAgregarServicio.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnAgregarServicio.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarServicio.Location = new System.Drawing.Point(658, 198);
+            this.btnAgregarServicio.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarServicio.Name = "btnAgregarServicio";
+            this.btnAgregarServicio.Size = new System.Drawing.Size(97, 35);
+            this.btnAgregarServicio.TabIndex = 73;
+            this.btnAgregarServicio.Text = "Agregar ";
+            this.btnAgregarServicio.UseVisualStyleBackColor = false;
+            this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click_1);
             // 
-            // btnModificarHallazgo
+            // btnModificarServicio
             // 
-            this.btnModificarHallazgo.BackColor = System.Drawing.Color.Khaki;
-            this.btnModificarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnModificarHallazgo.Location = new System.Drawing.Point(560, 253);
-            this.btnModificarHallazgo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificarHallazgo.Name = "btnModificarHallazgo";
-            this.btnModificarHallazgo.Size = new System.Drawing.Size(97, 35);
-            this.btnModificarHallazgo.TabIndex = 75;
-            this.btnModificarHallazgo.Text = "Modificar";
-            this.btnModificarHallazgo.UseVisualStyleBackColor = false;
+            this.btnModificarServicio.BackColor = System.Drawing.Color.Khaki;
+            this.btnModificarServicio.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnModificarServicio.Location = new System.Drawing.Point(560, 253);
+            this.btnModificarServicio.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarServicio.Name = "btnModificarServicio";
+            this.btnModificarServicio.Size = new System.Drawing.Size(97, 35);
+            this.btnModificarServicio.TabIndex = 75;
+            this.btnModificarServicio.Text = "Modificar";
+            this.btnModificarServicio.UseVisualStyleBackColor = false;
+            this.btnModificarServicio.Click += new System.EventHandler(this.btnModificarServicio_Click_1);
             // 
-            // btnEliminarHallazgo
+            // btnEliminarServicio
             // 
-            this.btnEliminarHallazgo.BackColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminarHallazgo.Location = new System.Drawing.Point(661, 253);
-            this.btnEliminarHallazgo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarHallazgo.Name = "btnEliminarHallazgo";
-            this.btnEliminarHallazgo.Size = new System.Drawing.Size(97, 35);
-            this.btnEliminarHallazgo.TabIndex = 74;
-            this.btnEliminarHallazgo.Text = "Eliminar ";
-            this.btnEliminarHallazgo.UseVisualStyleBackColor = false;
+            this.btnEliminarServicio.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminarServicio.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminarServicio.Location = new System.Drawing.Point(661, 253);
+            this.btnEliminarServicio.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarServicio.Name = "btnEliminarServicio";
+            this.btnEliminarServicio.Size = new System.Drawing.Size(97, 35);
+            this.btnEliminarServicio.TabIndex = 74;
+            this.btnEliminarServicio.Text = "Eliminar ";
+            this.btnEliminarServicio.UseVisualStyleBackColor = false;
+            this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminarServicio_Click_1);
             // 
             // gridServicios
             // 
@@ -137,6 +140,8 @@
             this.gridServicios.RowTemplate.Height = 27;
             this.gridServicios.Size = new System.Drawing.Size(950, 211);
             this.gridServicios.TabIndex = 76;
+            this.gridServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridServicios_CellClick);
+            this.gridServicios.Click += new System.EventHandler(this.gridServicios_Click);
             // 
             // labelAnio
             // 
@@ -213,12 +218,21 @@
             this.mesesLista.Size = new System.Drawing.Size(120, 202);
             this.mesesLista.TabIndex = 83;
             // 
+            // textId
+            // 
+            this.textId.Location = new System.Drawing.Point(433, 253);
+            this.textId.Name = "textId";
+            this.textId.ReadOnly = true;
+            this.textId.Size = new System.Drawing.Size(93, 23);
+            this.textId.TabIndex = 84;
+            // 
             // FormServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1016, 516);
+            this.Controls.Add(this.textId);
             this.Controls.Add(this.mesesLista);
             this.Controls.Add(this.comboTipo);
             this.Controls.Add(this.label6);
@@ -227,9 +241,9 @@
             this.Controls.Add(this.labelPeriodo);
             this.Controls.Add(this.labelAnio);
             this.Controls.Add(this.gridServicios);
-            this.Controls.Add(this.btnAgregarHallazgo);
-            this.Controls.Add(this.btnModificarHallazgo);
-            this.Controls.Add(this.btnEliminarHallazgo);
+            this.Controls.Add(this.btnAgregarServicio);
+            this.Controls.Add(this.btnModificarServicio);
+            this.Controls.Add(this.btnEliminarServicio);
             this.Controls.Add(this.textDescripcion);
             this.Controls.Add(this.textNombre);
             this.Controls.Add(this.textServicio);
@@ -249,9 +263,9 @@
         private Label label1;
         private TextBox textDescripcion;
         private Label textNombre;
-        private Button btnAgregarHallazgo;
-        private Button btnModificarHallazgo;
-        private Button btnEliminarHallazgo;
+        private Button btnAgregarServicio;
+        private Button btnModificarServicio;
+        private Button btnEliminarServicio;
         private DataGridView gridServicios;
         private Label labelAnio;
         private Label labelPeriodo;
@@ -260,5 +274,6 @@
         private ComboBox comboTipo;
         private Label label6;
         private CheckedListBox mesesLista;
+        private TextBox textId;
     }
 }
