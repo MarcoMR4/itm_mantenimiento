@@ -99,19 +99,22 @@ namespace mantenimiento_proyecto.Properties {
         ///&lt;head&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/meta&gt;
         ///
-        ///    &lt;title&gt;listaVerificacion1&lt;/title&gt;
+        ///    &lt;title&gt;ProgramaAnual&lt;/title&gt;
         ///    &lt;style&gt;
         ///        .c1 {
-        ///           width: 20%; 
+        ///            margin-left: 10%;
+        ///            width: 80%;
+        ///            margin-top: 10%;
+        ///        }
+        ///
+        ///        .c4 {
+        ///            margin-left: 10%;
+        ///            width: 40%;
+        ///            margin-top: 10%;
         ///        }
         ///
         ///        .tablaEncabezado {
-        ///            margin-left: 5%;
-        ///            width: 96%;
-        ///            height: 27%;
-        ///            border-bottom: darkred solid 2.5px;
-        ///            border-top: darkred solid 2.5px;
-        ///    [resto de la cadena truncado]&quot;;.
+        ///          [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string encabezadoPrograma {
             get {
@@ -191,7 +194,7 @@ namespace mantenimiento_proyecto.Properties {
         ///&lt;head&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/meta&gt;
         ///
-        ///    &lt;title&gt;listaVerificacion1&lt;/title&gt;
+        ///    &lt;title&gt;programaAnual&lt;/title&gt;
         ///    &lt;style&gt;
         ///        .c1 {
         ///            margin-top: 10%;
@@ -205,7 +208,7 @@ namespace mantenimiento_proyecto.Properties {
         ///        }
         ///
         ///        .celda1 {
-        ///            b [resto de la cadena truncado]&quot;;.
+        ///            border [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string programaV1 {
             get {

@@ -7,7 +7,7 @@ xhtml1-transitional.dtd">
 <head>
     <meta charset="UTF-8"></meta>
 
-    <title>listaVerificacion1</title>
+    <title>programaAnual</title>
     <style>
         .c1 {
             margin-top: 10%;
@@ -21,16 +21,31 @@ xhtml1-transitional.dtd">
         }
 
         .celda1 {
-            border: 0.2px black solid;
+            border: 0.1px black solid;
             border-collapse: collapse;
-            padding: 5%;
+            padding: 3%;
+            font-size: 70%;
+        }
+
+        .celda3 {
+            border: 0.1px black solid;
+            border-collapse: collapse;
+            padding: 3%;
             font-size: 90%;
         }
 
-        .celda2 {
-            border: 0.2px black solid;
+        .celdaMes {
+            border: 0.1px black solid;
             border-collapse: collapse;
-            padding: 4%;
+            padding: 3%;
+            text-align: center;
+            font-size: 85%;
+        }
+
+        .celda2 {
+            border: 0.1px black solid;
+            border-collapse: collapse;
+            padding: 3%;
             font-size: 75%;
             max-width: max-content;
         }
@@ -44,28 +59,16 @@ xhtml1-transitional.dtd">
     </style>
 </head>
 <body>
-    
-
-
-    <div class="c1">
-        <b>
-            <P>
-                Semestre: <u> @periodo </u>   &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;    Año: <u> @anio </u>
-            </P>
-        </b>
-    </div>
-
-    <br />
 
     <table class="tabla1">
         <tr>
         </tr>
         <thead>
             <tr>
-                <th class="celda1" align="center" >NO.</th>
-                <th rowspan="3" class="celda1" align="center" width="40%">SERVICIO</th>
+                <th class="celda3" align="center" >NO.</th>
+                <th  class="celda3" align="center" width="40%">SERVICIO</th>
                 <th  class="celda2" align="center" >TIPO</th>
-                <th  class="celda1" align="center" >E</th>
+                <th  class="celda3" align="center" >E</th>
                 <th  class="celda2" align="center" >ENE</th>
                 <th  class="celda2" align="center" >FEB</th>
                 <th  class="celda2" align="center" >MAR</th>
@@ -79,19 +82,12 @@ xhtml1-transitional.dtd">
                 <th  class="celda2" align="center" >NOV</th>
                 <th  class="celda2" align="center" >DIC</th>
             </tr>
-            <tr>
-
-               
-            </tr>
         </thead>
         <tbody>
-            
             @filas
         </tbody>
-
     </table>
 
-    <br />
     <br />
     <br />
     <br />
@@ -105,17 +101,13 @@ xhtml1-transitional.dtd">
                 <br />
                 <br />
                 <br />
-                <p>FECHA DE APROBACIÓN: <u> @fecha2 </u>       
+                <p>FECHA DE APROBACIÓN: <u> @feche </u>       
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp;
                 APROBÓ:<u> @aprobo </u></p>
-
         </b>
-      
     </div>
-
-
-   
 </body>
 </html>

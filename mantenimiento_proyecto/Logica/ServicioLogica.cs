@@ -78,17 +78,19 @@ namespace mantenimiento_proyecto.Logica
         }
 
         //Read 
-        public List<Servicio> Listar1(int idArea1)
+        public List<Servicio> Listar1(int idArea1, int anio1)
         {
             List<Servicio> lista = new List<Servicio>();
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "select * from Servicio2 where idArea=@idArea and periodo='enero-junio'";
+                string query = "select * from Servicio2 where idArea=@idArea and periodo='enero-junio' " +
+                    "and anio=@anio";
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@idArea", idArea1));
+                cmd.Parameters.Add(new SQLiteParameter("@anio", anio1));
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -119,17 +121,19 @@ namespace mantenimiento_proyecto.Logica
             }
         }
 
-        public List<Servicio> Listar2(int idArea1)
+        public List<Servicio> Listar2(int idArea1, int anio1)
         {
             List<Servicio> lista = new List<Servicio>();
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "select * from Servicio2 where idArea=@idArea and periodo='agosto-diciembre'";
+                string query = "select * from Servicio2 where idArea=@idArea and periodo='agosto-diciembre' " +
+                    "and anio=@anio";
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@idArea", idArea1));
+                cmd.Parameters.Add(new SQLiteParameter("@anio", anio1));
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -250,6 +254,91 @@ namespace mantenimiento_proyecto.Logica
 
             return respuesta;
         }
+
+
+        //Lista total 
+        public List<Servicio> ListarTodos1(int anio)
+        {
+            List<Servicio> lista = new List<Servicio>();
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+
+                string query = "select * from Servicio2 where periodo='enero-junio' and anio=@anio " +
+                    "order by enero desc, febrero desc, marzo desc, abril desc, mayo desc, junio desc";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@anio", anio));
+
+                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Servicio()
+                        {
+                            idServicio = int.Parse(dr["idServicio"].ToString()),
+                            descripcion = dr["descripcion"].ToString(),
+                            tipoServicio = dr["tipo"].ToString(),
+                            periodo = dr["periodo"].ToString(),
+                            anio = int.Parse(dr["anio"].ToString()),
+                            idArea = int.Parse(dr["idArea"].ToString()),
+                            enero = int.Parse(dr["enero"].ToString()),
+                            febrero = int.Parse(dr["febrero"].ToString()),
+                            marzo = int.Parse(dr["marzo"].ToString()),
+                            abril = int.Parse(dr["abril"].ToString()),
+                            mayo = int.Parse(dr["mayo"].ToString()),
+                            junio = int.Parse(dr["junio"].ToString()),
+
+                        });
+                    }
+                }
+
+                return lista;
+            }
+        }
+
+        public List<Servicio> ListarTodos2(int anio)
+        {
+            List<Servicio> lista = new List<Servicio>();
+
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = "select * from Servicio2 where periodo='agosto-diciembre' and anio=@anio " +
+                    "order by julio desc, agosto desc, septiembre desc, octubre desc, noviembre desc, diciembre desc";
+
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                cmd.Parameters.Add(new SQLiteParameter("@anio", anio));
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Servicio()
+                        {
+                            idServicio = int.Parse(dr["idServicio"].ToString()),
+                            descripcion = dr["descripcion"].ToString(),
+                            tipoServicio = dr["tipo"].ToString(),
+                            periodo = dr["periodo"].ToString(),
+                            anio = int.Parse(dr["anio"].ToString()),
+                            idArea = int.Parse(dr["idArea"].ToString()),
+                            julio = int.Parse(dr["julio"].ToString()),
+                            agosto = int.Parse(dr["agosto"].ToString()),
+                            septiembre = int.Parse(dr["septiembre"].ToString()),
+                            octubre = int.Parse(dr["octubre"].ToString()),
+                            noviembre = int.Parse(dr["noviembre"].ToString()),
+                            diciembre = int.Parse(dr["diciembre"].ToString()),
+                        });
+                    }
+                }
+
+                return lista;
+            }
+        }
+
 
     }
 }

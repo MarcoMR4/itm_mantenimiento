@@ -84,14 +84,15 @@ namespace mantenimiento_proyecto.Logica
 
         public void mostrarServicios()
         {
+            int anio = int.Parse(textAnio.Text);
             //mostrar servicios filtrando el semestre 
             if (textPeriodo.Text == "enero-junio")
             {
-                gridServicios.DataSource = ServicioLogica.Instancia.Listar1(encontrarId());
+                gridServicios.DataSource = ServicioLogica.Instancia.Listar1(encontrarId(), anio);
             }
             else
             {
-                gridServicios.DataSource = ServicioLogica.Instancia.Listar2(encontrarId());
+                gridServicios.DataSource = ServicioLogica.Instancia.Listar2(encontrarId(), anio);
             }
             ocultarCeldas();
         }

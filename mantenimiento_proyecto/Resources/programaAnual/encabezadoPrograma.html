@@ -6,27 +6,35 @@ xhtml1-transitional.dtd">
 <head>
     <meta charset="UTF-8"></meta>
 
-    <title>listaVerificacion1</title>
+    <title>ProgramaAnual</title>
     <style>
         .c1 {
-           width: 20%; 
+            margin-left: 10%;
+            width: 80%;
+            margin-top: 10%;
+        }
+
+        .c4 {
+            margin-left: 10%;
+            width: 40%;
+            margin-top: 10%;
         }
 
         .tablaEncabezado {
             margin-left: 5%;
             width: 96%;
-            height: 27%;
+            height: 23%;
             border-bottom: darkred solid 2.5px;
             border-top: darkred solid 2.5px;
             padding-bottom: 20%;
             padding-left: 10%;
             padding-right: 10%;
             text-align: center;
-            margin-bottom: 10%;
+            margin-bottom: 5%;
         }
 
         .c2 {
-            width: 60%;
+            width: 80%;
             text-align: center;
             padding-top: 5%;
         }
@@ -36,7 +44,7 @@ xhtml1-transitional.dtd">
 <body>
         <table class="tablaEncabezado">
             <tr>
-                <td class="c1"></td>
+                <td class="c4"></td>
     
                 <td class="c2">
                     <b>
@@ -51,10 +59,24 @@ xhtml1-transitional.dtd">
                         <br />
                     </b>  
                 </td>
-                <td class="c1"></td>
+                <td class="c4"></td>
             </tr>
-    
         </table>
+
+        <br />
+        
+    <div class="c1">
+        <b>
+            <P>
+                Semestre: <u> @periodo </u> 
+                  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;    
+                  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  
+                Año: <u> @anio </u>
+            </P>
+        </b>
+    </div>
+
+    <br />
 
 
    

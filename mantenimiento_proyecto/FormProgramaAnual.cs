@@ -13,9 +13,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection.Emit;
 using iTextSharp.tool.xml.html.table;
+using mantenimiento_proyecto.Models;
+using mantenimiento_proyecto;
 
 namespace mantenimiento_proyecto
 {
+
     public partial class FormProgramaAnual : Form
     {
         public static string anioPlan,periodoPlan,nombreAreaElegida; 
@@ -119,53 +122,250 @@ namespace mantenimiento_proyecto
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            SaveFileDialog guardar = new SaveFileDialog();
-            guardar.FileName =  "programaAnualMantenimiento.pdf";
-            guardar.ShowDialog();
-
-            //generar html
-            string paginahtmlTexto = Properties.Resources.programaV1.ToString();
-
-            paginahtmlTexto = paginahtmlTexto.Replace("@periodo", comboPeriodos.Text);
-            paginahtmlTexto = paginahtmlTexto.Replace("@elaboro", comboElaboro.Text);
-            paginahtmlTexto = paginahtmlTexto.Replace("@anio",numericAnio.Value.ToString());
-            paginahtmlTexto = paginahtmlTexto.Replace("@aprobo", comboAprobo.Text);
-            paginahtmlTexto = paginahtmlTexto.Replace("@fecha", DateTime.Now.ToString("dd/MM/yyyy"));
-
-            if (guardar.ShowDialog() == DialogResult.OK)
+            try
             {
-                using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                SaveFileDialog guardar = new SaveFileDialog();
+                guardar.FileName = "programaAnualMantenimiento.pdf";
+                guardar.ShowDialog();
+
+                //generar html
+                string paginahtmlTexto = Properties.Resources.programaV1.ToString();
+
+                paginahtmlTexto = paginahtmlTexto.Replace("@periodo", comboPeriodos.Text);
+                paginahtmlTexto = paginahtmlTexto.Replace("@elaboro", comboElaboro.Text);
+                paginahtmlTexto = paginahtmlTexto.Replace("@anio", numericAnio.Value.ToString());
+                paginahtmlTexto = paginahtmlTexto.Replace("@aprobo", comboAprobo.Text);
+                paginahtmlTexto = paginahtmlTexto.Replace("@fecha", DateTime.Now.ToString("dd/MM/yyyy"));
+                paginahtmlTexto = paginahtmlTexto.Replace("@feche", DateTime.Now.ToString("dd/MM/yyyy"));
+
+                anioPlan = numericAnio.Value.ToString();
+                periodoPlan = comboPeriodos.Text;
+
+
+
+                var anioBuscar = int.Parse(numericAnio.Value.ToString());
+                //agregar filas
+
+                string filas = string.Empty;
+                List<Servicio> collection = new List<Servicio>();
+
+                if (comboPeriodos.Text == "enero-junio")
                 {
-                    Document programaAnual = new Document(PageSize.LETTER.Rotate());
-
-                    PdfWriter writer = PdfWriter.GetInstance(programaAnual, stream);
-
-                    PageEventHelper pageEventHelper = new PageEventHelper();
-                    writer.PageEvent = pageEventHelper;
-
-                    programaAnual.Open();
-
-                    //html 
-                    using (StringReader sr = new StringReader(paginahtmlTexto))
-                    {
-                        System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, programaAnual, sr);
-                    }
-
-                    programaAnual.NewPage();//page break OR New Page
-
-                    programaAnual.Add(new Paragraph("This is a second page."));
-
-                    programaAnual.Close();
-                    stream.Close();
-
+                    collection = ServicioLogica.Instancia.ListarTodos1(anioBuscar);
+                }
+                else
+                {
+                    collection = ServicioLogica.Instancia.ListarTodos2(anioBuscar);
                 }
 
+                
+
+                for (var i = 0; i < collection.Count; i++)
+                {
+                    //MessageBox.Show(fila.descripcion);
+                    filas += "<tr>";
+                    filas += "<td rowspan='2' class=\"celda3\">" + (i + 1) + ". </td>";
+                    filas += "<td rowspan='2' class=\"celda3\">" + collection[i].descripcion + "</td>";
+                    filas += "<td align='center' class=\"celda3\">" + collection[i].tipoServicio + "</td>";
+                    filas += "<td class=\"celda3\"> P </td>";
+                    //meses
+                    if (collection[i].enero==1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].febrero == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].marzo == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].abril == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].mayo == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].junio == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].julio == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].agosto == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].septiembre == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].octubre == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].noviembre == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
+                    if (collection[i].diciembre == 1)
+                    {
+                        filas += "<td class=\"celdaMes\"><b>X</b></td>";
+                    }
+                    else
+                    {
+                        filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    }
 
 
+                    filas += "</tr>";
+
+                    //segundo renglón  
+                    filas += "<tr>";
+                    filas += "<td></td>";
+                    filas += "<td class=\"celdaMes\">R</td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    //filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    //filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    //filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "</tr>";
+
+                    //tercero,                        CORREGIR Y ARREGLAR, LUEGO PONER X EN MESES CON 1
+                   
+                    
+                    filas += "<tr>";
+                    filas += "<td class=\"celda1\"></td>";
+                    filas += "<td class=\"celda1\"></td>";
+                    filas += "<td class=\"celda1\"></td>";
+                    filas += "<td class=\"celdaMes\">O</td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    //filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    //filas += "<td class=\"celdaMes\"><b> </b></td>";
+                    //filas += "<td class=\"celdaMes\"><b> </b></td>";
+
+                    filas += "</tr>";
+                    
+                }
+
+                paginahtmlTexto = paginahtmlTexto.Replace("@filas", filas);
+
+                    if (guardar.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                            {
+                                Document programaAnual = new Document(PageSize.LETTER.Rotate());
+
+                                PdfWriter writer = PdfWriter.GetInstance(programaAnual, stream);
+
+                                PageEventHelper pageEventHelper = new PageEventHelper();
+                                writer.PageEvent = pageEventHelper;
+
+                                programaAnual.Open();
+
+                                //html 
+                                using (StringReader sr = new StringReader(paginahtmlTexto))
+                                {
+                                    System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+                                    XMLWorkerHelper.GetInstance().ParseXHtml(writer, programaAnual, sr);
+                                    //agregar filas, ver el de generar listas verif 
+                                }
+
+                                programaAnual.NewPage();//page break OR New Page
+
+                                programaAnual.Add(new Paragraph("This is a second page."));
+
+                                programaAnual.Close();
+                                stream.Close();
+
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al generar formato \n\n\n" + ex);
+                            Console.WriteLine(ex.Message);
+                        }
+                    }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al crear el documento \n\n\n" + ex);
+                Console.WriteLine(ex.Message);
+            }
         }
+
     }
 }
 
@@ -201,8 +401,13 @@ public class PageEventHelper : PdfPageEventHelper
 
         cb2.AddTemplate(template2, listaPdf.LeftMargin, pageSize.GetBottom(listaPdf.BottomMargin));
 
+
+        
         //html
         string encabezado = mantenimiento_proyecto.Properties.Resources.encabezadoPrograma.ToString();
+
+        encabezado = encabezado.Replace("@periodo", FormProgramaAnual.periodoPlan);
+        encabezado = encabezado.Replace("@anio", FormProgramaAnual.anioPlan);
         using (StringReader sr = new StringReader(encabezado))
         {
             //logo1

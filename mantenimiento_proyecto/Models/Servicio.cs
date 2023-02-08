@@ -20,6 +20,8 @@ namespace mantenimiento_proyecto.Models
 
         public int idArea { get; set; }
 
+        public string nombreArea { get; set; }
+
         // meses 0, 1 
         public int enero { get; set; }
         public int febrero { get; set; }
