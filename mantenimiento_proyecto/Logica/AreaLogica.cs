@@ -39,7 +39,7 @@ namespace mantenimiento_proyecto.Logica
                 using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
                     conexion.Open();
-                    string query = "insert into Area(nombre) values (@nombre)";
+                    string query = "insert into Area(nombreArea) values (@nombre)";
 
                     SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.nombre));
@@ -81,7 +81,7 @@ namespace mantenimiento_proyecto.Logica
                             lista.Add(new Area()
                             {
                                 idArea = int.Parse(dr["idArea"].ToString()),
-                                nombre = dr["nombre"].ToString()
+                                nombre = dr["nombreArea"].ToString()
                             });
                         }
                     }
@@ -103,10 +103,10 @@ namespace mantenimiento_proyecto.Logica
                 using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
                     conexion.Open();
-                    string query = "update Area set nombre=@nombre where idArea=@idarea";
+                    string query = "update Area set nombreArea=@nombreArea where idArea=@idarea";
 
                     SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                    cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.nombre));
+                    cmd.Parameters.Add(new SQLiteParameter("@nombreArea", obj.nombre));
                     cmd.Parameters.Add(new SQLiteParameter("@idarea", obj.idArea));
                     cmd.CommandType = System.Data.CommandType.Text;
 
@@ -180,7 +180,7 @@ namespace mantenimiento_proyecto.Logica
                 using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
                     conexion.Open();
-                    string query = "select idArea from Area where nombre = @nombreArea;";
+                    string query = "select idArea from Area where nombreArea = @nombreArea;";
 
                     SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@nombreArea", nombreA));
@@ -225,7 +225,7 @@ namespace mantenimiento_proyecto.Logica
                             lista.Add(new Area()
                             {
                                 idArea = int.Parse(dr["idArea"].ToString()),
-                                nombre = dr["nombre"].ToString()
+                                nombre = dr["nombreArea"].ToString()
                             });
                         }
                     }

@@ -42,7 +42,7 @@
             this.fechaElaboracion = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.fechaAprobacion = new System.Windows.Forms.DateTimePicker();
             this.comboAreas = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboElaboro = new System.Windows.Forms.ComboBox();
@@ -72,6 +72,7 @@
             "ene-jun",
             "ago-dic"});
             this.comboPeriodos.DisplayMember = "enero-junio";
+            this.comboPeriodos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPeriodos.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboPeriodos.FormattingEnabled = true;
             this.comboPeriodos.Items.AddRange(new object[] {
@@ -81,7 +82,8 @@
             this.comboPeriodos.Name = "comboPeriodos";
             this.comboPeriodos.Size = new System.Drawing.Size(177, 30);
             this.comboPeriodos.TabIndex = 3;
-            this.comboPeriodos.Text = "enero-junio";
+            this.comboPeriodos.Tag = "enero-junio";
+            this.comboPeriodos.ValueMember = "enero-junio";
             this.comboPeriodos.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
@@ -214,12 +216,12 @@
             this.label4.TabIndex = 35;
             this.label4.Text = "Fecha de aprobación:";
             // 
-            // dateTimePicker2
+            // fechaAprobacion
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(695, 202);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(258, 23);
-            this.dateTimePicker2.TabIndex = 34;
+            this.fechaAprobacion.Location = new System.Drawing.Point(695, 202);
+            this.fechaAprobacion.Name = "fechaAprobacion";
+            this.fechaAprobacion.Size = new System.Drawing.Size(258, 23);
+            this.fechaAprobacion.TabIndex = 34;
             // 
             // comboAreas
             // 
@@ -227,6 +229,7 @@
             "ene-jun",
             "ago-dic"});
             this.comboAreas.DisplayMember = "enero-junio";
+            this.comboAreas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboAreas.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboAreas.FormattingEnabled = true;
             this.comboAreas.Items.AddRange(new object[] {
@@ -236,7 +239,6 @@
             this.comboAreas.Name = "comboAreas";
             this.comboAreas.Size = new System.Drawing.Size(308, 30);
             this.comboAreas.TabIndex = 37;
-            this.comboAreas.Text = "Seleccione en la lista";
             this.comboAreas.SelectedIndexChanged += new System.EventHandler(this.comboAreas_SelectedIndexChanged);
             // 
             // label8
@@ -344,7 +346,7 @@
             this.Controls.Add(this.btnCargarServicio);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.fechaAprobacion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fechaElaboracion);
             this.Controls.Add(this.numericAnio);
@@ -382,7 +384,7 @@
         private DateTimePicker fechaElaboracion;
         private Label label1;
         private Label label4;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker fechaAprobacion;
         private ComboBox comboAreas;
         private Label label8;
         private ComboBox comboElaboro;

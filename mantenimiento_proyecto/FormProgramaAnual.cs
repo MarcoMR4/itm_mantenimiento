@@ -26,6 +26,7 @@ namespace mantenimiento_proyecto
         public FormProgramaAnual()
         {
             InitializeComponent();
+            comboPeriodos.ValueMember = "enero-junio";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,8 +53,9 @@ namespace mantenimiento_proyecto
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            comboAprobo.DataSource = PersonaLogica.Instancia.Listar();
-            comboAprobo.ValueMember = "nombres";
+            comboPeriodos.Text = "enero-junio";
+            comboAprobo.DataSource = PersonaLogica.Instancia.ListarGeneral();
+            comboAprobo.ValueMember = "nombre";
             comboAreas.DataSource = AreaLogica.Instancia.Listar();
             comboAreas.ValueMember = "nombre";
             nombreAreaElegida = comboAreas.Text;
@@ -106,12 +108,16 @@ namespace mantenimiento_proyecto
 
         private void btnCargarServicio_Click(object sender, EventArgs e)
         {
-            if (periodoPlan != "") 
+            if (periodoPlan != "")
             {
-                periodoPlan= comboPeriodos.Text;
-                anioPlan= numericAnio.Value.ToString();
+                periodoPlan = comboPeriodos.Text;
+                anioPlan = numericAnio.Value.ToString();
                 FormServicios formService = new FormServicios();
                 formService.Show();
+            }
+            else 
+            {
+                MessageBox.Show("Seleccione un periodo");
             }
         }
 
@@ -124,9 +130,12 @@ namespace mantenimiento_proyecto
         {
             try
             {
+                //nombre de archivo para guardar 
                 SaveFileDialog guardar = new SaveFileDialog();
-                guardar.FileName = "programaAnualMantenimiento.pdf";
-                guardar.ShowDialog();
+                periodoPlan = comboPeriodos.Text;
+                anioPlan = numericAnio.Value.ToString();
+                guardar.FileName = "programaAnualMantenimiento_"+periodoPlan+"_"+anioPlan+".pdf";
+               
 
                 //generar html
                 string paginahtmlTexto = Properties.Resources.programaV1.ToString();
@@ -135,8 +144,10 @@ namespace mantenimiento_proyecto
                 paginahtmlTexto = paginahtmlTexto.Replace("@elaboro", comboElaboro.Text);
                 paginahtmlTexto = paginahtmlTexto.Replace("@anio", numericAnio.Value.ToString());
                 paginahtmlTexto = paginahtmlTexto.Replace("@aprobo", comboAprobo.Text);
-                paginahtmlTexto = paginahtmlTexto.Replace("@fecha", DateTime.Now.ToString("dd/MM/yyyy"));
-                paginahtmlTexto = paginahtmlTexto.Replace("@feche", DateTime.Now.ToString("dd/MM/yyyy"));
+                var fecha1 = fechaElaboracion.Value.ToString("dd/MM/yyyy");
+                var fecha2 = fechaAprobacion.Value.ToString("dd/MM/yyyy");
+                paginahtmlTexto = paginahtmlTexto.Replace("@fecha", fecha1);
+                paginahtmlTexto = paginahtmlTexto.Replace("@feche", fecha2);
 
                 anioPlan = numericAnio.Value.ToString();
                 periodoPlan = comboPeriodos.Text;

@@ -20,7 +20,6 @@ namespace mantenimiento_proyecto.Models
 
         public int idArea { get; set; }
 
-        public string nombreArea { get; set; }
 
         // meses 0, 1 
         public int enero { get; set; }
@@ -35,8 +34,6 @@ namespace mantenimiento_proyecto.Models
         public int octubre { get; set; }
         public int noviembre { get; set; }  
         public int diciembre { get; set; }
-
-
 
 
     }

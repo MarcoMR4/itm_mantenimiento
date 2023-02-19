@@ -23,7 +23,8 @@ namespace mantenimiento_proyecto
             //MessageBox.Show(PersonaLogica.Instancia.Listar().ToString());
             mostrarPersonal();
             comboArea.DataSource = AreaLogica.Instancia.Listar();
-            comboArea.DisplayMember = "idArea";
+            // mostrar nombre de area 
+            comboArea.DisplayMember = "nombre";
             
             //comboBox.ValueMember = "Index";
         }
@@ -33,9 +34,7 @@ namespace mantenimiento_proyecto
         public void limpiar()
         {
             textNombre.Text = string.Empty;
-            textAmaterno.Text = string.Empty;
-            textApaterno.Text = string.Empty;
-            textCargo.Text = string.Empty;
+            textID.Text = string.Empty;
         }
 
         private void listaDeVerificaciónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,26 +77,32 @@ namespace mantenimiento_proyecto
 
         private void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
-            if (validarDatos())
+            if (textID.Text == String.Empty)
             {
-                string idArea2 = comboArea.Text;
-                //MessageBox.Show(idArea2);
-                Personal persona1 = new Personal()
+                if (validarDatos())
                 {
-                    nombres = textNombre.Text,
-                    apellidoPaterno = textApaterno.Text,
-                    apellidoMaterno = textAmaterno.Text,
-                    cargo = textCargo.Text,
-                    idArea = int.Parse(idArea2)
-                };
-                
-                bool respuesta = PersonaLogica.Instancia.Guardar(persona1);
+                    var nombreArea1 = comboArea.Text;
+                    int idArea2 = AreaLogica.Instancia.buscarArea(nombreArea1);
+                    //MessageBox.Show(idArea2);
+                    Personal persona1 = new Personal()
+                    {
+                        nombre = textNombre.Text,
+                        idArea = idArea2
+                    };
 
-                if (respuesta)
-                {
-                    mostrarPersonal();
-                    limpiar();
+                    bool respuesta = PersonaLogica.Instancia.Guardar(persona1);
+
+                    if (respuesta)
+                    {
+                        mostrarPersonal();
+                        limpiar();
+                    }
                 }
+                else 
+                {
+                    MessageBox.Show("Borrar campos primero ");
+                }
+            
 
 
             }
@@ -106,7 +111,7 @@ namespace mantenimiento_proyecto
         public void mostrarPersonal()
         {
             gridPersonal.DataSource = null;
-            gridPersonal.DataSource = PersonaLogica.Instancia.Listar();
+            gridPersonal.DataSource = PersonaLogica.Instancia.ListarGeneral();
             this.gridPersonal.Columns["idPersonal"].Visible = false;
             this.gridPersonal.Columns["idArea"].Visible = false;
         }
@@ -115,18 +120,6 @@ namespace mantenimiento_proyecto
         {
             bool respuesta;
             if (string.IsNullOrEmpty(textNombre.Text))
-            {
-                respuesta = false;
-            }
-            else if (string.IsNullOrEmpty(textApaterno.Text))
-            {
-                respuesta = false;
-            }
-            else if (string.IsNullOrEmpty(textAmaterno.Text))
-            {
-                respuesta = false;
-            }
-            else if (string.IsNullOrEmpty(textCargo.Text))
             {
                 respuesta = false;
             }
@@ -139,36 +132,46 @@ namespace mantenimiento_proyecto
 
         private void btnEliminarPersonal_Click(object sender, EventArgs e)
         {
-            Personal persona1 = new Personal()
+            if (validarDatos())
             {
-                idPersonal = int.Parse(textID.Text)
-            };
-            bool respuesta = PersonaLogica.Instancia.Eliminar(persona1);
-            if (respuesta)
-            {
-                mostrarPersonal();
-                limpiar();
+                var area1 = comboArea.Text;
+                var idArea1 = AreaLogica.Instancia.buscarArea(area1);
+                Personal persona1 = new Personal()
+                {
+                    idPersonal = int.Parse(textID.Text),
+                    nombre = textNombre.Text,
+                    idArea = idArea1
+                };
+                bool respuesta = PersonaLogica.Instancia.Eliminar(persona1);
+                if (respuesta)
+                {
+                    mostrarPersonal();
+                    limpiar();
+                }
             }
 
         }
 
         private void btnModificarPersonal_Click(object sender, EventArgs e)
         {
-            Personal persona1 = new Personal()
+            if (validarDatos())
             {
-                idPersonal = int.Parse(textID.Text),
-                nombres = textNombre.Text,
-                apellidoPaterno = textApaterno.Text,
-                apellidoMaterno = textAmaterno.Text,
-                cargo = textCargo.Text,
-                idArea = int.Parse(comboArea.Text)
-            };
-            bool respuesta = PersonaLogica.Instancia.Editar(persona1);
-            if (respuesta)
-            {
-                mostrarPersonal();
-                limpiar();
+                var area1 = comboArea.Text;
+                var idArea1 = AreaLogica.Instancia.buscarArea(area1);
+                Personal persona1 = new Personal()
+                {
+                    idPersonal = int.Parse(textID.Text),
+                    nombre = textNombre.Text,
+                    idArea = idArea1
+                };
+                bool respuesta = PersonaLogica.Instancia.Editar(persona1);
+                if (respuesta)
+                {
+                    mostrarPersonal();
+                    limpiar();
+                }
             }
+            
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -192,9 +195,7 @@ namespace mantenimiento_proyecto
             {
                 textID.Text = gridPersonal.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textNombre.Text = gridPersonal.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textApaterno.Text = gridPersonal.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textAmaterno.Text = gridPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();
-                textCargo.Text = gridPersonal.Rows[e.RowIndex].Cells[4].Value.ToString();
+                comboArea.Text = gridPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
             catch (Exception ex)
             {

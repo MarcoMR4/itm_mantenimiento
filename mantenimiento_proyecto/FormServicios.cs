@@ -14,12 +14,28 @@ namespace mantenimiento_proyecto.Logica
 {
     public partial class FormServicios : Form
     {
+        public static string nombreAreaV;
         public FormServicios()
         {
             InitializeComponent();
-            textAnio.Text = FormProgramaAnual.anioPlan;
-            textPeriodo.Text = FormProgramaAnual.periodoPlan;
-            textServicio.Text = FormProgramaAnual.nombreAreaElegida;
+            if (FormHallazgos.hallazgo)
+            {
+                textAnio.Text = FormHallazgos.anio.ToString();
+                textPeriodo.Text = FormHallazgos.periodo;
+                textServicio.Text = FormHallazgos.area;
+                nombreAreaV = textServicio.Text;
+                textDescripcion.Text = FormHallazgos.descHallazgo;
+
+                FormHallazgos.hallazgo = false;
+            }
+            else
+            {
+                textAnio.Text = FormProgramaAnual.anioPlan;
+                textPeriodo.Text = FormProgramaAnual.periodoPlan;
+                textServicio.Text = FormProgramaAnual.nombreAreaElegida;
+                nombreAreaV = textServicio.Text;
+            }
+            
             mostrarServicios();
 
             mesesLista.Items.Add("enero");
@@ -42,7 +58,7 @@ namespace mantenimiento_proyecto.Logica
 
         public int encontrarId()
         {
-            string a = FormProgramaAnual.nombreAreaElegida;
+            string a = nombreAreaV;
             int id = AreaLogica.Instancia.buscarArea(a);
             return id;
         }
@@ -84,6 +100,7 @@ namespace mantenimiento_proyecto.Logica
 
         public void mostrarServicios()
         {
+            //sMessageBox.Show("esto se recibe "+textAnio.Text);
             int anio = int.Parse(textAnio.Text);
             //mostrar servicios filtrando el semestre 
             if (textPeriodo.Text == "enero-junio")
@@ -113,6 +130,7 @@ namespace mantenimiento_proyecto.Logica
             }
             else
             {
+
                 mesesLista.Items.Remove("enero");
                 mesesLista.Items.Remove("febrero");
                 mesesLista.Items.Remove("marzo");
@@ -150,6 +168,7 @@ namespace mantenimiento_proyecto.Logica
                 desmarcarTodo();
                 if (textPeriodo.Text == "enero-junio")
                 {
+                    //MessageBox.Show("Äqui: "+ gridServicios.Rows[e.RowIndex].Cells[6].Value.ToString());
                     if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[6].Value.ToString()) == 1)
                     {
                         //MessageBox.Show("Enero si esta seleccionado");
@@ -274,61 +293,67 @@ namespace mantenimiento_proyecto.Logica
 
         private void btnAgregarServicio_Click_1(object sender, EventArgs e)
         {
-            if (validarDatos())
+            if (textId.Text == string.Empty)
             {
-                string t1 = comboTipo.Text;
-                int idArea1 = encontrarId();
-                //MessageBox.Show(idArea1.ToString());
-                Servicio s1 = new Servicio()
+                if (validarDatos())
                 {
-                    descripcion = textDescripcion.Text,
-                    tipoServicio = tipoServicio(t1).ToString(),
-                    anio = int.Parse(textAnio.Text),
-                    periodo = textPeriodo.Text,
-                    idArea = idArea1,
-                };
+                    string t1 = comboTipo.Text;
+                    int idArea1 = encontrarId();
+                    //MessageBox.Show(idArea1.ToString());
+                    Servicio s1 = new Servicio()
+                    {
+                        descripcion = textDescripcion.Text,
+                        tipoServicio = tipoServicio(t1).ToString(),
+                        anio = int.Parse(textAnio.Text),
+                        periodo = textPeriodo.Text,
+                        idArea = idArea1,
+                    };
 
-                foreach (var item in mesesLista.CheckedItems)
-                {
-                    //MessageBox.Show("Item: "+item.ToString());
-                    if (item.ToString() == "enero")
-                    { s1.enero = 1; }
-                    if (item.ToString() == "febrero")
-                    { s1.febrero = 1; }
-                    if (item.ToString() == "marzo")
-                    { s1.marzo = 1; }
-                    if (item.ToString() == "abril")
-                    { s1.abril = 1; }
-                    if (item.ToString() == "mayo")
-                    { s1.mayo = 1; }
-                    if (item.ToString() == "junio")
-                    { s1.junio = 1; }
+                    foreach (var item in mesesLista.CheckedItems)
+                    {
+                        //MessageBox.Show("Item: "+item.ToString());
+                        if (item.ToString() == "enero")
+                        { s1.enero = 1; }
+                        if (item.ToString() == "febrero")
+                        { s1.febrero = 1; }
+                        if (item.ToString() == "marzo")
+                        { s1.marzo = 1; }
+                        if (item.ToString() == "abril")
+                        { s1.abril = 1; }
+                        if (item.ToString() == "mayo")
+                        { s1.mayo = 1; }
+                        if (item.ToString() == "junio")
+                        { s1.junio = 1; }
 
-                    if (item.ToString() == "julio")
-                    { s1.julio = 1; }
-                    if (item.ToString() == "agosto")
-                    { s1.agosto = 1; }
-                    if (item.ToString() == "septiembre")
-                    { s1.septiembre = 1; }
-                    if (item.ToString() == "octubre")
-                    { s1.octubre = 1; }
-                    if (item.ToString() == "noviembre")
-                    { s1.noviembre = 1; }
-                    if (item.ToString() == "diciembre")
-                    { s1.diciembre = 1; }
+                        if (item.ToString() == "julio")
+                        { s1.julio = 1; }
+                        if (item.ToString() == "agosto")
+                        { s1.agosto = 1; }
+                        if (item.ToString() == "septiembre")
+                        { s1.septiembre = 1; }
+                        if (item.ToString() == "octubre")
+                        { s1.octubre = 1; }
+                        if (item.ToString() == "noviembre")
+                        { s1.noviembre = 1; }
+                        if (item.ToString() == "diciembre")
+                        { s1.diciembre = 1; }
 
+                    }
+
+                    //guardar en BD 
+                    bool respuesta = ServicioLogica.Instancia.Guardar(s1);
+                    if (respuesta)
+                    {
+                        mostrarServicios();
+                        limpiar();
+                    }
+                    //guardar los meses en cada servicio , tabla Mes_Servicio
                 }
-
-                //guardar en BD 
-                bool respuesta = ServicioLogica.Instancia.Guardar(s1);
-                if (respuesta)
-                {
-                    mostrarServicios();
-                    limpiar();
-                }
-                //guardar los meses en cada servicio , tabla Mes_Servicio
-
-
+            }
+            else 
+            {
+                MessageBox.Show("Favor de limpiar los campos antes de agregar ");
+                limpiar();
             }
         }
 

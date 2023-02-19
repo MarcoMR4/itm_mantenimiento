@@ -16,7 +16,9 @@ namespace mantenimiento_proyecto.Models
 
         public string atendido { get; set; }
 
-        public int idListaVerificacion { get; set; }
+        public int anio { get; set; }
+
+        public string periodo { get; set; }
 
         public string nombreEspacio { get; set; }
     }

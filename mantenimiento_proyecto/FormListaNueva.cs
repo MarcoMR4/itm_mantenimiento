@@ -28,6 +28,9 @@ namespace mantenimiento_proyecto
         public static string nombreEspacioSeleccionado = "";
         public static int idEspacioSeleccionado = 0;
 
+        public static int anio;
+        public static string periodo;
+
         public FormListaNueva()
         {
             InitializeComponent();
@@ -37,6 +40,10 @@ namespace mantenimiento_proyecto
             comboAreas.DataSource = AreaLogica.Instancia.Listar();
             comboAreas.DisplayMember = "nombre";
            
+            anio = int.Parse(numericAnio.Value.ToString());
+            periodo = comboPeriodo.Text;
+
+           // MessageBox.Show(anio.ToString()+" y "+periodo);
         }
 
 
@@ -59,10 +66,11 @@ namespace mantenimiento_proyecto
 
         private void btnHallazgos_Click(object sender, EventArgs e)
         {
+            anio = int.Parse(numericAnio.Value.ToString());
+            periodo = comboPeriodo.Text;
             Form formulario = new FormHallazgos();
             formulario.Show();
         }
-
 
         private void btnCargarEspacio_Click(object sender, EventArgs e)
         {
@@ -77,14 +85,16 @@ namespace mantenimiento_proyecto
 
         private void FormListaNueva_Load(object sender, EventArgs e)
         {
-            nombreAreaSeleccionada = "AG";
-            idAreaSeleccionada = AreaLogica.Instancia.buscarArea(nombreAreaSeleccionada);
+            //nombreAreaSeleccionada = "AG";
+            //idAreaSeleccionada = AreaLogica.Instancia.buscarArea(nombreAreaSeleccionada);
             //MessageBox.Show(idAreaSeleccionada.ToString());
+            comboAreas.DataSource = AreaLogica.Instancia.Listar();
+            comboAreas.DisplayMember = "nombre";
             comboEspacios.DataSource = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
             comboEspacios.DisplayMember = "nombre";
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
-            comboJefeArea.DisplayMember = "nombres";
-            comboJefeArea.DisplayMember = "apellidoPaterno";
+            comboJefeArea.DisplayMember = "nombre";
+            
         }
 
         private void comboAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,24 +105,28 @@ namespace mantenimiento_proyecto
 
             comboEspacios.DataSource = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
             comboEspacios.ValueMember = "nombre";
+            comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
+            comboJefeArea.DisplayMember = "nombre";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             nombreEspacioSeleccionado = comboEspacios.Text;
             idEspacioSeleccionado = EspacioLogica.Instancia.buscarEspacio(nombreEspacioSeleccionado);
+            anio = int.Parse(numericAnio.Value.ToString());
+            periodo = comboPeriodo.Text;
             //MessageBox.Show(idEspacioSeleccionado.ToString());
             Form formulario = new FormHallazgos();
             formulario.Show();
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
-        {
-          
-            
-            SaveFileDialog guardar = new SaveFileDialog();  
-            guardar.FileName = comboAreas.Text+".pdf";
-            guardar.ShowDialog();
+        { 
+            SaveFileDialog guardar = new SaveFileDialog();
+            idEspacioSeleccionado = EspacioLogica.Instancia.buscarEspacio(nombreEspacioSeleccionado);
+            anio = int.Parse(numericAnio.Value.ToString());
+            guardar.FileName = "listaVerificación_"+comboAreas.Text+"_"+periodo +"_"+anio+".pdf";
+            //guardar.ShowDialog();
 
             //generar html
             string paginahtmlTexto = Properties.Resources.listaV1.ToString();
@@ -124,8 +138,10 @@ namespace mantenimiento_proyecto
             string filas = string.Empty;
 
             List<Hallazgo> collection = new List<Hallazgo>();
-                                               //pasar idespacio e idarea 
-            collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado,idAreaSeleccionada);
+            //pasar idespacio e idarea
+            anio = int.Parse(numericAnio.Value.ToString());
+            periodo = comboPeriodo.Text;
+            collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado,idAreaSeleccionada, anio, periodo);
 
             //agregar filas a la tabla 
             foreach (var fila in collection)

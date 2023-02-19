@@ -38,12 +38,14 @@ namespace mantenimiento_proyecto.Logica
                 using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
                     conexion.Open();
-                    string query = "insert into Hallazgo2(descripcion,idEspacio,atendido) values (@descripcion,@idEspacio,@atendido)";
+                    string query = "insert into Hallazgo2(descripcion,idEspacio,atendido,periodo,anio) values (@descripcion,@idEspacio,@atendido,@periodo,@anio)";
 
                     SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@descripcion", obj.descripcion));
                     cmd.Parameters.Add(new SQLiteParameter("@idEspacio", obj.idEspacio));
                     cmd.Parameters.Add(new SQLiteParameter("@atendido", obj.atendido));
+                    cmd.Parameters.Add(new SQLiteParameter("@periodo", obj.periodo));
+                    cmd.Parameters.Add(new SQLiteParameter("@anio", obj.anio));
 
                     cmd.CommandType = System.Data.CommandType.Text;
 
@@ -61,7 +63,7 @@ namespace mantenimiento_proyecto.Logica
             return respuesta;
         }
 
-        public List<Hallazgo> Listar(int idEspacio1)
+        public List<Hallazgo> Listar(int idEspacio1, int anio, string periodo)
         {
             List<Hallazgo> lista = new List<Hallazgo>();
             try
@@ -69,10 +71,13 @@ namespace mantenimiento_proyecto.Logica
                 using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
                     conexion.Open();
-                    string query = "select * from Hallazgo2 where idEspacio=@idEspacio";
+                    string query = "select * from Hallazgo2 where idEspacio=@idEspacio " +
+                        "and anio=@anio and periodo=@periodo";
 
                     SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@idEspacio", idEspacio1));
+                    cmd.Parameters.Add(new SQLiteParameter("@anio", anio));
+                    cmd.Parameters.Add(new SQLiteParameter("@periodo", periodo));
 
                     cmd.CommandType = System.Data.CommandType.Text;
 
@@ -158,7 +163,7 @@ namespace mantenimiento_proyecto.Logica
             return respuesta;
         }
 
-        public List<Hallazgo> ListarEspacio(int idEspacio1, int idA1)
+        public List<Hallazgo> ListarEspacio(int idEspacio1, int idA1, int anio, string periodo)
         {
             List<Hallazgo> lista = new List<Hallazgo>();
             try
@@ -166,11 +171,15 @@ namespace mantenimiento_proyecto.Logica
                 using (SQLiteConnection conexion = new SQLiteConnection(cadena))
                 {
                     conexion.Open();
-                    string query = "select h.descripcion, e.nombre, h.atendido, h.idHallazgo from Hallazgo2 h inner join Espacio e inner join Area a\r\non (h.idEspacio = e.idEspacio) & (e.idArea = a.idArea) where a.idArea=@idArea1";
+                    string query = "select h.descripcion, e.nombre, h.atendido, h.idHallazgo from Hallazgo2 h inner join Espacio e " +
+                        "inner join Area a\r\non (h.idEspacio = e.idEspacio) & (e.idArea = a.idArea) where a.idArea=@idArea1 " +
+                        "and anio=@anio and periodo=@periodo";
 
                     SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@idEspacio", idEspacio1));
                     cmd.Parameters.Add(new SQLiteParameter("@idArea1", idA1));
+                    cmd.Parameters.Add(new SQLiteParameter("anio", anio));
+                    cmd.Parameters.Add(new SQLiteParameter("periodo", periodo));
 
                     cmd.CommandType = System.Data.CommandType.Text;
 

@@ -39,14 +39,8 @@
             this.gridPersonal = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.textCargo = new System.Windows.Forms.TextBox();
-            this.labelCargo = new System.Windows.Forms.Label();
             this.comboArea = new System.Windows.Forms.ComboBox();
             this.labelArea = new System.Windows.Forms.Label();
-            this.textAmaterno = new System.Windows.Forms.TextBox();
-            this.labelAmaterno = new System.Windows.Forms.Label();
-            this.textApaterno = new System.Windows.Forms.TextBox();
-            this.labelAPaterno = new System.Windows.Forms.Label();
             this.textNombre = new System.Windows.Forms.TextBox();
             this.labelNombre = new System.Windows.Forms.Label();
             this.btnAgregarPersonal = new System.Windows.Forms.Button();
@@ -134,13 +128,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridPersonal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPersonal.Location = new System.Drawing.Point(82, 397);
+            this.gridPersonal.Location = new System.Drawing.Point(82, 350);
             this.gridPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.gridPersonal.Name = "gridPersonal";
             this.gridPersonal.RowHeadersWidth = 51;
             this.gridPersonal.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridPersonal.RowTemplate.Height = 31;
-            this.gridPersonal.Size = new System.Drawing.Size(876, 207);
+            this.gridPersonal.Size = new System.Drawing.Size(876, 183);
             this.gridPersonal.TabIndex = 30;
             this.gridPersonal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPersonal_CellClick);
             this.gridPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -148,21 +142,15 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBorrar);
-            this.groupBox1.Controls.Add(this.textCargo);
-            this.groupBox1.Controls.Add(this.labelCargo);
             this.groupBox1.Controls.Add(this.comboArea);
             this.groupBox1.Controls.Add(this.labelArea);
-            this.groupBox1.Controls.Add(this.textAmaterno);
-            this.groupBox1.Controls.Add(this.labelAmaterno);
-            this.groupBox1.Controls.Add(this.textApaterno);
-            this.groupBox1.Controls.Add(this.labelAPaterno);
             this.groupBox1.Controls.Add(this.textNombre);
             this.groupBox1.Controls.Add(this.labelNombre);
             this.groupBox1.Controls.Add(this.btnAgregarPersonal);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(82, 45);
+            this.groupBox1.Location = new System.Drawing.Point(82, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(822, 267);
+            this.groupBox1.Size = new System.Drawing.Size(822, 206);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -171,38 +159,22 @@
             // 
             this.btnBorrar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnBorrar.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBorrar.Location = new System.Drawing.Point(461, 172);
+            this.btnBorrar.Location = new System.Drawing.Point(461, 152);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(151, 40);
+            this.btnBorrar.Size = new System.Drawing.Size(151, 35);
             this.btnBorrar.TabIndex = 60;
             this.btnBorrar.Text = "Limpiar campos";
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // textCargo
-            // 
-            this.textCargo.Location = new System.Drawing.Point(171, 222);
-            this.textCargo.Name = "textCargo";
-            this.textCargo.Size = new System.Drawing.Size(214, 25);
-            this.textCargo.TabIndex = 59;
-            // 
-            // labelCargo
-            // 
-            this.labelCargo.AutoSize = true;
-            this.labelCargo.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCargo.Location = new System.Drawing.Point(96, 222);
-            this.labelCargo.Name = "labelCargo";
-            this.labelCargo.Size = new System.Drawing.Size(65, 25);
-            this.labelCargo.TabIndex = 58;
-            this.labelCargo.Text = "Cargo:";
-            // 
             // comboArea
             // 
+            this.comboArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboArea.FormattingEnabled = true;
-            this.comboArea.Location = new System.Drawing.Point(480, 91);
+            this.comboArea.Location = new System.Drawing.Point(480, 80);
             this.comboArea.Name = "comboArea";
-            this.comboArea.Size = new System.Drawing.Size(252, 25);
+            this.comboArea.Size = new System.Drawing.Size(252, 23);
             this.comboArea.TabIndex = 55;
             this.comboArea.SelectedIndexChanged += new System.EventHandler(this.comboArea_SelectedIndexChanged);
             // 
@@ -210,58 +182,24 @@
             // 
             this.labelArea.AutoSize = true;
             this.labelArea.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelArea.Location = new System.Drawing.Point(420, 91);
+            this.labelArea.Location = new System.Drawing.Point(420, 80);
             this.labelArea.Name = "labelArea";
             this.labelArea.Size = new System.Drawing.Size(54, 25);
             this.labelArea.TabIndex = 54;
-            this.labelArea.Text = "Area:";
-            // 
-            // textAmaterno
-            // 
-            this.textAmaterno.Location = new System.Drawing.Point(171, 180);
-            this.textAmaterno.Name = "textAmaterno";
-            this.textAmaterno.Size = new System.Drawing.Size(214, 25);
-            this.textAmaterno.TabIndex = 53;
-            // 
-            // labelAmaterno
-            // 
-            this.labelAmaterno.AutoSize = true;
-            this.labelAmaterno.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAmaterno.Location = new System.Drawing.Point(14, 180);
-            this.labelAmaterno.Name = "labelAmaterno";
-            this.labelAmaterno.Size = new System.Drawing.Size(151, 25);
-            this.labelAmaterno.TabIndex = 52;
-            this.labelAmaterno.Text = "Apellido Materno:";
-            // 
-            // textApaterno
-            // 
-            this.textApaterno.Location = new System.Drawing.Point(167, 134);
-            this.textApaterno.Name = "textApaterno";
-            this.textApaterno.Size = new System.Drawing.Size(218, 25);
-            this.textApaterno.TabIndex = 51;
-            // 
-            // labelAPaterno
-            // 
-            this.labelAPaterno.AutoSize = true;
-            this.labelAPaterno.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAPaterno.Location = new System.Drawing.Point(14, 134);
-            this.labelAPaterno.Name = "labelAPaterno";
-            this.labelAPaterno.Size = new System.Drawing.Size(147, 25);
-            this.labelAPaterno.TabIndex = 50;
-            this.labelAPaterno.Text = "Apellido Paterno:";
+            this.labelArea.Text = "Área:";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(167, 91);
+            this.textNombre.Location = new System.Drawing.Point(167, 80);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(218, 25);
+            this.textNombre.Size = new System.Drawing.Size(218, 23);
             this.textNombre.TabIndex = 49;
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNombre.Location = new System.Drawing.Point(62, 91);
+            this.labelNombre.Location = new System.Drawing.Point(62, 80);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(79, 25);
             this.labelNombre.TabIndex = 48;
@@ -271,10 +209,10 @@
             // 
             this.btnAgregarPersonal.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnAgregarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(661, 172);
+            this.btnAgregarPersonal.Location = new System.Drawing.Point(661, 152);
             this.btnAgregarPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPersonal.Name = "btnAgregarPersonal";
-            this.btnAgregarPersonal.Size = new System.Drawing.Size(97, 40);
+            this.btnAgregarPersonal.Size = new System.Drawing.Size(97, 35);
             this.btnAgregarPersonal.TabIndex = 46;
             this.btnAgregarPersonal.Text = "Agregar ";
             this.btnAgregarPersonal.UseVisualStyleBackColor = false;
@@ -288,7 +226,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(534, 17);
+            this.label2.Location = new System.Drawing.Point(534, 15);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(198, 29);
@@ -299,10 +237,10 @@
             // 
             this.btnModificarPersonal.BackColor = System.Drawing.Color.Khaki;
             this.btnModificarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnModificarPersonal.Location = new System.Drawing.Point(693, 343);
+            this.btnModificarPersonal.Location = new System.Drawing.Point(693, 303);
             this.btnModificarPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarPersonal.Name = "btnModificarPersonal";
-            this.btnModificarPersonal.Size = new System.Drawing.Size(97, 40);
+            this.btnModificarPersonal.Size = new System.Drawing.Size(97, 35);
             this.btnModificarPersonal.TabIndex = 60;
             this.btnModificarPersonal.Text = "Modificar";
             this.btnModificarPersonal.UseVisualStyleBackColor = false;
@@ -312,10 +250,10 @@
             // 
             this.btnEliminarPersonal.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminarPersonal.Location = new System.Drawing.Point(806, 343);
+            this.btnEliminarPersonal.Location = new System.Drawing.Point(806, 303);
             this.btnEliminarPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarPersonal.Name = "btnEliminarPersonal";
-            this.btnEliminarPersonal.Size = new System.Drawing.Size(97, 40);
+            this.btnEliminarPersonal.Size = new System.Drawing.Size(97, 35);
             this.btnEliminarPersonal.TabIndex = 59;
             this.btnEliminarPersonal.Text = "Eliminar ";
             this.btnEliminarPersonal.UseVisualStyleBackColor = false;
@@ -323,18 +261,18 @@
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(441, 343);
+            this.textID.Location = new System.Drawing.Point(441, 303);
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
-            this.textID.Size = new System.Drawing.Size(214, 25);
+            this.textID.Size = new System.Drawing.Size(214, 23);
             this.textID.TabIndex = 61;
             // 
             // FormPersonal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(982, 615);
+            this.ClientSize = new System.Drawing.Size(982, 543);
             this.Controls.Add(this.textID);
             this.Controls.Add(this.btnModificarPersonal);
             this.Controls.Add(this.btnEliminarPersonal);
@@ -370,18 +308,12 @@
         private GroupBox groupBox1;
         private ComboBox comboArea;
         private Label labelArea;
-        private TextBox textAmaterno;
-        private Label labelAmaterno;
-        private TextBox textApaterno;
-        private Label labelAPaterno;
         private TextBox textNombre;
         private Label labelNombre;
         private Button btnAgregarPersonal;
         private Label label2;
         private Button btnModificarPersonal;
         private Button btnEliminarPersonal;
-        private TextBox textCargo;
-        private Label labelCargo;
         private TextBox textID;
         private Button btnBorrar;
     }

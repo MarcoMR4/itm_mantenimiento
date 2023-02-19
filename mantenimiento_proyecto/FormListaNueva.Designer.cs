@@ -51,7 +51,12 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.comboJefeArea = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelAnio = new System.Windows.Forms.Label();
+            this.numericAnio = new System.Windows.Forms.NumericUpDown();
+            this.comboPeriodo = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -266,7 +271,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(631, 318);
+            this.button1.Location = new System.Drawing.Point(421, 322);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 29);
@@ -314,12 +319,71 @@
             this.label6.TabIndex = 40;
             this.label6.Text = "Jefe del área verificada:";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(100, 322);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 25);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Periodo:";
+            // 
+            // labelAnio
+            // 
+            this.labelAnio.AutoSize = true;
+            this.labelAnio.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAnio.Location = new System.Drawing.Point(100, 358);
+            this.labelAnio.Name = "labelAnio";
+            this.labelAnio.Size = new System.Drawing.Size(48, 25);
+            this.labelAnio.TabIndex = 43;
+            this.labelAnio.Text = "Año:";
+            // 
+            // numericAnio
+            // 
+            this.numericAnio.Location = new System.Drawing.Point(184, 358);
+            this.numericAnio.Maximum = new decimal(new int[] {
+            2033,
+            0,
+            0,
+            0});
+            this.numericAnio.Minimum = new decimal(new int[] {
+            2023,
+            0,
+            0,
+            0});
+            this.numericAnio.Name = "numericAnio";
+            this.numericAnio.Size = new System.Drawing.Size(144, 23);
+            this.numericAnio.TabIndex = 44;
+            this.numericAnio.Tag = "2023";
+            this.numericAnio.Value = new decimal(new int[] {
+            2023,
+            0,
+            0,
+            0});
+            // 
+            // comboPeriodo
+            // 
+            this.comboPeriodo.FormattingEnabled = true;
+            this.comboPeriodo.Items.AddRange(new object[] {
+            "enero-junio",
+            "agosto-diciembre"});
+            this.comboPeriodo.Location = new System.Drawing.Point(184, 322);
+            this.comboPeriodo.Name = "comboPeriodo";
+            this.comboPeriodo.Size = new System.Drawing.Size(144, 23);
+            this.comboPeriodo.TabIndex = 45;
+            this.comboPeriodo.Text = "enero-junio";
+            // 
             // FormListaNueva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1024, 556);
+            this.Controls.Add(this.comboPeriodo);
+            this.Controls.Add(this.numericAnio);
+            this.Controls.Add(this.labelAnio);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.comboJefeArea);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnImprimir);
@@ -345,6 +409,7 @@
             this.Load += new System.EventHandler(this.FormListaNueva_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,5 +439,9 @@
         private Button btnImprimir;
         private ComboBox comboJefeArea;
         private Label label6;
+        private Label label9;
+        private Label labelAnio;
+        private NumericUpDown numericAnio;
+        private ComboBox comboPeriodo;
     }
 }
