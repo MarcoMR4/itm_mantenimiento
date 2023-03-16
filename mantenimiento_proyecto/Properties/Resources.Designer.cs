@@ -237,35 +237,5 @@ namespace mantenimiento_proyecto.Properties {
                 return ResourceManager.GetString("piePrograma", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD
-        ///XHTML 1.0 Transitional//EN&quot;
-        ///          &quot;http://www.w3.org/TR/xhtml1/DTD/
-        ///xhtml1-transitional.dtd&quot;&gt;
-        ///&lt;html&gt;
-        ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/meta&gt;
-        ///    &lt;title&gt;programaAnual&lt;/title&gt;
-        ///    &lt;style&gt;
-        ///        .c1 
-        ///        {
-        ///            margin-top: 10%;
-        ///            margin-left: 10%;
-        ///        }
-        ///        .tabla1 
-        ///        {
-        ///            width: 97%;
-        ///            border: 0.2px black solid;
-        ///            border-collapse: collapse;
-        ///            margin-top: 5%;
-        ///        }
-        ///       [resto de la cadena truncado]&quot;;.
-        /// </summary>
-        internal static string programaV1 {
-            get {
-                return ResourceManager.GetString("programaV1", resourceCulture);
-            }
-        }
     }
 }
