@@ -177,6 +177,7 @@
             // 
             // comboAtendido
             // 
+            this.comboAtendido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboAtendido.FormattingEnabled = true;
             this.comboAtendido.Items.AddRange(new object[] {
             "No",
@@ -186,7 +187,6 @@
             this.comboAtendido.Name = "comboAtendido";
             this.comboAtendido.Size = new System.Drawing.Size(118, 23);
             this.comboAtendido.TabIndex = 75;
-            this.comboAtendido.Text = "No";
             // 
             // labelPeriodo
             // 

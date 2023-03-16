@@ -138,6 +138,7 @@ namespace mantenimiento_proyecto.Logica
                 mesesLista.Items.Remove("mayo");
                 mesesLista.Items.Remove("junio");
             }
+            comboTipo.Text = "Interno";
         }
 
         private void gridServicios_Click(object sender, EventArgs e)

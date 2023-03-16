@@ -104,6 +104,7 @@
             this.registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
             this.registrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(150, 27);
             this.registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            this.registrarPersonalToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonalToolStripMenuItem_Click);
             // 
             // registrarDepartamentoToolStripMenuItem
             // 

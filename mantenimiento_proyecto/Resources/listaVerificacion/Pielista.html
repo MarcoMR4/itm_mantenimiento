@@ -1,23 +1,103 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD
+XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/
+xhtml1-transitional.dtd">
 <html lang="en">
 <head>
+    <meta charset="UTF-8"></meta>
+
+    <title>listaVerificacion1</title>
     <style>
-        .izq{
-            text-align: left;
+        .c1 {
+            margin-top: 10%;
+            margin-left: 10%;
         }
-        .der{
-            text-align: right;
+
+        .tabla1 {
+            width: 94%;
+            border: 0.2px black solid;
+            border-collapse: collapse;
         }
+
+        .celda1 {
+            border: 0.2px black solid;
+            border-collapse: collapse;
+            padding: 5%;
+        }
+
+        .celda2 {
+            border-top: white 0.1px;
+            border-left: white 0.1px;
+            border-right: white 0.1px;
+            border-collapse: collapse;
+            padding: 10%;
+        }
+
+        .tablaEncabezado {
+            margin-left: 5%;
+            width: 96%;
+            border-bottom: darkred solid 2px;
+            border-top: darkred solid 2px;
+            padding-bottom: 10%;
+            text-align: center;
+        }
+
+        .p1 {
+            margin-bottom: 5%;
+        }
+        .fecha{
+            font-size: small;
+        }
+
+        @media all{
+            div.saltoPagina{
+                display: none;
+            }
+        }
+
+        @media print{
+            div.saltoPagina{
+                display: block;
+                page-break-inside: always;
+            }
+        }
+
+        @media all{
+            div.saltoPagina2{
+                display: none;
+            }
+        }
+
+        @media print{
+            div.saltoPagina2{
+                display: block;
+                page-break-before: always;
+            }
+        }
+
+        
     </style>
-   
 </head>
 <body>
-    <table width="95%">
-        <tr>
-            <td class="izq">ITMORELIA-IT-AD-002-01</td>
-            <td class="der">	Rev. 1</td>
-        </tr>
-    </table>
-    
+
+    <div class="saltoPagina2">
+        <table class="celda2"> <tr>
+            <td class="celda2">REALIZÓ:</td>
+            <td class="celda2" align="left"></td>
+        </tr></table>
+        <table class="tabla1">
+            <tr>
+                <td width="50%" class="celda1" align="justify">DEPTO. DE RECURSOS MATERIALES Y SERVICIOS Y/O MANTENIMIENTO DE EQUIPO</td>
+                <td width="50%" class="celda1" align="center">@jefeElabora</td>
+            </tr>
+            <tr>
+                <TD width="50%" class="celda1">JEFE DEL ÁREA VERIFICADA</TD>
+                <TD width="50%" class="celda1" align="center">@jefeArea</TD>
+            </tr>
+        </table>
+    </div>
+
+
+   
 </body>
 </html>

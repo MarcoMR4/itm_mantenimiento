@@ -53,11 +53,11 @@ namespace mantenimiento_proyecto.Logica
                 if (servicio == System.Windows.Forms.DialogResult.OK)
                 {
       
-                    MessageBox.Show(descHallazgo);
+                    //  DEscripcion pasar ,MessageBox.Show(descHallazgo);
                     hallazgo = true;
                     FormServicios form1 = new FormServicios();
                     form1.Show();                         //PASAR NOMBRE DE SERVICIO***********
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             else
@@ -76,8 +76,9 @@ namespace mantenimiento_proyecto.Logica
             mostrarHallazgos();
             anio = int.Parse(textAnio.Text);
             periodo = textPeriodo.Text;
+            comboAtendido.Text = "No";
 
-            MessageBox.Show(anio.ToString());
+            //MessageBox.Show(anio.ToString());
 
 
         }

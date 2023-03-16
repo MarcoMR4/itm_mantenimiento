@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -204,6 +206,19 @@ namespace mantenimiento_proyecto
             }
 
 
+        }
+
+        private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormPersonal();
+            this.Close();   
+            formulario.Show();
+        }
+
+        public void reiniciar() {
+            Form formulario = new FormPersonal();
+            this.Close();
+            formulario.Show();
         }
     }
 }

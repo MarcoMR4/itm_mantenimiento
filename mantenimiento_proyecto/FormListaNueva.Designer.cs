@@ -45,7 +45,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboJefeElabora = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@
             this.labelAnio = new System.Windows.Forms.Label();
             this.numericAnio = new System.Windows.Forms.NumericUpDown();
             this.comboPeriodo = new System.Windows.Forms.ComboBox();
+            this.nombreJefe = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,7 @@
             "ene-jun",
             "ago-dic"});
             this.comboAreas.DisplayMember = "enero-junio";
+            this.comboAreas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboAreas.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboAreas.FormattingEnabled = true;
             this.comboAreas.Items.AddRange(new object[] {
@@ -112,6 +113,7 @@
             "ene-jun",
             "ago-dic"});
             this.comboEspacios.DisplayMember = "enero-junio";
+            this.comboEspacios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboEspacios.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboEspacios.FormattingEnabled = true;
             this.comboEspacios.Items.AddRange(new object[] {
@@ -121,7 +123,6 @@
             this.comboEspacios.Name = "comboEspacios";
             this.comboEspacios.Size = new System.Drawing.Size(353, 30);
             this.comboEspacios.TabIndex = 24;
-            this.comboEspacios.Text = "Seleccione un espacio guardado";
             // 
             // label3
             // 
@@ -221,13 +222,13 @@
             "ene-jun",
             "ago-dic"});
             this.comboBox1.DisplayMember = "enero-junio";
-            this.comboBox1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Mantenimiento de equipo"});
-            this.comboBox1.Location = new System.Drawing.Point(673, 432);
+            this.comboBox1.Location = new System.Drawing.Point(631, 432);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(308, 30);
+            this.comboBox1.Size = new System.Drawing.Size(350, 31);
             this.comboBox1.TabIndex = 34;
             this.comboBox1.Text = "Mantenimiento de equipo";
             // 
@@ -235,33 +236,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(447, 432);
+            this.label2.Location = new System.Drawing.Point(412, 432);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 23);
             this.label2.TabIndex = 33;
             this.label2.Text = "Departamento que elabora:";
             // 
-            // comboJefeElabora
-            // 
-            this.comboJefeElabora.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboJefeElabora.DisplayMember = "enero-junio";
-            this.comboJefeElabora.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboJefeElabora.FormattingEnabled = true;
-            this.comboJefeElabora.Items.AddRange(new object[] {
-            "Daniel Villamar Reyes"});
-            this.comboJefeElabora.Location = new System.Drawing.Point(673, 464);
-            this.comboJefeElabora.Name = "comboJefeElabora";
-            this.comboJefeElabora.Size = new System.Drawing.Size(308, 30);
-            this.comboJefeElabora.TabIndex = 36;
-            this.comboJefeElabora.Text = "Daniel Villamar Reyes";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(479, 466);
+            this.label5.Location = new System.Drawing.Point(444, 466);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 23);
             this.label5.TabIndex = 35;
@@ -341,6 +326,7 @@
             // 
             // numericAnio
             // 
+            this.numericAnio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.numericAnio.Location = new System.Drawing.Point(184, 358);
             this.numericAnio.Maximum = new decimal(new int[] {
             2033,
@@ -364,6 +350,8 @@
             // 
             // comboPeriodo
             // 
+            this.comboPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPeriodo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboPeriodo.FormattingEnabled = true;
             this.comboPeriodo.Items.AddRange(new object[] {
             "enero-junio",
@@ -372,7 +360,15 @@
             this.comboPeriodo.Name = "comboPeriodo";
             this.comboPeriodo.Size = new System.Drawing.Size(144, 23);
             this.comboPeriodo.TabIndex = 45;
-            this.comboPeriodo.Text = "enero-junio";
+            // 
+            // nombreJefe
+            // 
+            this.nombreJefe.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.nombreJefe.Location = new System.Drawing.Point(631, 468);
+            this.nombreJefe.Name = "nombreJefe";
+            this.nombreJefe.PlaceholderText = "escriba nombre de jefe de dpto. de Mantenimiento";
+            this.nombreJefe.Size = new System.Drawing.Size(350, 26);
+            this.nombreJefe.TabIndex = 46;
             // 
             // FormListaNueva
             // 
@@ -380,6 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1024, 556);
+            this.Controls.Add(this.nombreJefe);
             this.Controls.Add(this.comboPeriodo);
             this.Controls.Add(this.numericAnio);
             this.Controls.Add(this.labelAnio);
@@ -388,7 +385,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboJefeElabora);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -432,7 +428,6 @@
         private Label label8;
         private ComboBox comboBox1;
         private Label label2;
-        private ComboBox comboJefeElabora;
         private Label label5;
         private ToolStripMenuItem crearListaDeVerificaciónToolStripMenuItem;
         private Button button1;
@@ -443,5 +438,6 @@
         private Label labelAnio;
         private NumericUpDown numericAnio;
         private ComboBox comboPeriodo;
+        private TextBox nombreJefe;
     }
 }

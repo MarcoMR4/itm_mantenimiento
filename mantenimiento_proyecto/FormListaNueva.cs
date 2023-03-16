@@ -94,6 +94,7 @@ namespace mantenimiento_proyecto
             comboEspacios.DisplayMember = "nombre";
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombre";
+            comboPeriodo.Text = "enero-junio";
             
         }
 
@@ -125,15 +126,20 @@ namespace mantenimiento_proyecto
             SaveFileDialog guardar = new SaveFileDialog();
             idEspacioSeleccionado = EspacioLogica.Instancia.buscarEspacio(nombreEspacioSeleccionado);
             anio = int.Parse(numericAnio.Value.ToString());
+            periodo = comboPeriodo.Text;    
             guardar.FileName = "listaVerificación_"+comboAreas.Text+"_"+periodo +"_"+anio+".pdf";
             //guardar.ShowDialog();
 
             //generar html
             string paginahtmlTexto = Properties.Resources.listaV1.ToString();
+            string pieHtml = Properties.Resources.pieLista.ToString();
 
-            paginahtmlTexto = paginahtmlTexto.Replace("@jefeElabora", comboJefeElabora.Text);
+            paginahtmlTexto = paginahtmlTexto.Replace("@jefeElabora", nombreJefe.Text);      //pasar datos a la primera tabla 
             paginahtmlTexto = paginahtmlTexto.Replace("@jefeArea", comboJefeArea.Text);
-            paginahtmlTexto = paginahtmlTexto.Replace("@fecha", DateTime.Now.ToString("dd/MM/yyyy"));
+            var fecha1 = textFecha.Value.ToString("dd/MM/yyyy");   //establecer formato ara fecha seleccionada 
+            paginahtmlTexto = paginahtmlTexto.Replace("@fecha", fecha1);     //agregar la fecha 
+            pieHtml = pieHtml.Replace("@jefeElabora", nombreJefe.Text);
+            pieHtml = pieHtml.Replace("@jefeArea", comboJefeArea.Text);      //pasar datos a la ultima tabla 
 
             string filas = string.Empty;
 
@@ -143,7 +149,7 @@ namespace mantenimiento_proyecto
             periodo = comboPeriodo.Text;
             collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado,idAreaSeleccionada, anio, periodo);
 
-            //agregar filas a la tabla 
+            /* //agregar filas a la tabla 
             foreach (var fila in collection)
             {
                 //MessageBox.Show(fila.descripcion);
@@ -163,58 +169,101 @@ namespace mantenimiento_proyecto
                 filas += "</tr>";
             }
 
-            paginahtmlTexto = paginahtmlTexto.Replace("@filas", filas);
+            paginahtmlTexto = paginahtmlTexto.Replace("@filas", filas); */
+
+            //usando libreria 
+
+
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
                 using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create)) 
                 {
+                    //crear, abrir y preparar documento 
                     Document listaPdf = new Document(PageSize.LETTER);
-
                     PdfWriter writer = PdfWriter.GetInstance(listaPdf, stream);
-
                     PageEventHelper2 pageEventHelper = new PageEventHelper2();
                     writer.PageEvent = pageEventHelper;
-
                     listaPdf.Open();
 
-                    //html 
-                    using (StringReader sr = new StringReader(paginahtmlTexto))
+                    //Crear un estilo de letra en negritas 
+                    //var boldFont = new iTextSharp.text.Font(Font.FontFamily, 12, Font.BOLD);
+
+                    //Crear tabla con ayuda de itextSharp 
+                    PdfPTableHeader header = new PdfPTableHeader();
+                    PdfPTable table = new PdfPTable(4);
+                    table.WidthPercentage = 95;
+                    table.SetWidths(new float[] { 40, 50, 10, 10 }); // Establecer el ancho relativo de cada columna
+
+                    // Agregar encabezado de tabla
+                    table.HeaderRows = 2;
+                    PdfPCell celda= new PdfPCell(new Paragraph("Espacio Revisado"));
+                    celda.Rowspan= 2;
+                    table.AddCell(celda);
+                    PdfPCell celda2 = new PdfPCell(new Paragraph("Hallazgo"));
+                    celda2.Rowspan= 2;
+                    table.AddCell(celda2);
+                    PdfPCell celda3 = new PdfPCell(new Paragraph("Atendido"));
+                    celda3.Colspan = 2;
+                    table.AddCell(celda3);
+                    table.AddCell("Si");
+                    table.AddCell("No");
+
+                    // Agregar filas a la tabla
+                    foreach (var cosas in collection)
                     {
-                        System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, sr);
+                        table.AddCell(cosas.nombreEspacio);
+                        table.AddCell(cosas.descripcion);
+                        if (cosas.atendido == "Si")
+                        {
+                            table.AddCell(" X ");
+                            table.AddCell("");
+                        }
+                        else
+                        {
+                            table.AddCell("");
+                            table.AddCell(" X ");
+                        }
+
+                    }
+                    
+
+                    //Convertir el html generado a un archivo PDF  
+
+                    //primer tabla de nombres con html 
+                    try
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(paginahtmlTexto));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al convertir html en pdf \n\n\n"+ex);
+                        Console.WriteLine(ex);
                     }
 
-                    //listaPdf.Add(clienttable);
-                    listaPdf.NewPage();//page break OR New Page
+                    //añadir tabla dinamica creada con la librería ItextSharp
+                    listaPdf.Add(table);
 
-                    listaPdf.Add(new Paragraph("This is a second page."));
+                    //ultima tabla de nombres con html 
+                    try
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(pieHtml));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al convertir html en pdf \n\n\n" + ex);
+                        Console.WriteLine(ex);
+                    }
 
-                    listaPdf.NewPage();//page break OR New Page
-
-                    listaPdf.Add(new Paragraph("This is a third page."));
-
-
-                    //encabezado 
+                    //          Probar varias paginas 
                     /*
-                    //logo1
-                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logoTecNM, System.Drawing.Imaging.ImageFormat.Png);
-                    img.ScaleToFit(90, 70);
-                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
-                    img.SetAbsolutePosition(listaPdf.LeftMargin, listaPdf.Top -60);
-                    listaPdf.Add(img);
-                    //logo2
-                    iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(Properties.Resources.logoITM, System.Drawing.Imaging.ImageFormat.Png);
-                    img2.ScaleToFit(50,50);
-                    img2.Alignment = iTextSharp.text.Image.UNDERLYING;
-                    img2.SetAbsolutePosition(listaPdf.RightMargin +420, listaPdf.Top -60);
-                    listaPdf.Add(img2);
+                    listaPdf.NewPage();//page break OR New Page
+                    listaPdf.Add(new Paragraph("This is a second page."));
                     */
 
-
+                    //Cerrar el documento generado y guardado 
                     listaPdf.Close();
                     stream.Close();
-
                 }
 
 
@@ -229,9 +278,15 @@ namespace mantenimiento_proyecto
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombres";
         }
+
+        private void comboJefeElabora_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
+//Clase utilizada para controlar el comportamiento del documento en cada página 
 public class PageEventHelper2 : PdfPageEventHelper
 {
     PdfContentByte cb;
@@ -270,13 +325,13 @@ public class PageEventHelper2 : PdfPageEventHelper
         string encabezado = mantenimiento_proyecto.Properties.Resources.EncabezadoLista.ToString();
         using (StringReader sr = new StringReader(encabezado))
         {
-            //logo1
+            //insertar logo1
             iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(mantenimiento_proyecto.Properties.Resources.logoTecNM, System.Drawing.Imaging.ImageFormat.Png);
             img.ScaleToFit(100, 80);
             img.Alignment = iTextSharp.text.Image.UNDERLYING;
             img.SetAbsolutePosition(listaPdf.LeftMargin, listaPdf.Top - 60);
             listaPdf.Add(img);
-            //logo2
+            //insertar logo2
             iTextSharp.text.Image img2 = iTextSharp.text.Image.GetInstance(mantenimiento_proyecto.Properties.Resources.logoITM, System.Drawing.Imaging.ImageFormat.Png);
             img2.ScaleToFit(50, 50);
             img2.Alignment = iTextSharp.text.Image.UNDERLYING;
@@ -287,49 +342,10 @@ public class PageEventHelper2 : PdfPageEventHelper
             XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, sr);
         }
 
-        
-
-        /*
-        //tabla 
-        string titulo = "INSTITÚTO TECNOLÓGICO DE MORELIA";
-        iTextSharp.text.Phrase titulo1 = new iTextSharp.text.Phrase();
-        titulo1.Add(titulo);
-        PdfPTable encabezado = new PdfPTable(3);
-        PdfPCell celda1 = new PdfPCell(img);
-        PdfPCell celda2 = new PdfPCell(titulo1);
-        PdfPCell celda3 = new PdfPCell(img2);
-        celda1.Border = 1;
-        celda2.Border = 1;
-        celda3.Border = 1;
-        celda1.Width = 20;
-        celda2.Width = 60;
-        celda3.Width = 20;
-        celda1.BorderWidthTop = 2;
-        celda2.BorderWidthTop = 2;
-        celda3.BorderWidthTop = 2;
-        celda1.BorderWidthBottom = 2;
-        celda2.BorderWidthBottom = 2;
-        celda3.BorderWidthBottom = 2;
-        celda3.BorderWidthTop = 2;
-        celda1.BorderColorTop = BaseColor.RED.Darker();
-        celda2.BorderColorTop = BaseColor.RED.Darker();
-        celda3.BorderColorTop = BaseColor.RED.Darker();
-        celda1.BorderColorBottom = BaseColor.RED.Darker();
-        celda2.BorderColorBottom = BaseColor.RED.Darker();
-        celda3.BorderColorBottom = BaseColor.RED.Darker();
-        celda1.HorizontalAlignment = 2;
-        celda1.VerticalAlignment = 1;
-
-        encabezado.AddCell(celda1);
-        encabezado.AddCell(celda2);
-        encabezado.AddCell(celda3);
-
-        listaPdf.Add(encabezado);
-        */
-       
-
-        Paragraph saltoDeLinea1 = new Paragraph("                                                                                                                                                                                                                                                                                                                                                                                   ");
-        listaPdf.Add(saltoDeLinea1);
+        //     Realizar un salto de linea para espaciar el encabezado y contenido posterior a este 
+        Paragraph salto = new Paragraph();
+        salto.Add(new Chunk("\n")); // Agregar un salto de línea
+        listaPdf.Add(salto);
     }
 
 

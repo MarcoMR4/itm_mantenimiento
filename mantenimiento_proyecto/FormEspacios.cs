@@ -34,24 +34,34 @@ namespace mantenimiento_proyecto
 
         private void btnAgregarEspacio_Click(object sender, EventArgs e)
         {
-            if (textNombreE.Text != string.Empty) {
-           
-                Espacio espacio1 = new Espacio()
+            if (textIdE.Text == string.Empty)
+            {
+                if (textNombreE.Text != string.Empty)
                 {
-                    nombre = textNombreE.Text,
-                    idArea = idArea2
-                };
-          
-                //MessageBox.Show("id Area:"+idArea2.ToString());
-                bool respuesta = EspacioLogica.Instancia.Guardar(espacio1);
 
-                if (respuesta)
-                {
-                    mostrarEspacios();
-                    limpiar();
+                    Espacio espacio1 = new Espacio()
+                    {
+                        nombre = textNombreE.Text,
+                        idArea = idArea2
+                    };
+
+                    //MessageBox.Show("id Area:"+idArea2.ToString());
+                    bool respuesta = EspacioLogica.Instancia.Guardar(espacio1);
+
+                    if (respuesta)
+                    {
+                        mostrarEspacios();
+                        limpiar();
+                    }
+
                 }
-
             }
+            else 
+            {
+                MessageBox.Show("borrar los campos antes de agregar");
+                limpiar();
+            }
+            
         }
 
 

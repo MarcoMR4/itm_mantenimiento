@@ -20,7 +20,7 @@ namespace mantenimiento_proyecto
             mostrarAreas();
         }
 
-
+        //Guardar area en la base de datos 
         private async void btnGuardarArea_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(nombre);
@@ -46,6 +46,7 @@ namespace mantenimiento_proyecto
          
         }
 
+        //Cargar las areas guardadas en la base de datos 
         public void mostrarAreas()
         {
             gridAreas.DataSource = null;
@@ -119,6 +120,13 @@ namespace mantenimiento_proyecto
 
         }
 
+        private void FormAreas_Close(object sender, EventArgs e)
+        {
+            Form formulario = new FormPersonal();
+            formulario.Close();
+            formulario.Show();
+        }
+
         private void gridAreas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             validarCelda(sender, e);
@@ -139,6 +147,12 @@ namespace mantenimiento_proyecto
             }
             
 
+        }
+
+        private void FormAreas_Leave(object sender, EventArgs e)
+        {
+            Form formulario = new FormPersonal();
+            formulario.Refresh();
         }
     }
 }
