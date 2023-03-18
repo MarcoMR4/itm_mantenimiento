@@ -90,12 +90,28 @@ namespace mantenimiento_proyecto
             //MessageBox.Show(idAreaSeleccionada.ToString());
             comboAreas.DataSource = AreaLogica.Instancia.Listar();
             comboAreas.DisplayMember = "nombre";
-            comboEspacios.DataSource = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
-            comboEspacios.DisplayMember = "nombre";
+            revisarEspacios();
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombre";
             comboPeriodo.Text = "enero-junio";
             
+        }
+
+        private void revisarEspacios() 
+        {
+            List<Espacio> espacios = new List<Espacio>();
+            espacios = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
+            if (espacios.Count == 0)
+            {
+                MessageBox.Show("No existen espacios registrados en esta área, favor de registrar en el botón \"Ver espacios \" ");
+                comboEspacios.Text = string.Empty;
+                comboEspacios.DataSource = null;
+            }
+            else 
+            {
+                comboEspacios.DataSource = espacios;
+                comboEspacios.DisplayMember = "nombre";
+            }
         }
 
         private void comboAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,9 +119,7 @@ namespace mantenimiento_proyecto
             //MessageBox.Show(comboAreas.Text);
             nombreAreaSeleccionada = comboAreas.Text;
             idAreaSeleccionada = AreaLogica.Instancia.buscarArea(nombreAreaSeleccionada);
-
-            comboEspacios.DataSource = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
-            comboEspacios.ValueMember = "nombre";
+            revisarEspacios();
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombre";
         }
@@ -177,97 +191,107 @@ namespace mantenimiento_proyecto
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
-                using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create)) 
+                try
                 {
-                    //crear, abrir y preparar documento 
-                    Document listaPdf = new Document(PageSize.LETTER);
-                    PdfWriter writer = PdfWriter.GetInstance(listaPdf, stream);
-                    PageEventHelper2 pageEventHelper = new PageEventHelper2();
-                    writer.PageEvent = pageEventHelper;
-                    listaPdf.Open();
-
-                    //Crear un estilo de letra en negritas 
-                    //var boldFont = new iTextSharp.text.Font(Font.FontFamily, 12, Font.BOLD);
-
-                    //Crear tabla con ayuda de itextSharp 
-                    PdfPTableHeader header = new PdfPTableHeader();
-                    PdfPTable table = new PdfPTable(4);
-                    table.WidthPercentage = 95;
-                    table.SetWidths(new float[] { 40, 50, 10, 10 }); // Establecer el ancho relativo de cada columna
-
-                    // Agregar encabezado de tabla
-                    table.HeaderRows = 2;
-                    PdfPCell celda= new PdfPCell(new Paragraph("Espacio Revisado"));
-                    celda.Rowspan= 2;
-                    table.AddCell(celda);
-                    PdfPCell celda2 = new PdfPCell(new Paragraph("Hallazgo"));
-                    celda2.Rowspan= 2;
-                    table.AddCell(celda2);
-                    PdfPCell celda3 = new PdfPCell(new Paragraph("Atendido"));
-                    celda3.Colspan = 2;
-                    table.AddCell(celda3);
-                    table.AddCell("Si");
-                    table.AddCell("No");
-
-                    // Agregar filas a la tabla
-                    foreach (var cosas in collection)
+                    using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
                     {
-                        table.AddCell(cosas.nombreEspacio);
-                        table.AddCell(cosas.descripcion);
-                        if (cosas.atendido == "Si")
+                        //crear, abrir y preparar documento 
+                        Document listaPdf = new Document(PageSize.LETTER);
+                        PdfWriter writer = PdfWriter.GetInstance(listaPdf, stream);
+                        PageEventHelper2 pageEventHelper = new PageEventHelper2();
+                        writer.PageEvent = pageEventHelper;
+                        listaPdf.Open();
+
+                        //Crear un estilo de letra en negritas 
+                        //var boldFont = new iTextSharp.text.Font(Font.FontFamily, 12, Font.BOLD);
+
+                        //Crear tabla con ayuda de itextSharp 
+                        PdfPTableHeader header = new PdfPTableHeader();
+                        PdfPTable table = new PdfPTable(4);
+                        table.WidthPercentage = 95;
+                        table.SetWidths(new float[] { 40, 50, 10, 10 }); // Establecer el ancho relativo de cada columna
+
+                        // Agregar encabezado de tabla
+                        table.HeaderRows = 2;
+                        PdfPCell celda = new PdfPCell(new Paragraph("Espacio Revisado"));
+                        celda.Rowspan = 2;
+                        table.AddCell(celda);
+                        PdfPCell celda2 = new PdfPCell(new Paragraph("Hallazgo"));
+                        celda2.Rowspan = 2;
+                        table.AddCell(celda2);
+                        PdfPCell celda3 = new PdfPCell(new Paragraph("Atendido"));
+                        celda3.Colspan = 2;
+                        table.AddCell(celda3);
+                        table.AddCell("Si");
+                        table.AddCell("No");
+
+                        // Agregar filas a la tabla
+                        foreach (var cosas in collection)
                         {
-                            table.AddCell(" X ");
-                            table.AddCell("");
+                            table.AddCell(cosas.nombreEspacio);
+                            table.AddCell(cosas.descripcion);
+                            if (cosas.atendido == "Si")
+                            {
+                                table.AddCell(" X ");
+                                table.AddCell("");
+                            }
+                            else
+                            {
+                                table.AddCell("");
+                                table.AddCell(" X ");
+                            }
+
                         }
-                        else
+
+
+                        //Convertir el html generado a un archivo PDF  
+
+                        //primer tabla de nombres con html 
+                        try
                         {
-                            table.AddCell("");
-                            table.AddCell(" X ");
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(paginahtmlTexto));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al convertir html en pdf \n\n\n");
+                            Console.WriteLine(ex);
                         }
 
+                        //añadir tabla dinamica creada con la librería ItextSharp
+                        listaPdf.Add(table);
+
+                        //Añadir un salto entre tabla de hallazgos y espacio de firmas 
+                        Paragraph salto = new Paragraph();
+                        salto.Add(new Chunk("\n")); // Agregar un salto de línea
+                        listaPdf.Add(salto);
+                        //ultima tabla de nombres (firmas) con html 
+                        try
+                        {
+                            //Convertir tabla html y agregar al documento 
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(pieHtml));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al convertir html en pdf ");
+                            Console.WriteLine(ex);
+                        }
+
+                        //          Probar varias paginas 
+                        /*
+                        listaPdf.NewPage();//page break OR New Page
+                        listaPdf.Add(new Paragraph("This is a second page."));
+                        */
+
+                        //Cerrar el documento generado y guardado 
+                        listaPdf.Close();
+                        stream.Close();
                     }
-                    
-
-                    //Convertir el html generado a un archivo PDF  
-
-                    //primer tabla de nombres con html 
-                    try
-                    {
-                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(paginahtmlTexto));
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al convertir html en pdf \n\n\n"+ex);
-                        Console.WriteLine(ex);
-                    }
-
-                    //añadir tabla dinamica creada con la librería ItextSharp
-                    listaPdf.Add(table);
-
-                    //ultima tabla de nombres con html 
-                    try
-                    {
-                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(pieHtml));
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al convertir html en pdf \n\n\n" + ex);
-                        Console.WriteLine(ex);
-                    }
-
-                    //          Probar varias paginas 
-                    /*
-                    listaPdf.NewPage();//page break OR New Page
-                    listaPdf.Add(new Paragraph("This is a second page."));
-                    */
-
-                    //Cerrar el documento generado y guardado 
-                    listaPdf.Close();
-                    stream.Close();
                 }
-
-
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al generar formato, Intente cerrar el archivo si está en uso");
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

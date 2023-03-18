@@ -59,7 +59,14 @@ namespace mantenimiento_proyecto
             comboPeriodos.Text = "enero-junio";
             comboAreas.DataSource = AreaLogica.Instancia.Listar();
             comboAreas.ValueMember = "nombre";
-            nombreAreaElegida = comboAreas.Text;
+            if (comboAreas.DataSource == null)
+            {
+                MessageBox.Show("No existen áreas registradas, por favor registre en la cción áreas");
+            }
+            else
+            {
+                nombreAreaElegida = comboAreas.Text;
+            }
         }
 
         private void inicioToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -82,7 +89,7 @@ namespace mantenimiento_proyecto
                 elaboro = textElaboro.Text;
                 aprobo = textAprobo.Text;
 
-                if ((guardar.ShowDialog() == DialogResult.OK))
+                if (guardar.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
@@ -405,14 +412,14 @@ namespace mantenimiento_proyecto
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error al generar formato \n\n\n" + ex);
+                            MessageBox.Show("Error al generar formato \n\n\n" + "Intente cerrar el archivo si está en uso");
                             Console.WriteLine(ex.Message);
                         }
                     }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al crear el documento \n\n\n" + ex);
+                MessageBox.Show("Error al crear el documento \n\n\n");
                 Console.WriteLine(ex.Message);
             }
         }
