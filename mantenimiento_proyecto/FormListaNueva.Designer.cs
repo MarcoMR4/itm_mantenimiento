@@ -28,387 +28,384 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboAreas = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboEspacios = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnCargarEspacio = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearListaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.planAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textFecha = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.comboJefeArea = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.labelAnio = new System.Windows.Forms.Label();
-            this.numericAnio = new System.Windows.Forms.NumericUpDown();
-            this.comboPeriodo = new System.Windows.Forms.ComboBox();
-            this.nombreJefe = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).BeginInit();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaNueva));
+            label1 = new Label();
+            comboAreas = new ComboBox();
+            label7 = new Label();
+            label4 = new Label();
+            comboEspacios = new ComboBox();
+            label3 = new Label();
+            btnCargarEspacio = new Button();
+            menuStrip1 = new MenuStrip();
+            inicioToolStripMenuItem = new ToolStripMenuItem();
+            listaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
+            crearListaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
+            planAnualToolStripMenuItem = new ToolStripMenuItem();
+            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
+            textFecha = new DateTimePicker();
+            label8 = new Label();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
+            label5 = new Label();
+            button1 = new Button();
+            btnImprimir = new Button();
+            comboJefeArea = new ComboBox();
+            label6 = new Label();
+            label9 = new Label();
+            labelAnio = new Label();
+            numericAnio = new NumericUpDown();
+            comboPeriodo = new ComboBox();
+            nombreJefe = new TextBox();
+            pictureBox1 = new PictureBox();
+            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericAnio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(200, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Elaborar lista de verificación";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(615, 44);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(409, 34);
+            label1.TabIndex = 4;
+            label1.Text = "Elaborar lista de verificación";
             // 
             // comboAreas
             // 
-            this.comboAreas.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboAreas.DisplayMember = "enero-junio";
-            this.comboAreas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAreas.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboAreas.FormattingEnabled = true;
-            this.comboAreas.Items.AddRange(new object[] {
-            "Personal Registrado 1"});
-            this.comboAreas.Location = new System.Drawing.Point(76, 119);
-            this.comboAreas.Name = "comboAreas";
-            this.comboAreas.Size = new System.Drawing.Size(308, 30);
-            this.comboAreas.TabIndex = 19;
-            this.comboAreas.SelectedIndexChanged += new System.EventHandler(this.comboAreas_SelectedIndexChanged);
+            comboAreas.AutoCompleteCustomSource.AddRange(new string[] { "ene-jun", "ago-dic" });
+            comboAreas.DisplayMember = "enero-junio";
+            comboAreas.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboAreas.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboAreas.FormattingEnabled = true;
+            comboAreas.Items.AddRange(new object[] { "Personal Registrado 1" });
+            comboAreas.Location = new Point(76, 119);
+            comboAreas.Name = "comboAreas";
+            comboAreas.Size = new Size(308, 30);
+            comboAreas.TabIndex = 19;
+            comboAreas.SelectedIndexChanged += comboAreas_SelectedIndexChanged;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(248, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 25);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Área verificada:";
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(248, 94);
+            label7.Name = "label7";
+            label7.Size = new Size(136, 25);
+            label7.TabIndex = 18;
+            label7.Text = "Área verificada:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(14, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 25);
-            this.label4.TabIndex = 21;
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(14, 182);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 25);
+            label4.TabIndex = 21;
             // 
             // comboEspacios
             // 
-            this.comboEspacios.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboEspacios.DisplayMember = "enero-junio";
-            this.comboEspacios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboEspacios.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboEspacios.FormattingEnabled = true;
-            this.comboEspacios.Items.AddRange(new object[] {
-            "Edificio AG",
-            "Edificio F"});
-            this.comboEspacios.Location = new System.Drawing.Point(432, 259);
-            this.comboEspacios.Name = "comboEspacios";
-            this.comboEspacios.Size = new System.Drawing.Size(353, 30);
-            this.comboEspacios.TabIndex = 24;
+            comboEspacios.AutoCompleteCustomSource.AddRange(new string[] { "ene-jun", "ago-dic" });
+            comboEspacios.DisplayMember = "enero-junio";
+            comboEspacios.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboEspacios.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboEspacios.FormattingEnabled = true;
+            comboEspacios.Items.AddRange(new object[] { "Edificio AG", "Edificio F" });
+            comboEspacios.Location = new Point(432, 259);
+            comboEspacios.Name = "comboEspacios";
+            comboEspacios.Size = new Size(353, 30);
+            comboEspacios.TabIndex = 24;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(273, 259);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 25);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Espacio revisado:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(273, 259);
+            label3.Name = "label3";
+            label3.Size = new Size(153, 25);
+            label3.TabIndex = 23;
+            label3.Text = "Espacio revisado:";
             // 
             // btnCargarEspacio
             // 
-            this.btnCargarEspacio.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCargarEspacio.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarEspacio.Location = new System.Drawing.Point(631, 190);
-            this.btnCargarEspacio.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCargarEspacio.Name = "btnCargarEspacio";
-            this.btnCargarEspacio.Size = new System.Drawing.Size(154, 29);
-            this.btnCargarEspacio.TabIndex = 27;
-            this.btnCargarEspacio.Text = "Ver Espacios";
-            this.btnCargarEspacio.UseVisualStyleBackColor = false;
-            this.btnCargarEspacio.Click += new System.EventHandler(this.btnCargarEspacio_Click);
+            btnCargarEspacio.BackColor = Color.Gainsboro;
+            btnCargarEspacio.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCargarEspacio.Location = new Point(631, 190);
+            btnCargarEspacio.Margin = new Padding(2);
+            btnCargarEspacio.Name = "btnCargarEspacio";
+            btnCargarEspacio.Size = new Size(154, 29);
+            btnCargarEspacio.TabIndex = 27;
+            btnCargarEspacio.Text = "Ver Espacios";
+            btnCargarEspacio.UseVisualStyleBackColor = false;
+            btnCargarEspacio.Click += btnCargarEspacio_Click;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.menuStrip1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
-            this.listaDeVerificaciónToolStripMenuItem,
-            this.planAnualToolStripMenuItem,
-            this.registrarPersonalToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 31);
-            this.menuStrip1.TabIndex = 28;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.BackColor = SystemColors.ControlLight;
+            menuStrip1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, registrarDepartamentoToolStripMenuItem, registrarPersonalToolStripMenuItem, listaDeVerificaciónToolStripMenuItem, planAnualToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(1024, 31);
+            menuStrip1.TabIndex = 28;
+            menuStrip1.Text = "menuStrip1";
             // 
             // inicioToolStripMenuItem
             // 
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(57, 27);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click_1);
+            inicioToolStripMenuItem.Image = (Image)resources.GetObject("inicioToolStripMenuItem.Image");
+            inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            inicioToolStripMenuItem.Size = new Size(77, 27);
+            inicioToolStripMenuItem.Text = "Inicio";
+            inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click_1;
             // 
             // listaDeVerificaciónToolStripMenuItem
             // 
-            this.listaDeVerificaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearListaDeVerificaciónToolStripMenuItem});
-            this.listaDeVerificaciónToolStripMenuItem.Name = "listaDeVerificaciónToolStripMenuItem";
-            this.listaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(201, 27);
-            this.listaDeVerificaciónToolStripMenuItem.Text = "Crear listas de verificación";
-            this.listaDeVerificaciónToolStripMenuItem.Click += new System.EventHandler(this.listaDeVerificaciónToolStripMenuItem_Click);
+            listaDeVerificaciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearListaDeVerificaciónToolStripMenuItem });
+            listaDeVerificaciónToolStripMenuItem.Image = (Image)resources.GetObject("listaDeVerificaciónToolStripMenuItem.Image");
+            listaDeVerificaciónToolStripMenuItem.Name = "listaDeVerificaciónToolStripMenuItem";
+            listaDeVerificaciónToolStripMenuItem.Size = new Size(221, 27);
+            listaDeVerificaciónToolStripMenuItem.Text = "Crear listas de verificación";
+            listaDeVerificaciónToolStripMenuItem.Click += listaDeVerificaciónToolStripMenuItem_Click;
             // 
             // crearListaDeVerificaciónToolStripMenuItem
             // 
-            this.crearListaDeVerificaciónToolStripMenuItem.Name = "crearListaDeVerificaciónToolStripMenuItem";
-            this.crearListaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(251, 28);
-            this.crearListaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
+            crearListaDeVerificaciónToolStripMenuItem.Name = "crearListaDeVerificaciónToolStripMenuItem";
+            crearListaDeVerificaciónToolStripMenuItem.Size = new Size(251, 28);
+            crearListaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
             // 
             // planAnualToolStripMenuItem
             // 
-            this.planAnualToolStripMenuItem.Name = "planAnualToolStripMenuItem";
-            this.planAnualToolStripMenuItem.Size = new System.Drawing.Size(178, 27);
-            this.planAnualToolStripMenuItem.Text = "Crear Programa Anual";
-            this.planAnualToolStripMenuItem.Click += new System.EventHandler(this.planAnualToolStripMenuItem_Click);
+            planAnualToolStripMenuItem.Image = (Image)resources.GetObject("planAnualToolStripMenuItem.Image");
+            planAnualToolStripMenuItem.Name = "planAnualToolStripMenuItem";
+            planAnualToolStripMenuItem.Size = new Size(198, 27);
+            planAnualToolStripMenuItem.Text = "Crear Programa Anual";
+            planAnualToolStripMenuItem.Click += planAnualToolStripMenuItem_Click;
             // 
             // registrarPersonalToolStripMenuItem
             // 
-            this.registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
-            this.registrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(150, 27);
-            this.registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
+            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
+            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
+            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
             // 
             // textFecha
             // 
-            this.textFecha.Location = new System.Drawing.Point(527, 124);
-            this.textFecha.Name = "textFecha";
-            this.textFecha.Size = new System.Drawing.Size(258, 23);
-            this.textFecha.TabIndex = 31;
+            textFecha.Location = new Point(527, 124);
+            textFecha.Name = "textFecha";
+            textFecha.Size = new Size(258, 23);
+            textFecha.TabIndex = 31;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(527, 99);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 25);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Fecha:";
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(527, 99);
+            label8.Name = "label8";
+            label8.Size = new Size(67, 25);
+            label8.TabIndex = 32;
+            label8.Text = "Fecha:";
             // 
             // comboBox1
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboBox1.DisplayMember = "enero-junio";
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Mantenimiento de equipo"});
-            this.comboBox1.Location = new System.Drawing.Point(631, 432);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(350, 31);
-            this.comboBox1.TabIndex = 34;
-            this.comboBox1.Text = "Mantenimiento de equipo";
+            comboBox1.AutoCompleteCustomSource.AddRange(new string[] { "ene-jun", "ago-dic" });
+            comboBox1.DisplayMember = "enero-junio";
+            comboBox1.Font = new Font("Arial", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Mantenimiento de equipo" });
+            comboBox1.Location = new Point(631, 432);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(350, 31);
+            comboBox1.TabIndex = 34;
+            comboBox1.Text = "Mantenimiento de equipo";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(412, 432);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 23);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Departamento que elabora:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(412, 432);
+            label2.Name = "label2";
+            label2.Size = new Size(200, 23);
+            label2.TabIndex = 33;
+            label2.Text = "Departamento que elabora:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(444, 466);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 23);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Jefe del departamento:";
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(444, 466);
+            label5.Name = "label5";
+            label5.Size = new Size(168, 23);
+            label5.TabIndex = 35;
+            label5.Text = "Jefe del departamento:";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(421, 322);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 29);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Hallazgos";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = SystemColors.ControlLight;
+            button1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(421, 322);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(154, 29);
+            button1.TabIndex = 37;
+            button1.Text = "Hallazgos";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnImprimir
             // 
-            this.btnImprimir.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnImprimir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnImprimir.Location = new System.Drawing.Point(590, 517);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(175, 29);
-            this.btnImprimir.TabIndex = 38;
-            this.btnImprimir.Text = "Generar Lista";
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            btnImprimir.BackColor = Color.Gainsboro;
+            btnImprimir.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnImprimir.Location = new Point(560, 528);
+            btnImprimir.Margin = new Padding(2);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(167, 43);
+            btnImprimir.TabIndex = 38;
+            btnImprimir.Text = "Generar Lista";
+            btnImprimir.UseVisualStyleBackColor = false;
+            btnImprimir.Click += btnImprimir_Click;
             // 
             // comboJefeArea
             // 
-            this.comboJefeArea.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboJefeArea.DisplayMember = "enero-junio";
-            this.comboJefeArea.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboJefeArea.FormattingEnabled = true;
-            this.comboJefeArea.Items.AddRange(new object[] {
-            "Personal Registrado 1"});
-            this.comboJefeArea.Location = new System.Drawing.Point(76, 190);
-            this.comboJefeArea.Name = "comboJefeArea";
-            this.comboJefeArea.Size = new System.Drawing.Size(308, 30);
-            this.comboJefeArea.TabIndex = 41;
-            this.comboJefeArea.SelectedIndexChanged += new System.EventHandler(this.comboJefeArea_SelectedIndexChanged);
+            comboJefeArea.AutoCompleteCustomSource.AddRange(new string[] { "ene-jun", "ago-dic" });
+            comboJefeArea.DisplayMember = "enero-junio";
+            comboJefeArea.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboJefeArea.FormattingEnabled = true;
+            comboJefeArea.Items.AddRange(new object[] { "Personal Registrado 1" });
+            comboJefeArea.Location = new Point(76, 190);
+            comboJefeArea.Name = "comboJefeArea";
+            comboJefeArea.Size = new Size(308, 30);
+            comboJefeArea.TabIndex = 41;
+            comboJefeArea.SelectedIndexChanged += comboJefeArea_SelectedIndexChanged;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(181, 165);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(203, 25);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Jefe del área verificada:";
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(181, 165);
+            label6.Name = "label6";
+            label6.Size = new Size(203, 25);
+            label6.TabIndex = 40;
+            label6.Text = "Jefe del área verificada:";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(100, 322);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 25);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Periodo:";
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(100, 322);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 25);
+            label9.TabIndex = 42;
+            label9.Text = "Periodo:";
             // 
             // labelAnio
             // 
-            this.labelAnio.AutoSize = true;
-            this.labelAnio.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAnio.Location = new System.Drawing.Point(100, 358);
-            this.labelAnio.Name = "labelAnio";
-            this.labelAnio.Size = new System.Drawing.Size(48, 25);
-            this.labelAnio.TabIndex = 43;
-            this.labelAnio.Text = "Año:";
+            labelAnio.AutoSize = true;
+            labelAnio.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelAnio.Location = new Point(100, 358);
+            labelAnio.Name = "labelAnio";
+            labelAnio.Size = new Size(48, 25);
+            labelAnio.TabIndex = 43;
+            labelAnio.Text = "Año:";
             // 
             // numericAnio
             // 
-            this.numericAnio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.numericAnio.Location = new System.Drawing.Point(184, 358);
-            this.numericAnio.Maximum = new decimal(new int[] {
-            2033,
-            0,
-            0,
-            0});
-            this.numericAnio.Minimum = new decimal(new int[] {
-            2023,
-            0,
-            0,
-            0});
-            this.numericAnio.Name = "numericAnio";
-            this.numericAnio.Size = new System.Drawing.Size(144, 23);
-            this.numericAnio.TabIndex = 44;
-            this.numericAnio.Tag = "2023";
-            this.numericAnio.Value = new decimal(new int[] {
-            2023,
-            0,
-            0,
-            0});
+            numericAnio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            numericAnio.Location = new Point(184, 358);
+            numericAnio.Maximum = new decimal(new int[] { 2033, 0, 0, 0 });
+            numericAnio.Minimum = new decimal(new int[] { 2023, 0, 0, 0 });
+            numericAnio.Name = "numericAnio";
+            numericAnio.Size = new Size(144, 23);
+            numericAnio.TabIndex = 44;
+            numericAnio.Tag = "2023";
+            numericAnio.Value = new decimal(new int[] { 2023, 0, 0, 0 });
             // 
             // comboPeriodo
             // 
-            this.comboPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPeriodo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboPeriodo.FormattingEnabled = true;
-            this.comboPeriodo.Items.AddRange(new object[] {
-            "enero-junio",
-            "agosto-diciembre"});
-            this.comboPeriodo.Location = new System.Drawing.Point(184, 322);
-            this.comboPeriodo.Name = "comboPeriodo";
-            this.comboPeriodo.Size = new System.Drawing.Size(144, 23);
-            this.comboPeriodo.TabIndex = 45;
+            comboPeriodo.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboPeriodo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comboPeriodo.FormattingEnabled = true;
+            comboPeriodo.Items.AddRange(new object[] { "enero-junio", "agosto-diciembre" });
+            comboPeriodo.Location = new Point(184, 322);
+            comboPeriodo.Name = "comboPeriodo";
+            comboPeriodo.Size = new Size(144, 23);
+            comboPeriodo.TabIndex = 45;
             // 
             // nombreJefe
             // 
-            this.nombreJefe.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.nombreJefe.Location = new System.Drawing.Point(631, 468);
-            this.nombreJefe.Name = "nombreJefe";
-            this.nombreJefe.PlaceholderText = "escriba nombre de jefe de dpto. de Mantenimiento";
-            this.nombreJefe.Size = new System.Drawing.Size(350, 26);
-            this.nombreJefe.TabIndex = 46;
+            nombreJefe.Font = new Font("Arial Narrow", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            nombreJefe.Location = new Point(631, 468);
+            nombreJefe.Name = "nombreJefe";
+            nombreJefe.PlaceholderText = "escriba nombre de jefe de dpto. de Mantenimiento";
+            nombreJefe.Size = new Size(350, 26);
+            nombreJefe.TabIndex = 46;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(76, 432);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(150, 139);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 47;
+            pictureBox1.TabStop = false;
+            // 
+            // registrarDepartamentoToolStripMenuItem
+            // 
+            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
+            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
+            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
+            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
+            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
+            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
             // 
             // FormListaNueva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1024, 556);
-            this.Controls.Add(this.nombreJefe);
-            this.Controls.Add(this.comboPeriodo);
-            this.Controls.Add(this.numericAnio);
-            this.Controls.Add(this.labelAnio);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboJefeArea);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textFecha);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.btnCargarEspacio);
-            this.Controls.Add(this.comboEspacios);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboAreas);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label1);
-            this.Name = "FormListaNueva";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listas de verificación";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormListaNueva_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(1024, 582);
+            Controls.Add(pictureBox1);
+            Controls.Add(nombreJefe);
+            Controls.Add(comboPeriodo);
+            Controls.Add(numericAnio);
+            Controls.Add(labelAnio);
+            Controls.Add(label9);
+            Controls.Add(comboJefeArea);
+            Controls.Add(label6);
+            Controls.Add(btnImprimir);
+            Controls.Add(button1);
+            Controls.Add(label5);
+            Controls.Add(comboBox1);
+            Controls.Add(label2);
+            Controls.Add(label8);
+            Controls.Add(textFecha);
+            Controls.Add(menuStrip1);
+            Controls.Add(btnCargarEspacio);
+            Controls.Add(comboEspacios);
+            Controls.Add(label3);
+            Controls.Add(label4);
+            Controls.Add(comboAreas);
+            Controls.Add(label7);
+            Controls.Add(label1);
+            Name = "FormListaNueva";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Listas de verificación";
+            WindowState = FormWindowState.Maximized;
+            Load += FormListaNueva_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericAnio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -439,5 +436,7 @@
         private NumericUpDown numericAnio;
         private ComboBox comboPeriodo;
         private TextBox nombreJefe;
+        private PictureBox pictureBox1;
+        private ToolStripMenuItem registrarDepartamentoToolStripMenuItem;
     }
 }

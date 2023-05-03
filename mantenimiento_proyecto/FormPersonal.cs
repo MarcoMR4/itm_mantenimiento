@@ -27,7 +27,7 @@ namespace mantenimiento_proyecto
             comboArea.DataSource = AreaLogica.Instancia.Listar();
             // mostrar nombre de area 
             comboArea.DisplayMember = "nombre";
-            
+
             //comboBox.ValueMember = "Index";
         }
 
@@ -41,7 +41,9 @@ namespace mantenimiento_proyecto
 
         private void listaDeVerificaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new FormListaNueva();
+            formulario.Show();
+            this.Hide();
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,11 +102,11 @@ namespace mantenimiento_proyecto
                         limpiar();
                     }
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Borrar campos primero ");
                 }
-            
+
 
 
             }
@@ -125,7 +127,7 @@ namespace mantenimiento_proyecto
             {
                 respuesta = false;
             }
-            else 
+            else
             {
                 respuesta = true;
             }
@@ -173,7 +175,7 @@ namespace mantenimiento_proyecto
                     limpiar();
                 }
             }
-            
+
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -211,14 +213,22 @@ namespace mantenimiento_proyecto
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form formulario = new FormPersonal();
-            this.Close();   
+            this.Close();
             formulario.Show();
         }
 
-        public void reiniciar() {
+        public void reiniciar()
+        {
             Form formulario = new FormPersonal();
             this.Close();
             formulario.Show();
+        }
+
+        private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormProgramaAnual();
+            formulario.Show();
+            this.Hide();
         }
     }
 }

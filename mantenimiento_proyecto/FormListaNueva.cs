@@ -39,11 +39,11 @@ namespace mantenimiento_proyecto
 
             comboAreas.DataSource = AreaLogica.Instancia.Listar();
             comboAreas.DisplayMember = "nombre";
-           
+
             anio = int.Parse(numericAnio.Value.ToString());
             periodo = comboPeriodo.Text;
 
-           // MessageBox.Show(anio.ToString()+" y "+periodo);
+            // MessageBox.Show(anio.ToString()+" y "+periodo);
         }
 
 
@@ -61,7 +61,9 @@ namespace mantenimiento_proyecto
 
         private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new FormProgramaAnual();
+            formulario.Show();
+            this.Hide();
         }
 
         private void btnHallazgos_Click(object sender, EventArgs e)
@@ -94,10 +96,10 @@ namespace mantenimiento_proyecto
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombre";
             comboPeriodo.Text = "enero-junio";
-            
+
         }
 
-        private void revisarEspacios() 
+        private void revisarEspacios()
         {
             List<Espacio> espacios = new List<Espacio>();
             espacios = EspacioLogica.Instancia.Listar(idAreaSeleccionada);
@@ -107,7 +109,7 @@ namespace mantenimiento_proyecto
                 comboEspacios.Text = string.Empty;
                 comboEspacios.DataSource = null;
             }
-            else 
+            else
             {
                 comboEspacios.DataSource = espacios;
                 comboEspacios.DisplayMember = "nombre";
@@ -136,12 +138,12 @@ namespace mantenimiento_proyecto
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
-        { 
+        {
             SaveFileDialog guardar = new SaveFileDialog();
             idEspacioSeleccionado = EspacioLogica.Instancia.buscarEspacio(nombreEspacioSeleccionado);
             anio = int.Parse(numericAnio.Value.ToString());
-            periodo = comboPeriodo.Text;    
-            guardar.FileName = "listaVerificación_"+comboAreas.Text+"_"+periodo +"_"+anio+".pdf";
+            periodo = comboPeriodo.Text;
+            guardar.FileName = "listaVerificación_" + comboAreas.Text + "_" + periodo + "_" + anio + ".pdf";
             //guardar.ShowDialog();
 
             //generar html
@@ -161,7 +163,7 @@ namespace mantenimiento_proyecto
             //pasar idespacio e idarea
             anio = int.Parse(numericAnio.Value.ToString());
             periodo = comboPeriodo.Text;
-            collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado,idAreaSeleccionada, anio, periodo);
+            collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado, idAreaSeleccionada, anio, periodo);
 
             /* //agregar filas a la tabla 
             foreach (var fila in collection)
@@ -298,7 +300,7 @@ namespace mantenimiento_proyecto
         private void comboJefeArea_SelectedIndexChanged(object sender, EventArgs e)
         {
             nombreAreaSeleccionada = comboAreas.Text;
-   
+
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombres";
         }
@@ -306,6 +308,19 @@ namespace mantenimiento_proyecto
         private void comboJefeElabora_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormPersonal();
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void registrarDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormAreas();
+            formulario.Show();
         }
     }
 }
@@ -334,7 +349,7 @@ public class PageEventHelper2 : PdfPageEventHelper
         //no. de pagina 
         int pageN = writer.PageNumber;
         iTextSharp.text.Rectangle pageSize = listaPdf.PageSize;
-        textPag = "Página " + pageN.ToString()+ " de";
+        textPag = "Página " + pageN.ToString() + " de";
         cb.BeginText();
         cb.SetFontAndSize(bf, 9);
         //cb.SetRGBColorFill(50, 50, 200);
@@ -392,7 +407,7 @@ public class PageEventHelper2 : PdfPageEventHelper
         cb.SetTextMatrix(listaPdf.RightMargin + 450, 30);
         cb.ShowText(text2);
         cb.EndText();
-        
+
 
 
         //html 
@@ -416,7 +431,7 @@ public class PageEventHelper2 : PdfPageEventHelper
         template.ShowText(" " + (writer.PageNumber));
         template.EndText();
 
-      
+
 
     }
 

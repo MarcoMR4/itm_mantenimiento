@@ -24,8 +24,8 @@ namespace mantenimiento_proyecto
 
     public partial class FormProgramaAnual : Form
     {
-        public static string anioPlan,periodoPlan,nombreAreaElegida,elaboro,aprobo,fecha1,fecha2; 
-       
+        public static string anioPlan, periodoPlan, nombreAreaElegida, elaboro, aprobo, fecha1, fecha2;
+
         public FormProgramaAnual()
         {
             InitializeComponent();
@@ -94,7 +94,7 @@ namespace mantenimiento_proyecto
                     try
                     {
                         Document programaAnual = new Document(PageSize.LETTER.Rotate());
-    
+
                         PdfWriter writer = PdfWriter.GetInstance(programaAnual, new FileStream("output.pdf", FileMode.Create));
                         programaAnual.Open();
 
@@ -108,9 +108,9 @@ namespace mantenimiento_proyecto
                         HtmlPipelineContext htmlContext = new HtmlPipelineContext(null);
                         htmlContext.SetTagFactory(Tags.GetHtmlTagProcessorFactory());
                         StringReader s1 = new StringReader(html);
-                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, programaAnual,s1);
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, programaAnual, s1);
 
-                      
+
 
                         // Add the table to the document
                         programaAnual.Add(table);
@@ -156,14 +156,14 @@ namespace mantenimiento_proyecto
                 FormServicios formService = new FormServicios();
                 formService.Show();
             }
-            else 
+            else
             {
                 MessageBox.Show("Seleccione un periodo");
             }
         }
 
 
-        //                                                         Generar PDF 
+        //                                                         Generar formato PDF 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             try
@@ -172,7 +172,7 @@ namespace mantenimiento_proyecto
                 SaveFileDialog guardar = new SaveFileDialog();
                 periodoPlan = comboPeriodos.Text;
                 anioPlan = numericAnio.Value.ToString();
-                guardar.FileName = "programaAnualMantenimiento_"+periodoPlan+"_"+anioPlan+".pdf";
+                guardar.FileName = "programaAnualMantenimiento_" + periodoPlan + "_" + anioPlan + ".pdf";
 
                 elaboro = textElaboro.Text;
                 aprobo = textAprobo.Text;
@@ -183,33 +183,33 @@ namespace mantenimiento_proyecto
                 fecha2 = fechaAprobacion.Value.ToString("dd/MM/yyyy");
 
                 if (guardar.ShowDialog() == DialogResult.OK)
+                {
+                    try
                     {
-                        try
+                        using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
                         {
-                            using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
-                            {
-                                //Crear, abrir y preparar documento 
-                                Document programaAnual = new Document(PageSize.LETTER.Rotate());
-                                PdfWriter writer = PdfWriter.GetInstance(programaAnual, stream);
-                                PageEventHelper pageEventHelper = new PageEventHelper();
-                                writer.PageEvent = pageEventHelper;
-                                programaAnual.Open();
-                                 //cuerpo de la tabla 
-                                 var anioPlan = FormProgramaAnual.anioPlan;
-                                 var periodoPlan = FormProgramaAnual.periodoPlan;
-                                 var anioBuscar = int.Parse(anioPlan);
+                            //Crear, abrir y preparar documento 
+                            Document programaAnual = new Document(PageSize.LETTER.Rotate());
+                            PdfWriter writer = PdfWriter.GetInstance(programaAnual, stream);
+                            PageEventHelper pageEventHelper = new PageEventHelper();
+                            writer.PageEvent = pageEventHelper;
+                            programaAnual.Open();
+                            //cuerpo de la tabla 
+                            var anioPlan = FormProgramaAnual.anioPlan;
+                            var periodoPlan = FormProgramaAnual.periodoPlan;
+                            var anioBuscar = int.Parse(anioPlan);
 
                             //consultar datos guardados 
-                                 string filas = string.Empty;
-                                 List<Servicio> collection = new List<Servicio>();
-                                 if (periodoPlan == "enero-junio")
-                                 {
-                                        collection = ServicioLogica.Instancia.ListarTodos1(anioBuscar);
-                                 }
-                                    else
-                                 {
-                                     collection = ServicioLogica.Instancia.ListarTodos2(anioBuscar);
-                                 }
+                            string filas = string.Empty;
+                            List<Servicio> collection = new List<Servicio>();
+                            if (periodoPlan == "enero-junio")
+                            {
+                                collection = ServicioLogica.Instancia.ListarTodos1(anioBuscar);
+                            }
+                            else
+                            {
+                                collection = ServicioLogica.Instancia.ListarTodos2(anioBuscar);
+                            }
 
                             //llenar tabla 
                             //Crear tabla con ayuda de itextSharp 
@@ -219,7 +219,7 @@ namespace mantenimiento_proyecto
                             table.SetWidths(new float[] { 5, 30, 8, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7 }); // Establecer el ancho relativo de cada columna
 
                             // Agregar encabezado de tabla
-                            table.HeaderRows = 1;    
+                            table.HeaderRows = 1;
                             table.AddCell("No.");
                             table.AddCell("Servicio");
                             table.AddCell("Tipo");
@@ -406,16 +406,16 @@ namespace mantenimiento_proyecto
                             //programaAnual.Add(new Paragraph("This is a second page."));
 
                             //Cerrar documento 
-                                programaAnual.Close();
-                                stream.Close();
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al generar formato \n\n\n" + "Intente cerrar el archivo si está en uso");
-                            Console.WriteLine(ex.Message);
+                            programaAnual.Close();
+                            stream.Close();
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al generar formato \n\n\n" + "Intente cerrar el archivo si está en uso");
+                        Console.WriteLine(ex.Message);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -424,6 +424,25 @@ namespace mantenimiento_proyecto
             }
         }
 
+        private void listaDeVerificaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormListaNueva();
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormPersonal();
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void registrarDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormAreas();
+            formulario.Show();
+        }
     }
 }
 
@@ -436,7 +455,7 @@ public class PageEventHelper : PdfPageEventHelper
     public override void OnOpenDocument(PdfWriter myPDFWriter, Document document)
     {
         cb2 = myPDFWriter.DirectContent;
-        template2 = cb2.CreateTemplate(document.RightMargin +700, document.PageSize.Top);
+        template2 = cb2.CreateTemplate(document.RightMargin + 700, document.PageSize.Top);
         bf2 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
     }
 
@@ -496,7 +515,7 @@ public class PageEventHelper : PdfPageEventHelper
     {
         base.OnEndPage(myPDFWriter, listaPdf);
 
-      
+
 
         string text = "ITMORELIA-IT-AD-002-02";
         cb2.BeginText();
@@ -531,8 +550,8 @@ public class PageEventHelper : PdfPageEventHelper
         template2.BeginText();
         template2.SetFontAndSize(bf2, 11);
         template2.SetTextMatrix(document.RightMargin + 630, 0);
-        template2.ShowText(""+(writer.PageNumber));
-        template2.EndText(); 
+        template2.ShowText("" + (writer.PageNumber));
+        template2.EndText();
     }
 
 }

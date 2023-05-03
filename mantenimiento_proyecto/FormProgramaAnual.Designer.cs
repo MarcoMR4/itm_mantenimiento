@@ -28,345 +28,336 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelPeriodo = new System.Windows.Forms.Label();
-            this.comboPeriodos = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelServicio = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.planAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.numericAnio = new System.Windows.Forms.NumericUpDown();
-            this.fechaElaboracion = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.fechaAprobacion = new System.Windows.Forms.DateTimePicker();
-            this.comboAreas = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnCargarServicio = new System.Windows.Forms.Button();
-            this.btnGenerar = new System.Windows.Forms.Button();
-            this.btnG2 = new System.Windows.Forms.Button();
-            this.textElaboro = new System.Windows.Forms.TextBox();
-            this.textAprobo = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).BeginInit();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProgramaAnual));
+            labelPeriodo = new Label();
+            comboPeriodos = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
+            labelServicio = new Label();
+            menuStrip1 = new MenuStrip();
+            inicioToolStripMenuItem = new ToolStripMenuItem();
+            listaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
+            planAnualToolStripMenuItem = new ToolStripMenuItem();
+            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
+            numericAnio = new NumericUpDown();
+            fechaElaboracion = new DateTimePicker();
+            label1 = new Label();
+            label4 = new Label();
+            fechaAprobacion = new DateTimePicker();
+            comboAreas = new ComboBox();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            btnCargarServicio = new Button();
+            btnGenerar = new Button();
+            textElaboro = new TextBox();
+            textAprobo = new TextBox();
+            pictureBox1 = new PictureBox();
+            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericAnio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // labelPeriodo
             // 
-            this.labelPeriodo.AutoSize = true;
-            this.labelPeriodo.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPeriodo.Location = new System.Drawing.Point(538, 95);
-            this.labelPeriodo.Name = "labelPeriodo";
-            this.labelPeriodo.Size = new System.Drawing.Size(73, 25);
-            this.labelPeriodo.TabIndex = 2;
-            this.labelPeriodo.Text = "Periodo";
-            this.labelPeriodo.Click += new System.EventHandler(this.label1_Click);
+            labelPeriodo.AutoSize = true;
+            labelPeriodo.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelPeriodo.Location = new Point(538, 95);
+            labelPeriodo.Name = "labelPeriodo";
+            labelPeriodo.Size = new Size(73, 25);
+            labelPeriodo.TabIndex = 2;
+            labelPeriodo.Text = "Periodo";
+            labelPeriodo.Click += label1_Click;
             // 
             // comboPeriodos
             // 
-            this.comboPeriodos.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboPeriodos.DisplayMember = "enero-junio";
-            this.comboPeriodos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPeriodos.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboPeriodos.FormattingEnabled = true;
-            this.comboPeriodos.Items.AddRange(new object[] {
-            "enero-junio",
-            "agosto-diciembre"});
-            this.comboPeriodos.Location = new System.Drawing.Point(632, 95);
-            this.comboPeriodos.Name = "comboPeriodos";
-            this.comboPeriodos.Size = new System.Drawing.Size(177, 30);
-            this.comboPeriodos.TabIndex = 3;
-            this.comboPeriodos.Tag = "enero-junio";
-            this.comboPeriodos.ValueMember = "enero-junio";
-            this.comboPeriodos.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboPeriodos.AutoCompleteCustomSource.AddRange(new string[] { "ene-jun", "ago-dic" });
+            comboPeriodos.DisplayMember = "enero-junio";
+            comboPeriodos.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboPeriodos.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboPeriodos.FormattingEnabled = true;
+            comboPeriodos.Items.AddRange(new object[] { "enero-junio", "agosto-diciembre" });
+            comboPeriodos.Location = new Point(632, 95);
+            comboPeriodos.Name = "comboPeriodos";
+            comboPeriodos.Size = new Size(177, 30);
+            comboPeriodos.TabIndex = 3;
+            comboPeriodos.Tag = "enero-junio";
+            comboPeriodos.ValueMember = "enero-junio";
+            comboPeriodos.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(41, 40);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(421, 29);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Elaborar Programa anual de mantenimiento";
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial Narrow", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.Navy;
+            label2.Location = new Point(41, 40);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(421, 29);
+            label2.TabIndex = 5;
+            label2.Text = "Elaborar Programa anual de mantenimiento";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(851, 95);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 26);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Año";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(851, 95);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 26);
+            label3.TabIndex = 6;
+            label3.Text = "Año";
+            label3.Click += label3_Click;
             // 
             // labelServicio
             // 
-            this.labelServicio.AutoSize = true;
-            this.labelServicio.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelServicio.Location = new System.Drawing.Point(791, 354);
-            this.labelServicio.Name = "labelServicio";
-            this.labelServicio.Size = new System.Drawing.Size(89, 25);
-            this.labelServicio.TabIndex = 10;
-            this.labelServicio.Text = "Servicios:";
+            labelServicio.AutoSize = true;
+            labelServicio.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelServicio.Location = new Point(791, 354);
+            labelServicio.Name = "labelServicio";
+            labelServicio.Size = new Size(89, 25);
+            labelServicio.TabIndex = 10;
+            labelServicio.Text = "Servicios:";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.menuStrip1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
-            this.listaDeVerificaciónToolStripMenuItem,
-            this.planAnualToolStripMenuItem,
-            this.registrarPersonalToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1083, 31);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.BackColor = SystemColors.ControlLight;
+            menuStrip1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, registrarDepartamentoToolStripMenuItem, listaDeVerificaciónToolStripMenuItem, planAnualToolStripMenuItem, registrarPersonalToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(1083, 31);
+            menuStrip1.TabIndex = 18;
+            menuStrip1.Text = "menuStrip1";
             // 
             // inicioToolStripMenuItem
             // 
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(57, 27);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click_1);
+            inicioToolStripMenuItem.Image = (Image)resources.GetObject("inicioToolStripMenuItem.Image");
+            inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            inicioToolStripMenuItem.Size = new Size(77, 27);
+            inicioToolStripMenuItem.Text = "Inicio";
+            inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click_1;
             // 
             // listaDeVerificaciónToolStripMenuItem
             // 
-            this.listaDeVerificaciónToolStripMenuItem.Name = "listaDeVerificaciónToolStripMenuItem";
-            this.listaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(193, 27);
-            this.listaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
+            listaDeVerificaciónToolStripMenuItem.Image = (Image)resources.GetObject("listaDeVerificaciónToolStripMenuItem.Image");
+            listaDeVerificaciónToolStripMenuItem.Name = "listaDeVerificaciónToolStripMenuItem";
+            listaDeVerificaciónToolStripMenuItem.Size = new Size(213, 27);
+            listaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
+            listaDeVerificaciónToolStripMenuItem.Click += listaDeVerificaciónToolStripMenuItem_Click;
             // 
             // planAnualToolStripMenuItem
             // 
-            this.planAnualToolStripMenuItem.Name = "planAnualToolStripMenuItem";
-            this.planAnualToolStripMenuItem.Size = new System.Drawing.Size(178, 27);
-            this.planAnualToolStripMenuItem.Text = "Crear Programa Anual";
+            planAnualToolStripMenuItem.Image = (Image)resources.GetObject("planAnualToolStripMenuItem.Image");
+            planAnualToolStripMenuItem.Name = "planAnualToolStripMenuItem";
+            planAnualToolStripMenuItem.Size = new Size(198, 27);
+            planAnualToolStripMenuItem.Text = "Crear Programa Anual";
             // 
             // registrarPersonalToolStripMenuItem
             // 
-            this.registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
-            this.registrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(150, 27);
-            this.registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
+            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
+            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
+            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
             // 
             // numericAnio
             // 
-            this.numericAnio.Location = new System.Drawing.Point(908, 98);
-            this.numericAnio.Maximum = new decimal(new int[] {
-            2030,
-            0,
-            0,
-            0});
-            this.numericAnio.Minimum = new decimal(new int[] {
-            2010,
-            0,
-            0,
-            0});
-            this.numericAnio.Name = "numericAnio";
-            this.numericAnio.Size = new System.Drawing.Size(120, 23);
-            this.numericAnio.TabIndex = 19;
-            this.numericAnio.Value = new decimal(new int[] {
-            2023,
-            0,
-            0,
-            0});
-            this.numericAnio.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            numericAnio.Location = new Point(908, 98);
+            numericAnio.Maximum = new decimal(new int[] { 2030, 0, 0, 0 });
+            numericAnio.Minimum = new decimal(new int[] { 2010, 0, 0, 0 });
+            numericAnio.Name = "numericAnio";
+            numericAnio.Size = new Size(120, 23);
+            numericAnio.TabIndex = 19;
+            numericAnio.Value = new decimal(new int[] { 2023, 0, 0, 0 });
+            numericAnio.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // fechaElaboracion
             // 
-            this.fechaElaboracion.Location = new System.Drawing.Point(770, 171);
-            this.fechaElaboracion.Name = "fechaElaboracion";
-            this.fechaElaboracion.Size = new System.Drawing.Size(258, 23);
-            this.fechaElaboracion.TabIndex = 32;
+            fechaElaboracion.Location = new Point(770, 171);
+            fechaElaboracion.Name = "fechaElaboracion";
+            fechaElaboracion.Size = new Size(258, 23);
+            fechaElaboracion.TabIndex = 32;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(583, 173);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 23);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Fecha de elaboración:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(583, 173);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(167, 23);
+            label1.TabIndex = 33;
+            label1.Text = "Fecha de elaboración:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(583, 210);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 23);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Fecha de aprobación:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(583, 210);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(164, 23);
+            label4.TabIndex = 35;
+            label4.Text = "Fecha de aprobación:";
             // 
             // fechaAprobacion
             // 
-            this.fechaAprobacion.Location = new System.Drawing.Point(770, 208);
-            this.fechaAprobacion.Name = "fechaAprobacion";
-            this.fechaAprobacion.Size = new System.Drawing.Size(258, 23);
-            this.fechaAprobacion.TabIndex = 34;
+            fechaAprobacion.Location = new Point(770, 208);
+            fechaAprobacion.Name = "fechaAprobacion";
+            fechaAprobacion.Size = new Size(258, 23);
+            fechaAprobacion.TabIndex = 34;
             // 
             // comboAreas
             // 
-            this.comboAreas.AutoCompleteCustomSource.AddRange(new string[] {
-            "ene-jun",
-            "ago-dic"});
-            this.comboAreas.DisplayMember = "enero-junio";
-            this.comboAreas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAreas.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboAreas.FormattingEnabled = true;
-            this.comboAreas.Items.AddRange(new object[] {
-            "enero-junio",
-            "agosto-diciembre"});
-            this.comboAreas.Location = new System.Drawing.Point(720, 277);
-            this.comboAreas.Name = "comboAreas";
-            this.comboAreas.Size = new System.Drawing.Size(308, 30);
-            this.comboAreas.TabIndex = 37;
-            this.comboAreas.SelectedIndexChanged += new System.EventHandler(this.comboAreas_SelectedIndexChanged);
+            comboAreas.AutoCompleteCustomSource.AddRange(new string[] { "ene-jun", "ago-dic" });
+            comboAreas.DisplayMember = "enero-junio";
+            comboAreas.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboAreas.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboAreas.FormattingEnabled = true;
+            comboAreas.Items.AddRange(new object[] { "enero-junio", "agosto-diciembre" });
+            comboAreas.Location = new Point(720, 277);
+            comboAreas.Name = "comboAreas";
+            comboAreas.Size = new Size(308, 30);
+            comboAreas.TabIndex = 37;
+            comboAreas.SelectedIndexChanged += comboAreas_SelectedIndexChanged;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(606, 277);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 25);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Área a tratar:";
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(606, 277);
+            label8.Name = "label8";
+            label8.Size = new Size(116, 25);
+            label8.TabIndex = 36;
+            label8.Text = "Área a tratar:";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(62, 174);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 23);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Elaboró:";
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(62, 174);
+            label9.Name = "label9";
+            label9.Size = new Size(68, 23);
+            label9.TabIndex = 38;
+            label9.Text = "Elaboró:";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(62, 237);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 23);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Aprobó:";
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(62, 237);
+            label10.Name = "label10";
+            label10.Size = new Size(65, 23);
+            label10.TabIndex = 40;
+            label10.Text = "Aprobó:";
             // 
             // btnCargarServicio
             // 
-            this.btnCargarServicio.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCargarServicio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarServicio.Location = new System.Drawing.Point(900, 348);
-            this.btnCargarServicio.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCargarServicio.Name = "btnCargarServicio";
-            this.btnCargarServicio.Size = new System.Drawing.Size(128, 34);
-            this.btnCargarServicio.TabIndex = 18;
-            this.btnCargarServicio.Text = "Cargar servicio";
-            this.btnCargarServicio.UseVisualStyleBackColor = false;
-            this.btnCargarServicio.Click += new System.EventHandler(this.btnCargarServicio_Click);
+            btnCargarServicio.BackColor = SystemColors.ControlLight;
+            btnCargarServicio.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCargarServicio.Location = new Point(900, 348);
+            btnCargarServicio.Margin = new Padding(2);
+            btnCargarServicio.Name = "btnCargarServicio";
+            btnCargarServicio.Size = new Size(128, 34);
+            btnCargarServicio.TabIndex = 18;
+            btnCargarServicio.Text = "Cargar servicio";
+            btnCargarServicio.UseVisualStyleBackColor = false;
+            btnCargarServicio.Click += btnCargarServicio_Click;
             // 
             // btnGenerar
             // 
-            this.btnGenerar.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnGenerar.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGenerar.Location = new System.Drawing.Point(360, 450);
-            this.btnGenerar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(175, 35);
-            this.btnGenerar.TabIndex = 42;
-            this.btnGenerar.Text = "Generar documento";
-            this.btnGenerar.UseVisualStyleBackColor = false;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
-            // 
-            // btnG2
-            // 
-            this.btnG2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnG2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnG2.Location = new System.Drawing.Point(571, 450);
-            this.btnG2.Margin = new System.Windows.Forms.Padding(2);
-            this.btnG2.Name = "btnG2";
-            this.btnG2.Size = new System.Drawing.Size(175, 35);
-            this.btnG2.TabIndex = 43;
-            this.btnG2.Tag = "Generar";
-            this.btnG2.Text = "Generar2";
-            this.btnG2.UseVisualStyleBackColor = false;
-            this.btnG2.Click += new System.EventHandler(this.btnG2_Click);
+            btnGenerar.BackColor = SystemColors.ControlLight;
+            btnGenerar.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGenerar.ImageAlign = ContentAlignment.TopLeft;
+            btnGenerar.Location = new Point(538, 484);
+            btnGenerar.Margin = new Padding(2);
+            btnGenerar.Name = "btnGenerar";
+            btnGenerar.Size = new Size(144, 61);
+            btnGenerar.TabIndex = 42;
+            btnGenerar.Text = "Generar documento";
+            btnGenerar.UseVisualStyleBackColor = false;
+            btnGenerar.Click += btnGenerar_Click;
             // 
             // textElaboro
             // 
-            this.textElaboro.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.textElaboro.Location = new System.Drawing.Point(136, 174);
-            this.textElaboro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textElaboro.Name = "textElaboro";
-            this.textElaboro.PlaceholderText = "Nombre de jefe de dpto. de Mantenimiento";
-            this.textElaboro.Size = new System.Drawing.Size(370, 26);
-            this.textElaboro.TabIndex = 44;
+            textElaboro.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            textElaboro.Location = new Point(136, 174);
+            textElaboro.Margin = new Padding(3, 2, 3, 2);
+            textElaboro.Name = "textElaboro";
+            textElaboro.PlaceholderText = "Nombre de jefe de dpto. de Mantenimiento";
+            textElaboro.Size = new Size(370, 26);
+            textElaboro.TabIndex = 44;
             // 
             // textAprobo
             // 
-            this.textAprobo.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.textAprobo.Location = new System.Drawing.Point(136, 237);
-            this.textAprobo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textAprobo.Name = "textAprobo";
-            this.textAprobo.PlaceholderText = "Nombre de jefe de dpto. de Recursos";
-            this.textAprobo.Size = new System.Drawing.Size(370, 26);
-            this.textAprobo.TabIndex = 45;
+            textAprobo.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            textAprobo.Location = new Point(136, 237);
+            textAprobo.Margin = new Padding(3, 2, 3, 2);
+            textAprobo.Name = "textAprobo";
+            textAprobo.PlaceholderText = "Nombre de jefe de dpto. de Recursos";
+            textAprobo.Size = new Size(370, 26);
+            textAprobo.TabIndex = 45;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(253, 375);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 170);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 46;
+            pictureBox1.TabStop = false;
+            // 
+            // registrarDepartamentoToolStripMenuItem
+            // 
+            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
+            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
+            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
+            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
+            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
+            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
             // 
             // FormProgramaAnual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1083, 566);
-            this.Controls.Add(this.textAprobo);
-            this.Controls.Add(this.textElaboro);
-            this.Controls.Add(this.btnG2);
-            this.Controls.Add(this.btnGenerar);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboAreas);
-            this.Controls.Add(this.btnCargarServicio);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.fechaAprobacion);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.fechaElaboracion);
-            this.Controls.Add(this.numericAnio);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.labelServicio);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboPeriodos);
-            this.Controls.Add(this.labelPeriodo);
-            this.Name = "FormProgramaAnual";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Programa anual";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form3_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAnio)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(1083, 566);
+            Controls.Add(pictureBox1);
+            Controls.Add(textAprobo);
+            Controls.Add(textElaboro);
+            Controls.Add(btnGenerar);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(comboAreas);
+            Controls.Add(btnCargarServicio);
+            Controls.Add(label8);
+            Controls.Add(label4);
+            Controls.Add(fechaAprobacion);
+            Controls.Add(label1);
+            Controls.Add(fechaElaboracion);
+            Controls.Add(numericAnio);
+            Controls.Add(menuStrip1);
+            Controls.Add(labelServicio);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(comboPeriodos);
+            Controls.Add(labelPeriodo);
+            Name = "FormProgramaAnual";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Programa anual";
+            WindowState = FormWindowState.Maximized;
+            Load += Form3_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericAnio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -391,8 +382,9 @@
         private Label label10;
         private Button btnCargarServicio;
         private Button btnGenerar;
-        private Button btnG2;
         private TextBox textElaboro;
         private TextBox textAprobo;
+        private PictureBox pictureBox1;
+        private ToolStripMenuItem registrarDepartamentoToolStripMenuItem;
     }
 }

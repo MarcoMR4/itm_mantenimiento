@@ -28,272 +28,270 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearListaDeVerificaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.planAnualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridPersonal = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.comboArea = new System.Windows.Forms.ComboBox();
-            this.labelArea = new System.Windows.Forms.Label();
-            this.textNombre = new System.Windows.Forms.TextBox();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.btnAgregarPersonal = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnModificarPersonal = new System.Windows.Forms.Button();
-            this.btnEliminarPersonal = new System.Windows.Forms.Button();
-            this.textID = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPersonal)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonal));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            menuStrip1 = new MenuStrip();
+            inicioToolStripMenuItem = new ToolStripMenuItem();
+            listaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
+            crearListaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
+            planAnualToolStripMenuItem = new ToolStripMenuItem();
+            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
+            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
+            gridPersonal = new DataGridView();
+            groupBox1 = new GroupBox();
+            btnBorrar = new Button();
+            comboArea = new ComboBox();
+            labelArea = new Label();
+            textNombre = new TextBox();
+            labelNombre = new Label();
+            btnAgregarPersonal = new Button();
+            label2 = new Label();
+            btnModificarPersonal = new Button();
+            btnEliminarPersonal = new Button();
+            textID = new TextBox();
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridPersonal).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.menuStrip1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
-            this.listaDeVerificaciónToolStripMenuItem,
-            this.planAnualToolStripMenuItem,
-            this.registrarPersonalToolStripMenuItem,
-            this.registrarDepartamentoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(982, 31);
-            this.menuStrip1.TabIndex = 29;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.BackColor = SystemColors.ControlLight;
+            menuStrip1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, registrarDepartamentoToolStripMenuItem, registrarPersonalToolStripMenuItem, listaDeVerificaciónToolStripMenuItem, planAnualToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(982, 31);
+            menuStrip1.TabIndex = 29;
+            menuStrip1.Text = "menuStrip1";
             // 
             // inicioToolStripMenuItem
             // 
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(57, 27);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
+            inicioToolStripMenuItem.Image = (Image)resources.GetObject("inicioToolStripMenuItem.Image");
+            inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            inicioToolStripMenuItem.Size = new Size(77, 27);
+            inicioToolStripMenuItem.Text = "Inicio";
+            inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
             // 
             // listaDeVerificaciónToolStripMenuItem
             // 
-            this.listaDeVerificaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearListaDeVerificaciónToolStripMenuItem});
-            this.listaDeVerificaciónToolStripMenuItem.Name = "listaDeVerificaciónToolStripMenuItem";
-            this.listaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(193, 27);
-            this.listaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
-            this.listaDeVerificaciónToolStripMenuItem.Click += new System.EventHandler(this.listaDeVerificaciónToolStripMenuItem_Click);
+            listaDeVerificaciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearListaDeVerificaciónToolStripMenuItem });
+            listaDeVerificaciónToolStripMenuItem.Image = (Image)resources.GetObject("listaDeVerificaciónToolStripMenuItem.Image");
+            listaDeVerificaciónToolStripMenuItem.Name = "listaDeVerificaciónToolStripMenuItem";
+            listaDeVerificaciónToolStripMenuItem.Size = new Size(213, 27);
+            listaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
+            listaDeVerificaciónToolStripMenuItem.Click += listaDeVerificaciónToolStripMenuItem_Click;
             // 
             // crearListaDeVerificaciónToolStripMenuItem
             // 
-            this.crearListaDeVerificaciónToolStripMenuItem.Name = "crearListaDeVerificaciónToolStripMenuItem";
-            this.crearListaDeVerificaciónToolStripMenuItem.Size = new System.Drawing.Size(251, 28);
-            this.crearListaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
+            crearListaDeVerificaciónToolStripMenuItem.Name = "crearListaDeVerificaciónToolStripMenuItem";
+            crearListaDeVerificaciónToolStripMenuItem.Size = new Size(251, 28);
+            crearListaDeVerificaciónToolStripMenuItem.Text = "Crear lista de verificación";
             // 
             // planAnualToolStripMenuItem
             // 
-            this.planAnualToolStripMenuItem.Name = "planAnualToolStripMenuItem";
-            this.planAnualToolStripMenuItem.Size = new System.Drawing.Size(178, 27);
-            this.planAnualToolStripMenuItem.Text = "Crear Programa Anual";
+            planAnualToolStripMenuItem.Image = (Image)resources.GetObject("planAnualToolStripMenuItem.Image");
+            planAnualToolStripMenuItem.Name = "planAnualToolStripMenuItem";
+            planAnualToolStripMenuItem.Size = new Size(198, 27);
+            planAnualToolStripMenuItem.Text = "Crear Programa Anual";
+            planAnualToolStripMenuItem.Click += planAnualToolStripMenuItem_Click;
             // 
             // registrarPersonalToolStripMenuItem
             // 
-            this.registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
-            this.registrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(150, 27);
-            this.registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
-            this.registrarPersonalToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonalToolStripMenuItem_Click);
+            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
+            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
+            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
+            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
             // 
             // registrarDepartamentoToolStripMenuItem
             // 
-            this.registrarDepartamentoToolStripMenuItem.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
-            this.registrarDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(63, 27);
-            this.registrarDepartamentoToolStripMenuItem.Text = "Áreas";
-            this.registrarDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.registrarDepartamentoToolStripMenuItem_Click);
+            registrarDepartamentoToolStripMenuItem.BackColor = Color.PowderBlue;
+            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
+            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
+            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
+            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
+            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
             // 
             // gridPersonal
             // 
-            this.gridPersonal.AllowUserToDeleteRows = false;
-            this.gridPersonal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.gridPersonal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gridPersonal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPersonal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPersonal.Location = new System.Drawing.Point(82, 350);
-            this.gridPersonal.Margin = new System.Windows.Forms.Padding(2);
-            this.gridPersonal.Name = "gridPersonal";
-            this.gridPersonal.RowHeadersWidth = 51;
-            this.gridPersonal.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.gridPersonal.RowTemplate.Height = 31;
-            this.gridPersonal.Size = new System.Drawing.Size(876, 183);
-            this.gridPersonal.TabIndex = 30;
-            this.gridPersonal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPersonal_CellClick);
-            this.gridPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            gridPersonal.AllowUserToDeleteRows = false;
+            gridPersonal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            gridPersonal.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            gridPersonal.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            gridPersonal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            gridPersonal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridPersonal.Location = new Point(82, 350);
+            gridPersonal.Margin = new Padding(2);
+            gridPersonal.Name = "gridPersonal";
+            gridPersonal.RowHeadersWidth = 51;
+            gridPersonal.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            gridPersonal.RowTemplate.Height = 31;
+            gridPersonal.Size = new Size(876, 183);
+            gridPersonal.TabIndex = 30;
+            gridPersonal.CellClick += gridPersonal_CellClick;
+            gridPersonal.CellContentClick += dataGridView1_CellContentClick;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnBorrar);
-            this.groupBox1.Controls.Add(this.comboArea);
-            this.groupBox1.Controls.Add(this.labelArea);
-            this.groupBox1.Controls.Add(this.textNombre);
-            this.groupBox1.Controls.Add(this.labelNombre);
-            this.groupBox1.Controls.Add(this.btnAgregarPersonal);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(82, 40);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(822, 206);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            groupBox1.Controls.Add(btnBorrar);
+            groupBox1.Controls.Add(comboArea);
+            groupBox1.Controls.Add(labelArea);
+            groupBox1.Controls.Add(textNombre);
+            groupBox1.Controls.Add(labelNombre);
+            groupBox1.Controls.Add(btnAgregarPersonal);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Location = new Point(82, 40);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(822, 206);
+            groupBox1.TabIndex = 45;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnBorrar.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBorrar.Location = new System.Drawing.Point(461, 152);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(151, 35);
-            this.btnBorrar.TabIndex = 60;
-            this.btnBorrar.Text = "Limpiar campos";
-            this.btnBorrar.UseVisualStyleBackColor = false;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            btnBorrar.BackColor = Color.LightSteelBlue;
+            btnBorrar.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBorrar.Location = new Point(461, 152);
+            btnBorrar.Margin = new Padding(2);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(151, 35);
+            btnBorrar.TabIndex = 60;
+            btnBorrar.Text = "Limpiar campos";
+            btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // comboArea
             // 
-            this.comboArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboArea.FormattingEnabled = true;
-            this.comboArea.Location = new System.Drawing.Point(480, 80);
-            this.comboArea.Name = "comboArea";
-            this.comboArea.Size = new System.Drawing.Size(252, 23);
-            this.comboArea.TabIndex = 55;
-            this.comboArea.SelectedIndexChanged += new System.EventHandler(this.comboArea_SelectedIndexChanged);
+            comboArea.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboArea.FormattingEnabled = true;
+            comboArea.Location = new Point(480, 80);
+            comboArea.Name = "comboArea";
+            comboArea.Size = new Size(252, 23);
+            comboArea.TabIndex = 55;
+            comboArea.SelectedIndexChanged += comboArea_SelectedIndexChanged;
             // 
             // labelArea
             // 
-            this.labelArea.AutoSize = true;
-            this.labelArea.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelArea.Location = new System.Drawing.Point(420, 80);
-            this.labelArea.Name = "labelArea";
-            this.labelArea.Size = new System.Drawing.Size(54, 25);
-            this.labelArea.TabIndex = 54;
-            this.labelArea.Text = "Área:";
+            labelArea.AutoSize = true;
+            labelArea.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelArea.Location = new Point(420, 80);
+            labelArea.Name = "labelArea";
+            labelArea.Size = new Size(54, 25);
+            labelArea.TabIndex = 54;
+            labelArea.Text = "Área:";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(167, 80);
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(218, 23);
-            this.textNombre.TabIndex = 49;
+            textNombre.Location = new Point(167, 80);
+            textNombre.Name = "textNombre";
+            textNombre.Size = new Size(218, 23);
+            textNombre.TabIndex = 49;
             // 
             // labelNombre
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNombre.Location = new System.Drawing.Point(62, 80);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(79, 25);
-            this.labelNombre.TabIndex = 48;
-            this.labelNombre.Text = "Nombre:";
+            labelNombre.AutoSize = true;
+            labelNombre.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelNombre.Location = new Point(62, 80);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Size = new Size(79, 25);
+            labelNombre.TabIndex = 48;
+            labelNombre.Text = "Nombre:";
             // 
             // btnAgregarPersonal
             // 
-            this.btnAgregarPersonal.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnAgregarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(661, 152);
-            this.btnAgregarPersonal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregarPersonal.Name = "btnAgregarPersonal";
-            this.btnAgregarPersonal.Size = new System.Drawing.Size(97, 35);
-            this.btnAgregarPersonal.TabIndex = 46;
-            this.btnAgregarPersonal.Text = "Agregar ";
-            this.btnAgregarPersonal.UseVisualStyleBackColor = false;
-            this.btnAgregarPersonal.Click += new System.EventHandler(this.btnAgregarPersonal_Click);
+            btnAgregarPersonal.BackColor = Color.MediumAquamarine;
+            btnAgregarPersonal.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregarPersonal.Location = new Point(661, 152);
+            btnAgregarPersonal.Margin = new Padding(2);
+            btnAgregarPersonal.Name = "btnAgregarPersonal";
+            btnAgregarPersonal.Size = new Size(97, 35);
+            btnAgregarPersonal.TabIndex = 46;
+            btnAgregarPersonal.Text = "Agregar ";
+            btnAgregarPersonal.UseVisualStyleBackColor = false;
+            btnAgregarPersonal.Click += btnAgregarPersonal_Click;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(534, 15);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 29);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Personal registrado";
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial Narrow", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.Navy;
+            label2.Location = new Point(534, 15);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(198, 29);
+            label2.TabIndex = 45;
+            label2.Text = "Personal registrado";
             // 
             // btnModificarPersonal
             // 
-            this.btnModificarPersonal.BackColor = System.Drawing.Color.Khaki;
-            this.btnModificarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnModificarPersonal.Location = new System.Drawing.Point(693, 303);
-            this.btnModificarPersonal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificarPersonal.Name = "btnModificarPersonal";
-            this.btnModificarPersonal.Size = new System.Drawing.Size(97, 35);
-            this.btnModificarPersonal.TabIndex = 60;
-            this.btnModificarPersonal.Text = "Modificar";
-            this.btnModificarPersonal.UseVisualStyleBackColor = false;
-            this.btnModificarPersonal.Click += new System.EventHandler(this.btnModificarPersonal_Click);
+            btnModificarPersonal.BackColor = Color.Khaki;
+            btnModificarPersonal.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificarPersonal.Location = new Point(693, 303);
+            btnModificarPersonal.Margin = new Padding(2);
+            btnModificarPersonal.Name = "btnModificarPersonal";
+            btnModificarPersonal.Size = new Size(97, 35);
+            btnModificarPersonal.TabIndex = 60;
+            btnModificarPersonal.Text = "Modificar";
+            btnModificarPersonal.UseVisualStyleBackColor = false;
+            btnModificarPersonal.Click += btnModificarPersonal_Click;
             // 
             // btnEliminarPersonal
             // 
-            this.btnEliminarPersonal.BackColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarPersonal.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminarPersonal.Location = new System.Drawing.Point(806, 303);
-            this.btnEliminarPersonal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarPersonal.Name = "btnEliminarPersonal";
-            this.btnEliminarPersonal.Size = new System.Drawing.Size(97, 35);
-            this.btnEliminarPersonal.TabIndex = 59;
-            this.btnEliminarPersonal.Text = "Eliminar ";
-            this.btnEliminarPersonal.UseVisualStyleBackColor = false;
-            this.btnEliminarPersonal.Click += new System.EventHandler(this.btnEliminarPersonal_Click);
+            btnEliminarPersonal.BackColor = Color.LightCoral;
+            btnEliminarPersonal.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminarPersonal.Location = new Point(806, 303);
+            btnEliminarPersonal.Margin = new Padding(2);
+            btnEliminarPersonal.Name = "btnEliminarPersonal";
+            btnEliminarPersonal.Size = new Size(97, 35);
+            btnEliminarPersonal.TabIndex = 59;
+            btnEliminarPersonal.Text = "Eliminar ";
+            btnEliminarPersonal.UseVisualStyleBackColor = false;
+            btnEliminarPersonal.Click += btnEliminarPersonal_Click;
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(441, 303);
-            this.textID.Name = "textID";
-            this.textID.ReadOnly = true;
-            this.textID.Size = new System.Drawing.Size(214, 23);
-            this.textID.TabIndex = 61;
+            textID.Location = new Point(441, 303);
+            textID.Name = "textID";
+            textID.ReadOnly = true;
+            textID.Size = new Size(214, 23);
+            textID.TabIndex = 61;
             // 
             // FormPersonal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(982, 543);
-            this.Controls.Add(this.textID);
-            this.Controls.Add(this.btnModificarPersonal);
-            this.Controls.Add(this.btnEliminarPersonal);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.gridPersonal);
-            this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FormPersonal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar personal ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormPersonal_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPersonal)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(982, 543);
+            Controls.Add(textID);
+            Controls.Add(btnModificarPersonal);
+            Controls.Add(btnEliminarPersonal);
+            Controls.Add(groupBox1);
+            Controls.Add(gridPersonal);
+            Controls.Add(menuStrip1);
+            Margin = new Padding(2);
+            Name = "FormPersonal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Agregar personal ";
+            WindowState = FormWindowState.Maximized;
+            Load += FormPersonal_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gridPersonal).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -41,6 +41,18 @@
           "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
         }
       },
+      "FontAwesome.Sharp/6.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "iTextSharp/5.5.13.3": {
         "type": "package",
         "dependencies": {
@@ -535,6 +547,21 @@
         "tools/netcoreapp3.0/any/ef6.dll",
         "tools/netcoreapp3.0/any/ef6.pdb",
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "FontAwesome.Sharp/6.3.0": {
+      "sha512": "3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.3.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
       ]
     },
     "iTextSharp/5.5.13.3": {
@@ -1390,6 +1417,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "FontAwesome.Sharp >= 6.3.0",
       "System.Data.SQLite >= 1.0.117",
       "System.Text.Encoding.CodePages >= 7.0.0",
       "iTextSharp >= 5.5.13.3",
@@ -1397,23 +1425,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\darks\\.nuget\\packages\\": {},
+    "C:\\Users\\Mark1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darks\\OneDrive\\Documentos\\SERVICIO_SOCIAL\\Servicio_proyecto\\itm_mantenimiento\\mantenimiento_proyecto\\mantenimiento_proyecto.csproj",
+      "projectUniqueName": "C:\\Users\\Mark1\\OneDrive\\Documentos\\SERVICIO_SOCIAL\\Servicio_proyecto\\itm_mantenimiento\\mantenimiento_proyecto\\mantenimiento_proyecto.csproj",
       "projectName": "mantenimiento_proyecto",
-      "projectPath": "C:\\Users\\darks\\OneDrive\\Documentos\\SERVICIO_SOCIAL\\Servicio_proyecto\\itm_mantenimiento\\mantenimiento_proyecto\\mantenimiento_proyecto.csproj",
-      "packagesPath": "C:\\Users\\darks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darks\\OneDrive\\Documentos\\SERVICIO_SOCIAL\\Servicio_proyecto\\itm_mantenimiento\\mantenimiento_proyecto\\obj\\",
+      "projectPath": "C:\\Users\\Mark1\\OneDrive\\Documentos\\SERVICIO_SOCIAL\\Servicio_proyecto\\itm_mantenimiento\\mantenimiento_proyecto\\mantenimiento_proyecto.csproj",
+      "packagesPath": "C:\\Users\\Mark1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mark1\\OneDrive\\Documentos\\SERVICIO_SOCIAL\\Servicio_proyecto\\itm_mantenimiento\\mantenimiento_proyecto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\darks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mark1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1422,7 +1450,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1441,6 +1468,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.3.0, )"
+          },
           "System.Data.SQLite": {
             "target": "Package",
             "version": "[1.0.117, )"
@@ -1477,7 +1508,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },
