@@ -28,238 +28,238 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textEspacio = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textIdE = new System.Windows.Forms.TextBox();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnAgregarHallazgo = new System.Windows.Forms.Button();
-            this.btnModificarHallazgo = new System.Windows.Forms.Button();
-            this.btnEliminarHallazgo = new System.Windows.Forms.Button();
-            this.textNombreHallazgo = new System.Windows.Forms.TextBox();
-            this.textNombre = new System.Windows.Forms.Label();
-            this.gridHallazgos = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboAtendido = new System.Windows.Forms.ComboBox();
-            this.labelPeriodo = new System.Windows.Forms.Label();
-            this.labelAnio = new System.Windows.Forms.Label();
-            this.textPeriodo = new System.Windows.Forms.TextBox();
-            this.textAnio = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gridHallazgos)).BeginInit();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHallazgos));
+            textEspacio = new Label();
+            label1 = new Label();
+            textIdE = new TextBox();
+            btnBorrar = new Button();
+            btnAgregarHallazgo = new Button();
+            btnModificarHallazgo = new Button();
+            btnEliminarHallazgo = new Button();
+            textNombreHallazgo = new TextBox();
+            textNombre = new Label();
+            gridHallazgos = new DataGridView();
+            label2 = new Label();
+            comboAtendido = new ComboBox();
+            labelPeriodo = new Label();
+            labelAnio = new Label();
+            textPeriodo = new TextBox();
+            textAnio = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)gridHallazgos).BeginInit();
+            SuspendLayout();
             // 
             // textEspacio
             // 
-            this.textEspacio.AutoSize = true;
-            this.textEspacio.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.textEspacio.ForeColor = System.Drawing.Color.Navy;
-            this.textEspacio.Location = new System.Drawing.Point(309, 22);
-            this.textEspacio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.textEspacio.Name = "textEspacio";
-            this.textEspacio.Size = new System.Drawing.Size(100, 29);
-            this.textEspacio.TabIndex = 8;
-            this.textEspacio.Text = "(nombre)";
+            textEspacio.AutoSize = true;
+            textEspacio.Font = new Font("Arial Narrow", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            textEspacio.ForeColor = Color.Navy;
+            textEspacio.Location = new Point(309, 22);
+            textEspacio.Margin = new Padding(2, 0, 2, 0);
+            textEspacio.Name = "textEspacio";
+            textEspacio.Size = new Size(100, 29);
+            textEspacio.TabIndex = 8;
+            textEspacio.Text = "(nombre)";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(29, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 29);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Hallazgos del espacio:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Narrow", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(29, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(222, 29);
+            label1.TabIndex = 7;
+            label1.Text = "Hallazgos del espacio:";
             // 
             // textIdE
             // 
-            this.textIdE.Location = new System.Drawing.Point(487, 190);
-            this.textIdE.Name = "textIdE";
-            this.textIdE.ReadOnly = true;
-            this.textIdE.Size = new System.Drawing.Size(100, 23);
-            this.textIdE.TabIndex = 73;
+            textIdE.Location = new Point(487, 190);
+            textIdE.Name = "textIdE";
+            textIdE.ReadOnly = true;
+            textIdE.Size = new Size(100, 23);
+            textIdE.TabIndex = 73;
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnBorrar.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBorrar.Location = new System.Drawing.Point(644, 163);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(169, 35);
-            this.btnBorrar.TabIndex = 71;
-            this.btnBorrar.Text = "Limpiar campos";
-            this.btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.BackColor = Color.LightSteelBlue;
+            btnBorrar.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBorrar.Location = new Point(644, 163);
+            btnBorrar.Margin = new Padding(2);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(169, 35);
+            btnBorrar.TabIndex = 71;
+            btnBorrar.Text = "Limpiar campos";
+            btnBorrar.UseVisualStyleBackColor = false;
             // 
             // btnAgregarHallazgo
             // 
-            this.btnAgregarHallazgo.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnAgregarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarHallazgo.Location = new System.Drawing.Point(716, 125);
-            this.btnAgregarHallazgo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregarHallazgo.Name = "btnAgregarHallazgo";
-            this.btnAgregarHallazgo.Size = new System.Drawing.Size(97, 35);
-            this.btnAgregarHallazgo.TabIndex = 69;
-            this.btnAgregarHallazgo.Text = "Agregar ";
-            this.btnAgregarHallazgo.UseVisualStyleBackColor = false;
-            this.btnAgregarHallazgo.Click += new System.EventHandler(this.btnAgregarHallazgo_Click);
+            btnAgregarHallazgo.BackColor = Color.MediumAquamarine;
+            btnAgregarHallazgo.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregarHallazgo.Location = new Point(716, 125);
+            btnAgregarHallazgo.Margin = new Padding(2);
+            btnAgregarHallazgo.Name = "btnAgregarHallazgo";
+            btnAgregarHallazgo.Size = new Size(97, 35);
+            btnAgregarHallazgo.TabIndex = 69;
+            btnAgregarHallazgo.Text = "Agregar ";
+            btnAgregarHallazgo.UseVisualStyleBackColor = false;
+            btnAgregarHallazgo.Click += btnAgregarHallazgo_Click;
             // 
             // btnModificarHallazgo
             // 
-            this.btnModificarHallazgo.BackColor = System.Drawing.Color.Khaki;
-            this.btnModificarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnModificarHallazgo.Location = new System.Drawing.Point(615, 227);
-            this.btnModificarHallazgo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificarHallazgo.Name = "btnModificarHallazgo";
-            this.btnModificarHallazgo.Size = new System.Drawing.Size(97, 35);
-            this.btnModificarHallazgo.TabIndex = 72;
-            this.btnModificarHallazgo.Text = "Modificar";
-            this.btnModificarHallazgo.UseVisualStyleBackColor = false;
-            this.btnModificarHallazgo.Click += new System.EventHandler(this.btnModificarHallazgo_Click);
+            btnModificarHallazgo.BackColor = Color.Khaki;
+            btnModificarHallazgo.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificarHallazgo.Location = new Point(615, 227);
+            btnModificarHallazgo.Margin = new Padding(2);
+            btnModificarHallazgo.Name = "btnModificarHallazgo";
+            btnModificarHallazgo.Size = new Size(97, 35);
+            btnModificarHallazgo.TabIndex = 72;
+            btnModificarHallazgo.Text = "Modificar";
+            btnModificarHallazgo.UseVisualStyleBackColor = false;
+            btnModificarHallazgo.Click += btnModificarHallazgo_Click;
             // 
             // btnEliminarHallazgo
             // 
-            this.btnEliminarHallazgo.BackColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarHallazgo.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminarHallazgo.Location = new System.Drawing.Point(716, 227);
-            this.btnEliminarHallazgo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarHallazgo.Name = "btnEliminarHallazgo";
-            this.btnEliminarHallazgo.Size = new System.Drawing.Size(97, 35);
-            this.btnEliminarHallazgo.TabIndex = 70;
-            this.btnEliminarHallazgo.Text = "Eliminar ";
-            this.btnEliminarHallazgo.UseVisualStyleBackColor = false;
-            this.btnEliminarHallazgo.Click += new System.EventHandler(this.btnEliminarHallazgo_Click);
+            btnEliminarHallazgo.BackColor = Color.LightCoral;
+            btnEliminarHallazgo.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminarHallazgo.Location = new Point(716, 227);
+            btnEliminarHallazgo.Margin = new Padding(2);
+            btnEliminarHallazgo.Name = "btnEliminarHallazgo";
+            btnEliminarHallazgo.Size = new Size(97, 35);
+            btnEliminarHallazgo.TabIndex = 70;
+            btnEliminarHallazgo.Text = "Eliminar ";
+            btnEliminarHallazgo.UseVisualStyleBackColor = false;
+            btnEliminarHallazgo.Click += btnEliminarHallazgo_Click;
             // 
             // textNombreHallazgo
             // 
-            this.textNombreHallazgo.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textNombreHallazgo.Location = new System.Drawing.Point(267, 131);
-            this.textNombreHallazgo.Name = "textNombreHallazgo";
-            this.textNombreHallazgo.Size = new System.Drawing.Size(331, 29);
-            this.textNombreHallazgo.TabIndex = 68;
+            textNombreHallazgo.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textNombreHallazgo.Location = new Point(267, 131);
+            textNombreHallazgo.Name = "textNombreHallazgo";
+            textNombreHallazgo.Size = new Size(331, 29);
+            textNombreHallazgo.TabIndex = 68;
             // 
             // textNombre
             // 
-            this.textNombre.AutoSize = true;
-            this.textNombre.Font = new System.Drawing.Font("Arial Narrow", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.textNombre.ForeColor = System.Drawing.Color.Black;
-            this.textNombre.Location = new System.Drawing.Point(28, 130);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(223, 25);
-            this.textNombre.TabIndex = 67;
-            this.textNombre.Text = "Descripción de hallazgo:";
+            textNombre.AutoSize = true;
+            textNombre.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            textNombre.ForeColor = Color.Black;
+            textNombre.Location = new Point(28, 130);
+            textNombre.Margin = new Padding(2, 0, 2, 0);
+            textNombre.Name = "textNombre";
+            textNombre.Size = new Size(223, 25);
+            textNombre.TabIndex = 67;
+            textNombre.Text = "Descripción de hallazgo:";
             // 
             // gridHallazgos
             // 
-            this.gridHallazgos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridHallazgos.Location = new System.Drawing.Point(68, 267);
-            this.gridHallazgos.Name = "gridHallazgos";
-            this.gridHallazgos.ReadOnly = true;
-            this.gridHallazgos.RowHeadersWidth = 51;
-            this.gridHallazgos.RowTemplate.Height = 27;
-            this.gridHallazgos.Size = new System.Drawing.Size(745, 211);
-            this.gridHallazgos.TabIndex = 66;
-            this.gridHallazgos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHallazgos_CellClick);
-            this.gridHallazgos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHallazgos_CellContentDoubleClick);
+            gridHallazgos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridHallazgos.Location = new Point(68, 267);
+            gridHallazgos.Name = "gridHallazgos";
+            gridHallazgos.ReadOnly = true;
+            gridHallazgos.RowHeadersWidth = 51;
+            gridHallazgos.RowTemplate.Height = 27;
+            gridHallazgos.Size = new Size(745, 211);
+            gridHallazgos.TabIndex = 66;
+            gridHallazgos.CellClick += gridHallazgos_CellClick;
+            gridHallazgos.CellContentDoubleClick += gridHallazgos_CellContentDoubleClick;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(68, 190);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "Atendido:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(68, 190);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 25);
+            label2.TabIndex = 74;
+            label2.Text = "Atendido:";
             // 
             // comboAtendido
             // 
-            this.comboAtendido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAtendido.FormattingEnabled = true;
-            this.comboAtendido.Items.AddRange(new object[] {
-            "No",
-            "Si"});
-            this.comboAtendido.Location = new System.Drawing.Point(193, 192);
-            this.comboAtendido.Margin = new System.Windows.Forms.Padding(2);
-            this.comboAtendido.Name = "comboAtendido";
-            this.comboAtendido.Size = new System.Drawing.Size(118, 23);
-            this.comboAtendido.TabIndex = 75;
+            comboAtendido.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboAtendido.FormattingEnabled = true;
+            comboAtendido.Items.AddRange(new object[] { "No", "Si" });
+            comboAtendido.Location = new Point(193, 192);
+            comboAtendido.Margin = new Padding(2);
+            comboAtendido.Name = "comboAtendido";
+            comboAtendido.Size = new Size(118, 23);
+            comboAtendido.TabIndex = 75;
             // 
             // labelPeriodo
             // 
-            this.labelPeriodo.AutoSize = true;
-            this.labelPeriodo.Font = new System.Drawing.Font("Arial Narrow", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.labelPeriodo.ForeColor = System.Drawing.Color.Black;
-            this.labelPeriodo.Location = new System.Drawing.Point(411, 73);
-            this.labelPeriodo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPeriodo.Name = "labelPeriodo";
-            this.labelPeriodo.Size = new System.Drawing.Size(74, 23);
-            this.labelPeriodo.TabIndex = 76;
-            this.labelPeriodo.Text = "Periodo:";
+            labelPeriodo.AutoSize = true;
+            labelPeriodo.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelPeriodo.ForeColor = Color.Black;
+            labelPeriodo.Location = new Point(411, 73);
+            labelPeriodo.Margin = new Padding(2, 0, 2, 0);
+            labelPeriodo.Name = "labelPeriodo";
+            labelPeriodo.Size = new Size(74, 23);
+            labelPeriodo.TabIndex = 76;
+            labelPeriodo.Text = "Periodo:";
             // 
             // labelAnio
             // 
-            this.labelAnio.AutoSize = true;
-            this.labelAnio.Font = new System.Drawing.Font("Arial Narrow", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.labelAnio.ForeColor = System.Drawing.Color.Black;
-            this.labelAnio.Location = new System.Drawing.Point(657, 73);
-            this.labelAnio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelAnio.Name = "labelAnio";
-            this.labelAnio.Size = new System.Drawing.Size(46, 23);
-            this.labelAnio.TabIndex = 77;
-            this.labelAnio.Text = "Año:";
-            this.labelAnio.Click += new System.EventHandler(this.label4_Click);
+            labelAnio.AutoSize = true;
+            labelAnio.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelAnio.ForeColor = Color.Black;
+            labelAnio.Location = new Point(657, 73);
+            labelAnio.Margin = new Padding(2, 0, 2, 0);
+            labelAnio.Name = "labelAnio";
+            labelAnio.Size = new Size(46, 23);
+            labelAnio.TabIndex = 77;
+            labelAnio.Text = "Año:";
+            labelAnio.Click += label4_Click;
             // 
             // textPeriodo
             // 
-            this.textPeriodo.Enabled = false;
-            this.textPeriodo.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textPeriodo.Location = new System.Drawing.Point(500, 73);
-            this.textPeriodo.Name = "textPeriodo";
-            this.textPeriodo.Size = new System.Drawing.Size(152, 29);
-            this.textPeriodo.TabIndex = 78;
+            textPeriodo.Enabled = false;
+            textPeriodo.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textPeriodo.Location = new Point(500, 73);
+            textPeriodo.Name = "textPeriodo";
+            textPeriodo.Size = new Size(152, 29);
+            textPeriodo.TabIndex = 78;
             // 
             // textAnio
             // 
-            this.textAnio.Enabled = false;
-            this.textAnio.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textAnio.Location = new System.Drawing.Point(708, 73);
-            this.textAnio.Name = "textAnio";
-            this.textAnio.Size = new System.Drawing.Size(129, 29);
-            this.textAnio.TabIndex = 79;
+            textAnio.Enabled = false;
+            textAnio.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textAnio.Location = new Point(708, 73);
+            textAnio.Name = "textAnio";
+            textAnio.Size = new Size(129, 29);
+            textAnio.TabIndex = 79;
             // 
             // FormHallazgos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(872, 517);
-            this.Controls.Add(this.textAnio);
-            this.Controls.Add(this.textPeriodo);
-            this.Controls.Add(this.labelAnio);
-            this.Controls.Add(this.labelPeriodo);
-            this.Controls.Add(this.comboAtendido);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textIdE);
-            this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.btnAgregarHallazgo);
-            this.Controls.Add(this.btnModificarHallazgo);
-            this.Controls.Add(this.btnEliminarHallazgo);
-            this.Controls.Add(this.textNombreHallazgo);
-            this.Controls.Add(this.textNombre);
-            this.Controls.Add(this.gridHallazgos);
-            this.Controls.Add(this.textEspacio);
-            this.Controls.Add(this.label1);
-            this.Name = "FormHallazgos";
-            this.Text = "FormHallazgos";
-            this.Load += new System.EventHandler(this.FormHallazgos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridHallazgos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(872, 517);
+            Controls.Add(textAnio);
+            Controls.Add(textPeriodo);
+            Controls.Add(labelAnio);
+            Controls.Add(labelPeriodo);
+            Controls.Add(comboAtendido);
+            Controls.Add(label2);
+            Controls.Add(textIdE);
+            Controls.Add(btnBorrar);
+            Controls.Add(btnAgregarHallazgo);
+            Controls.Add(btnModificarHallazgo);
+            Controls.Add(btnEliminarHallazgo);
+            Controls.Add(textNombreHallazgo);
+            Controls.Add(textNombre);
+            Controls.Add(gridHallazgos);
+            Controls.Add(textEspacio);
+            Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FormHallazgos";
+            Text = "FormHallazgos";
+            FormClosed += FormHallazgos_FormClosed;
+            Load += FormHallazgos_Load;
+            ((System.ComponentModel.ISupportInitialize)gridHallazgos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

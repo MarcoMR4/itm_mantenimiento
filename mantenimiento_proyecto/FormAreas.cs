@@ -39,11 +39,11 @@ namespace mantenimiento_proyecto
                     mostrarAreas();
                     limpiar();
                 }
-                
+
 
             }
 
-         
+
         }
 
         //Cargar las areas guardadas en la base de datos 
@@ -56,20 +56,27 @@ namespace mantenimiento_proyecto
         public bool validarDatos()
         {
             string nombre = textArea.Text;
+            string id = textId.Text;
             bool respuesta;
             if (string.IsNullOrEmpty(nombre))
             {
                 respuesta = false;
+                MessageBox.Show("Ingrese un nombre para el area");
+            }
+            else if (string.IsNullOrEmpty(id))
+            {
+                respuesta = true;
             }
             else
             {
-                respuesta = true;
+                respuesta = false;
+                MessageBox.Show("Seleccione el boton limpiar y escriba un nombre de area, luego presione guardar");
             }
             return respuesta;
         }
 
         public void limpiar()
-        { 
+        {
             textArea.Text = string.Empty;
         }
 
@@ -84,35 +91,49 @@ namespace mantenimiento_proyecto
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Area area1 = new Area()
+            try
             {
-                idArea = int.Parse(textId.Text),
-                nombre = textArea.Text
-            };
+                Area area1 = new Area()
+                {
+                    idArea = int.Parse(textId.Text),
+                    nombre = textArea.Text
+                };
 
-            bool respuesta = AreaLogica.Instancia.Editar(area1);
+                bool respuesta = AreaLogica.Instancia.Editar(area1);
 
-            if (respuesta)
-            {
-                mostrarAreas();
-                limpiar();
+                if (respuesta)
+                {
+                    mostrarAreas();
+                    limpiar();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar un area en la tabla");
+            }
+
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Area area1 = new Area()
+            try
             {
-                idArea = int.Parse(textId.Text),
-            };
-            bool respuesta = AreaLogica.Instancia.Eliminar(area1);
-            if (respuesta)
-            {
-                mostrarAreas();
-                limpiar();
+                Area area1 = new Area()
+                {
+                    idArea = int.Parse(textId.Text),
+                };
+                bool respuesta = AreaLogica.Instancia.Eliminar(area1);
+                if (respuesta)
+                {
+                    mostrarAreas();
+                    limpiar();
+                }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar un area en la tabla");
+            }
         }
 
         private void FormAreas_Load(object sender, EventArgs e)
@@ -130,7 +151,7 @@ namespace mantenimiento_proyecto
         private void gridAreas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             validarCelda(sender, e);
-            
+
         }
 
         private void validarCelda(object sender, DataGridViewCellEventArgs e)
@@ -142,10 +163,10 @@ namespace mantenimiento_proyecto
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error, debe seleccionar una fila válida \n\n\n"+ex.Message);
+                MessageBox.Show("Error, debe seleccionar una fila válida \n\n\n" + ex.Message);
                 this.Close();
             }
-            
+
 
         }
 
@@ -153,6 +174,17 @@ namespace mantenimiento_proyecto
         {
             Form formulario = new FormPersonal();
             formulario.Refresh();
+        }
+
+        private void labelArea_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            textId.Text = null;
+            textArea.Text = null;
         }
     }
 }

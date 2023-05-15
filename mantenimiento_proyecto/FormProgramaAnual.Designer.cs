@@ -36,9 +36,10 @@
             labelServicio = new Label();
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
+            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
+            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
             listaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
             planAnualToolStripMenuItem = new ToolStripMenuItem();
-            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
             numericAnio = new NumericUpDown();
             fechaElaboracion = new DateTimePicker();
             label1 = new Label();
@@ -53,7 +54,6 @@
             textElaboro = new TextBox();
             textAprobo = new TextBox();
             pictureBox1 = new PictureBox();
-            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericAnio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -125,7 +125,7 @@
             menuStrip1.BackColor = SystemColors.ControlLight;
             menuStrip1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, registrarDepartamentoToolStripMenuItem, listaDeVerificaciónToolStripMenuItem, planAnualToolStripMenuItem, registrarPersonalToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, registrarDepartamentoToolStripMenuItem, registrarPersonalToolStripMenuItem, listaDeVerificaciónToolStripMenuItem, planAnualToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
@@ -141,6 +141,23 @@
             inicioToolStripMenuItem.Text = "Inicio";
             inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click_1;
             // 
+            // registrarDepartamentoToolStripMenuItem
+            // 
+            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
+            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
+            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
+            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
+            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
+            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
+            // 
+            // registrarPersonalToolStripMenuItem
+            // 
+            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
+            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
+            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
+            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
+            // 
             // listaDeVerificaciónToolStripMenuItem
             // 
             listaDeVerificaciónToolStripMenuItem.Image = (Image)resources.GetObject("listaDeVerificaciónToolStripMenuItem.Image");
@@ -155,14 +172,7 @@
             planAnualToolStripMenuItem.Name = "planAnualToolStripMenuItem";
             planAnualToolStripMenuItem.Size = new Size(198, 27);
             planAnualToolStripMenuItem.Text = "Crear Programa Anual";
-            // 
-            // registrarPersonalToolStripMenuItem
-            // 
-            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
-            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
-            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
-            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
-            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
+            planAnualToolStripMenuItem.Click += planAnualToolStripMenuItem_Click;
             // 
             // numericAnio
             // 
@@ -312,15 +322,6 @@
             pictureBox1.TabIndex = 46;
             pictureBox1.TabStop = false;
             // 
-            // registrarDepartamentoToolStripMenuItem
-            // 
-            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
-            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
-            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
-            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
-            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
-            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
-            // 
             // FormProgramaAnual
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -347,10 +348,12 @@
             Controls.Add(label2);
             Controls.Add(comboPeriodos);
             Controls.Add(labelPeriodo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormProgramaAnual";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Programa anual";
             WindowState = FormWindowState.Maximized;
+            FormClosed += FormProgramaAnual_FormClosed;
             Load += Form3_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

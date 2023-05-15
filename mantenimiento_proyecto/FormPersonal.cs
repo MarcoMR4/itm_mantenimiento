@@ -50,7 +50,7 @@ namespace mantenimiento_proyecto
         {
             Form formulario = new FormPrincipal();
             formulario.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -183,11 +183,28 @@ namespace mantenimiento_proyecto
             limpiar();
         }
 
+        //cargar ventana 
         private void FormPersonal_Load(object sender, EventArgs e)
         {
+            if (revisarAreas() == false)
+            {
+                MessageBox.Show("No existen áreas registradas \n\n favor de presionar en el botón \"Areas \" en la barra superior ");
+            }
 
         }
 
+        //funcion para revisar que en la base de datos haya departamentos o areas guardados 
+        private bool revisarAreas()
+        {
+            bool resultado = true;
+            List<Area> areas = new List<Area>();
+            areas = AreaLogica.Instancia.Listar();
+            if (areas.Count == 0)
+            {
+                resultado = false;
+            }
+            return resultado;
+        }
         private void gridPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             validarCelda(sender, e);
@@ -213,7 +230,6 @@ namespace mantenimiento_proyecto
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form formulario = new FormPersonal();
-            this.Close();
             formulario.Show();
         }
 
@@ -229,6 +245,16 @@ namespace mantenimiento_proyecto
             Form formulario = new FormProgramaAnual();
             formulario.Show();
             this.Hide();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormPersonal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

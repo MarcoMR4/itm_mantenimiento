@@ -31,18 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
+            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
+            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
             listaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
             planAnualToolStripMenuItem = new ToolStripMenuItem();
-            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
-            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
@@ -68,6 +66,23 @@
             inicioToolStripMenuItem.Text = "Inicio";
             inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
             // 
+            // registrarDepartamentoToolStripMenuItem
+            // 
+            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
+            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
+            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
+            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
+            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
+            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
+            // 
+            // registrarPersonalToolStripMenuItem
+            // 
+            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
+            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
+            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
+            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
+            // 
             // listaDeVerificaciónToolStripMenuItem
             // 
             listaDeVerificaciónToolStripMenuItem.Image = (Image)resources.GetObject("listaDeVerificaciónToolStripMenuItem.Image");
@@ -83,23 +98,6 @@
             planAnualToolStripMenuItem.Size = new Size(198, 27);
             planAnualToolStripMenuItem.Text = "Crear Programa Anual";
             planAnualToolStripMenuItem.Click += planAnualToolStripMenuItem_Click;
-            // 
-            // registrarPersonalToolStripMenuItem
-            // 
-            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
-            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
-            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
-            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
-            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
-            // 
-            // registrarDepartamentoToolStripMenuItem
-            // 
-            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
-            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
-            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
-            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
-            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
-            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
             // 
             // label1
             // 
@@ -124,17 +122,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(877, 150);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(136, 136);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox3
             // 
@@ -164,7 +151,6 @@
             ClientSize = new Size(1043, 512);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
             Controls.Add(pictureBox1);
@@ -179,7 +165,6 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
@@ -195,7 +180,6 @@
         private Label label1;
         private ToolStripMenuItem registrarPersonalToolStripMenuItem;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private ToolStripMenuItem registrarDepartamentoToolStripMenuItem;

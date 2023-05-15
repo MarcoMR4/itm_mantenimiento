@@ -28,129 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.labelArea = new System.Windows.Forms.Label();
-            this.textArea = new System.Windows.Forms.TextBox();
-            this.btnGuardarArea = new System.Windows.Forms.Button();
-            this.gridAreas = new System.Windows.Forms.DataGridView();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.textId = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAreas)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAreas));
+            labelArea = new Label();
+            textArea = new TextBox();
+            btnGuardarArea = new Button();
+            gridAreas = new DataGridView();
+            btnEditar = new Button();
+            textId = new TextBox();
+            btnEliminar = new Button();
+            btnLimpiar = new Button();
+            ((System.ComponentModel.ISupportInitialize)gridAreas).BeginInit();
+            SuspendLayout();
             // 
             // labelArea
             // 
-            this.labelArea.AutoSize = true;
-            this.labelArea.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelArea.Location = new System.Drawing.Point(24, 23);
-            this.labelArea.Name = "labelArea";
-            this.labelArea.Size = new System.Drawing.Size(54, 25);
-            this.labelArea.TabIndex = 0;
-            this.labelArea.Text = "Area:";
+            labelArea.AutoSize = true;
+            labelArea.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelArea.Location = new Point(65, 26);
+            labelArea.Name = "labelArea";
+            labelArea.Size = new Size(54, 25);
+            labelArea.TabIndex = 0;
+            labelArea.Text = "Area:";
+            labelArea.Click += labelArea_Click;
             // 
             // textArea
             // 
-            this.textArea.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textArea.Location = new System.Drawing.Point(94, 23);
-            this.textArea.Name = "textArea";
-            this.textArea.Size = new System.Drawing.Size(405, 32);
-            this.textArea.TabIndex = 1;
+            textArea.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textArea.Location = new Point(120, 23);
+            textArea.Name = "textArea";
+            textArea.PlaceholderText = "Escriba el nombre de area o departamento";
+            textArea.Size = new Size(379, 29);
+            textArea.TabIndex = 1;
             // 
             // btnGuardarArea
             // 
-            this.btnGuardarArea.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnGuardarArea.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarArea.Location = new System.Drawing.Point(426, 111);
-            this.btnGuardarArea.Name = "btnGuardarArea";
-            this.btnGuardarArea.Size = new System.Drawing.Size(101, 27);
-            this.btnGuardarArea.TabIndex = 2;
-            this.btnGuardarArea.Text = "Guardar";
-            this.btnGuardarArea.UseVisualStyleBackColor = false;
-            this.btnGuardarArea.Click += new System.EventHandler(this.btnGuardarArea_Click);
+            btnGuardarArea.BackColor = Color.MediumAquamarine;
+            btnGuardarArea.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardarArea.Location = new Point(426, 111);
+            btnGuardarArea.Name = "btnGuardarArea";
+            btnGuardarArea.Size = new Size(101, 31);
+            btnGuardarArea.TabIndex = 2;
+            btnGuardarArea.Text = "Guardar";
+            btnGuardarArea.UseVisualStyleBackColor = false;
+            btnGuardarArea.Click += btnGuardarArea_Click;
             // 
             // gridAreas
             // 
-            this.gridAreas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridAreas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.gridAreas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gridAreas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridAreas.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gridAreas.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.gridAreas.Location = new System.Drawing.Point(41, 181);
-            this.gridAreas.MultiSelect = false;
-            this.gridAreas.Name = "gridAreas";
-            this.gridAreas.ReadOnly = true;
-            this.gridAreas.RowTemplate.Height = 27;
-            this.gridAreas.Size = new System.Drawing.Size(458, 194);
-            this.gridAreas.TabIndex = 3;
-            this.gridAreas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAreas_CellClick);
-            this.gridAreas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAreas_CellContentClick);
+            gridAreas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            gridAreas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            gridAreas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            gridAreas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            gridAreas.DefaultCellStyle = dataGridViewCellStyle1;
+            gridAreas.ImeMode = ImeMode.Off;
+            gridAreas.Location = new Point(41, 181);
+            gridAreas.MultiSelect = false;
+            gridAreas.Name = "gridAreas";
+            gridAreas.ReadOnly = true;
+            gridAreas.RowTemplate.Height = 27;
+            gridAreas.Size = new Size(458, 194);
+            gridAreas.TabIndex = 3;
+            gridAreas.CellClick += gridAreas_CellClick;
+            gridAreas.CellContentClick += gridAreas_CellContentClick;
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.Khaki;
-            this.btnEditar.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.Location = new System.Drawing.Point(307, 111);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(101, 27);
-            this.btnEditar.TabIndex = 4;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            btnEditar.BackColor = Color.Khaki;
+            btnEditar.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.Location = new Point(307, 111);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(102, 31);
+            btnEditar.TabIndex = 4;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // textId
             // 
-            this.textId.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textId.Location = new System.Drawing.Point(65, 110);
-            this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(92, 32);
-            this.textId.TabIndex = 5;
+            textId.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textId.Location = new Point(65, 143);
+            textId.Name = "textId";
+            textId.ReadOnly = true;
+            textId.Size = new Size(92, 32);
+            textId.TabIndex = 5;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Salmon;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.Location = new System.Drawing.Point(179, 110);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(101, 27);
-            this.btnEliminar.TabIndex = 6;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            btnEliminar.BackColor = Color.Salmon;
+            btnEliminar.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminar.Location = new Point(179, 110);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(104, 32);
+            btnEliminar.TabIndex = 6;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.DarkGray;
+            btnLimpiar.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(426, 143);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(101, 31);
+            btnLimpiar.TabIndex = 7;
+            btnLimpiar.Text = "limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // FormAreas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(571, 386);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.textId);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.gridAreas);
-            this.Controls.Add(this.btnGuardarArea);
-            this.Controls.Add(this.textArea);
-            this.Controls.Add(this.labelArea);
-            this.Name = "FormAreas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar area ";
-            this.Load += new System.EventHandler(this.FormAreas_Load);
-            this.Leave += new System.EventHandler(this.FormAreas_Leave);
-            ((System.ComponentModel.ISupportInitialize)(this.gridAreas)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(571, 386);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnEliminar);
+            Controls.Add(textId);
+            Controls.Add(btnEditar);
+            Controls.Add(gridAreas);
+            Controls.Add(btnGuardarArea);
+            Controls.Add(textArea);
+            Controls.Add(labelArea);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FormAreas";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Agregar area ";
+            Load += FormAreas_Load;
+            Leave += FormAreas_Leave;
+            ((System.ComponentModel.ISupportInitialize)gridAreas).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -162,5 +179,6 @@
         private Button btnEditar;
         private TextBox textId;
         private Button btnEliminar;
+        private Button btnLimpiar;
     }
 }

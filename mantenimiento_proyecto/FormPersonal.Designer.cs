@@ -32,11 +32,11 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
+            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
+            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
             listaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
             crearListaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
             planAnualToolStripMenuItem = new ToolStripMenuItem();
-            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
-            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
             gridPersonal = new DataGridView();
             groupBox1 = new GroupBox();
             btnBorrar = new Button();
@@ -75,6 +75,23 @@
             inicioToolStripMenuItem.Text = "Inicio";
             inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
             // 
+            // registrarDepartamentoToolStripMenuItem
+            // 
+            registrarDepartamentoToolStripMenuItem.BackColor = Color.PowderBlue;
+            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
+            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
+            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
+            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
+            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
+            // 
+            // registrarPersonalToolStripMenuItem
+            // 
+            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
+            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
+            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
+            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
+            // 
             // listaDeVerificaciónToolStripMenuItem
             // 
             listaDeVerificaciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearListaDeVerificaciónToolStripMenuItem });
@@ -97,23 +114,6 @@
             planAnualToolStripMenuItem.Size = new Size(198, 27);
             planAnualToolStripMenuItem.Text = "Crear Programa Anual";
             planAnualToolStripMenuItem.Click += planAnualToolStripMenuItem_Click;
-            // 
-            // registrarPersonalToolStripMenuItem
-            // 
-            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
-            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
-            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
-            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
-            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
-            // 
-            // registrarDepartamentoToolStripMenuItem
-            // 
-            registrarDepartamentoToolStripMenuItem.BackColor = Color.PowderBlue;
-            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
-            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
-            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
-            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
-            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
             // 
             // gridPersonal
             // 
@@ -156,6 +156,7 @@
             groupBox1.TabIndex = 45;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnBorrar
             // 
@@ -279,11 +280,13 @@
             Controls.Add(groupBox1);
             Controls.Add(gridPersonal);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "FormPersonal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar personal ";
             WindowState = FormWindowState.Maximized;
+            FormClosed += FormPersonal_FormClosed;
             Load += FormPersonal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

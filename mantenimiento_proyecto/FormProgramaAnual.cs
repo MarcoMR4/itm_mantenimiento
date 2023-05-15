@@ -18,6 +18,7 @@ using mantenimiento_proyecto;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.tool.xml.html;
 using iTextSharp.tool.xml.pipeline.html;
+using System.Windows.Media;
 
 namespace mantenimiento_proyecto
 {
@@ -59,21 +60,35 @@ namespace mantenimiento_proyecto
             comboPeriodos.Text = "enero-junio";
             comboAreas.DataSource = AreaLogica.Instancia.Listar();
             comboAreas.ValueMember = "nombre";
-            if (comboAreas.DataSource == null)
+            if (revisarAreas() == false)
             {
-                MessageBox.Show("No existen áreas registradas, por favor registre en la cción áreas");
+                MessageBox.Show("No existen áreas registradas \n\n favor de presionar en el botón \"Areas \" en la barra superior ");
             }
             else
             {
                 nombreAreaElegida = comboAreas.Text;
             }
+
+        }
+
+        //funcion para revisar que en la base de datos haya departamentos o areas guardados 
+        private bool revisarAreas()
+        {
+            bool resultado = true;
+            List<Area> areas = new List<Area>();
+            areas = AreaLogica.Instancia.Listar();
+            if (areas.Count == 0)
+            {
+                resultado = false;
+            }
+            return resultado;
         }
 
         private void inicioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Form formulario = new FormPrincipal();
             formulario.Show();
-            this.Close();
+            this.Hide();
 
         }
 
@@ -219,23 +234,59 @@ namespace mantenimiento_proyecto
                             table.SetWidths(new float[] { 5, 30, 8, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7 }); // Establecer el ancho relativo de cada columna
 
                             // Agregar encabezado de tabla
+                            var font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+                            //1 fila para el encabezado 
                             table.HeaderRows = 1;
-                            table.AddCell("No.");
-                            table.AddCell("Servicio");
-                            table.AddCell("Tipo");
-                            table.AddCell("E");
-                            table.AddCell("ENE");
-                            table.AddCell("FEB");
-                            table.AddCell("MAR");
-                            table.AddCell("ABR");
-                            table.AddCell("MAY");
-                            table.AddCell("JUN");
-                            table.AddCell("JUL");
-                            table.AddCell("AGO");
-                            table.AddCell("SEP");
-                            table.AddCell("OCT");
-                            table.AddCell("NOV");
-                            table.AddCell("DIC");
+
+                            PdfPCell c1 = new PdfPCell(new Paragraph("No."));
+                            c1.Phrase = new Phrase("No", font);
+                            table.AddCell(c1);
+                            PdfPCell c2 = new PdfPCell(new Paragraph("Servicio"));
+                            c2.Phrase = new Phrase("Servicio", font);
+                            table.AddCell(c2);
+                            PdfPCell c3 = new PdfPCell(new Paragraph("Tipo"));
+                            c3.Phrase = new Phrase("Tipo", font);
+                            table.AddCell(c3);
+                            PdfPCell c4 = new PdfPCell(new Paragraph("E"));
+                            c4.Phrase = new Phrase("E", font);
+                            table.AddCell(c4);
+                            //Encabezados de meses del año
+                            PdfPCell c5 = new PdfPCell(new Paragraph("ENE"));
+                            c5.Phrase = new Phrase("ENE", font);
+                            table.AddCell(c5);
+                            PdfPCell c6 = new PdfPCell(new Paragraph("FEB"));
+                            c6.Phrase = new Phrase("FEB", font);
+                            table.AddCell(c6);
+                            PdfPCell c7 = new PdfPCell(new Paragraph("MAR"));
+                            c7.Phrase = new Phrase("MAR", font);
+                            table.AddCell(c7);
+                            PdfPCell c8 = new PdfPCell(new Paragraph("ABR"));
+                            c8.Phrase = new Phrase("ABR", font);
+                            table.AddCell(c8);
+                            PdfPCell c9 = new PdfPCell(new Paragraph("MAY"));
+                            c9.Phrase = new Phrase("MAY", font);
+                            table.AddCell(c9);
+                            PdfPCell c10 = new PdfPCell(new Paragraph("JUN"));
+                            c10.Phrase = new Phrase("JUN", font);
+                            table.AddCell(c10);
+                            PdfPCell c11 = new PdfPCell(new Paragraph("JUL"));
+                            c11.Phrase = new Phrase("JUL", font);
+                            table.AddCell(c11);
+                            PdfPCell c12 = new PdfPCell(new Paragraph("AGO"));
+                            c12.Phrase = new Phrase("AGO", font);
+                            table.AddCell(c12);
+                            PdfPCell c13 = new PdfPCell(new Paragraph("SEP"));
+                            c13.Phrase = new Phrase("SEP", font);
+                            table.AddCell(c13);
+                            PdfPCell c14 = new PdfPCell(new Paragraph("OCT"));
+                            c14.Phrase = new Phrase("OCT", font);
+                            table.AddCell(c14);
+                            PdfPCell c15 = new PdfPCell(new Paragraph("NOV"));
+                            c15.Phrase = new Phrase("NOV", font);
+                            table.AddCell(c15);
+                            PdfPCell c16 = new PdfPCell(new Paragraph("DIC"));
+                            c16.Phrase = new Phrase("DIC", font);
+                            table.AddCell(c16);
 
 
                             // Agregar filas a la tabla
@@ -441,6 +492,17 @@ namespace mantenimiento_proyecto
         private void registrarDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form formulario = new FormAreas();
+            formulario.Show();
+        }
+
+        private void FormProgramaAnual_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FormProgramaAnual();
             formulario.Show();
         }
     }

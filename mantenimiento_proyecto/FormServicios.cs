@@ -35,7 +35,7 @@ namespace mantenimiento_proyecto.Logica
                 textServicio.Text = FormProgramaAnual.nombreAreaElegida;
                 nombreAreaV = textServicio.Text;
             }
-            
+
             mostrarServicios();
 
             mesesLista.Items.Add("enero");
@@ -277,17 +277,18 @@ namespace mantenimiento_proyecto.Logica
 
         private void btnModificarServicio_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnEliminarServicio_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void limpiar() {
+        private void limpiar()
+        {
             textDescripcion.Text = string.Empty;
-            comboTipo.Text = "Interno";     
+            comboTipo.Text = "Interno";
             textId.Text = string.Empty;
             desmarcarTodo();
         }
@@ -351,7 +352,7 @@ namespace mantenimiento_proyecto.Logica
                     //guardar los meses en cada servicio , tabla Mes_Servicio
                 }
             }
-            else 
+            else
             {
                 MessageBox.Show("Favor de limpiar los campos antes de agregar ");
                 limpiar();

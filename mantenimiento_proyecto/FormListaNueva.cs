@@ -17,6 +17,8 @@ using iTextSharp.tool.xml;
 using mantenimiento_proyecto.Properties;
 using iTextSharp.tool.xml.html.head;
 using System.Drawing.Printing;
+using System.Runtime.CompilerServices;
+using System.Security.Policy;
 
 namespace mantenimiento_proyecto
 {
@@ -51,12 +53,14 @@ namespace mantenimiento_proyecto
         {
             Form formulario = new FormPrincipal();
             formulario.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void listaDeVerificaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new FormListaNueva();
+            formulario.Show();
+            this.Hide();
         }
 
         private void planAnualToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +103,7 @@ namespace mantenimiento_proyecto
 
         }
 
+        //Cargar espacios desde la base de datos 
         private void revisarEspacios()
         {
             List<Espacio> espacios = new List<Espacio>();
@@ -108,11 +113,13 @@ namespace mantenimiento_proyecto
                 MessageBox.Show("No existen espacios registrados en esta área, favor de registrar en el botón \"Ver espacios \" ");
                 comboEspacios.Text = string.Empty;
                 comboEspacios.DataSource = null;
+                comboEspacios.Enabled = false;
             }
             else
             {
                 comboEspacios.DataSource = espacios;
                 comboEspacios.DisplayMember = "nombre";
+                comboEspacios.Enabled = true;
             }
         }
 
@@ -137,6 +144,7 @@ namespace mantenimiento_proyecto
             formulario.Show();
         }
 
+        //Generar y guardar doumento pdf 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             SaveFileDialog guardar = new SaveFileDialog();
@@ -150,6 +158,7 @@ namespace mantenimiento_proyecto
             string paginahtmlTexto = Properties.Resources.listaV1.ToString();
             string pieHtml = Properties.Resources.pieLista.ToString();
 
+            //Escribir información capturada en formulario en la tabla de html 
             paginahtmlTexto = paginahtmlTexto.Replace("@jefeElabora", nombreJefe.Text);      //pasar datos a la primera tabla 
             paginahtmlTexto = paginahtmlTexto.Replace("@jefeArea", comboJefeArea.Text);
             var fecha1 = textFecha.Value.ToString("dd/MM/yyyy");   //establecer formato ara fecha seleccionada 
@@ -158,38 +167,24 @@ namespace mantenimiento_proyecto
             pieHtml = pieHtml.Replace("@jefeArea", comboJefeArea.Text);      //pasar datos a la ultima tabla 
 
             string filas = string.Empty;
-
             List<Hallazgo> collection = new List<Hallazgo>();
-            //pasar idespacio e idarea
-            anio = int.Parse(numericAnio.Value.ToString());
-            periodo = comboPeriodo.Text;
-            collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado, idAreaSeleccionada, anio, periodo);
-
-            /* //agregar filas a la tabla 
-            foreach (var fila in collection)
+            try      //obtener una lista de objetos consultados de la tabla hallazgos 
             {
-                //MessageBox.Show(fila.descripcion);
-                filas += "<tr>";
-                filas += "<td class=\"celda1\">" + fila.nombreEspacio+"</td>";
-                filas += "<td class=\"celda1\">" + fila.descripcion+"</td>";
-                if (fila.atendido == "No")
-                {
-                    filas += "<td align=\"center\" class=\"celda1\"></td>";
-                    filas += "<td align=\"center\" class=\"celda1\">X</td>";
-                }
-                else
-                {
-                    filas += "<td align=\"center\" class=\"celda1\">X</td>";
-                    filas += "<td align=\"center\" class=\"celda1\"></td>";
-                }
-                filas += "</tr>";
+                //pasar idespacio e idarea
+                anio = int.Parse(numericAnio.Value.ToString());
+                periodo = comboPeriodo.Text;
+                collection = HallazgoLogica.Instancia.ListarEspacio(idEspacioSeleccionado, idAreaSeleccionada, anio, periodo);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al consultar de la base de datos");
             }
 
-            paginahtmlTexto = paginahtmlTexto.Replace("@filas", filas); */
-
-            //usando libreria 
-
-
+            //esta solo se uso para comprobar que se devolvía desde la Base de datos
+            /*foreach (var aver in collection)
+            {
+                MessageBox.Show(aver.ToString());
+            }*/
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
@@ -213,15 +208,20 @@ namespace mantenimiento_proyecto
                         table.WidthPercentage = 95;
                         table.SetWidths(new float[] { 40, 50, 10, 10 }); // Establecer el ancho relativo de cada columna
 
-                        // Agregar encabezado de tabla
+                        // Agregar encabezado de tabla, columnas de encabezado
+                        var font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+
                         table.HeaderRows = 2;
                         PdfPCell celda = new PdfPCell(new Paragraph("Espacio Revisado"));
+                        celda.Phrase = new Phrase("Espacio Revisado", font);
                         celda.Rowspan = 2;
                         table.AddCell(celda);
                         PdfPCell celda2 = new PdfPCell(new Paragraph("Hallazgo"));
+                        celda2.Phrase = new Phrase("Hallazgo", font);
                         celda2.Rowspan = 2;
                         table.AddCell(celda2);
                         PdfPCell celda3 = new PdfPCell(new Paragraph("Atendido"));
+                        celda3.Phrase = new Phrase("Atendido", font);
                         celda3.Colspan = 2;
                         table.AddCell(celda3);
                         table.AddCell("Si");
@@ -247,8 +247,6 @@ namespace mantenimiento_proyecto
 
 
                         //Convertir el html generado a un archivo PDF  
-
-                        //primer tabla de nombres con html 
                         try
                         {
                             XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(paginahtmlTexto));
@@ -297,10 +295,10 @@ namespace mantenimiento_proyecto
             }
         }
 
+        //Si existe personal registrado en un area, motrar nombre completo 
         private void comboJefeArea_SelectedIndexChanged(object sender, EventArgs e)
         {
             nombreAreaSeleccionada = comboAreas.Text;
-
             comboJefeArea.DataSource = PersonaLogica.Instancia.listarPorArea(nombreAreaSeleccionada);
             comboJefeArea.DisplayMember = "nombres";
         }
@@ -310,6 +308,7 @@ namespace mantenimiento_proyecto
 
         }
 
+        //ir a registrar personal
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form formulario = new FormPersonal();
@@ -322,6 +321,13 @@ namespace mantenimiento_proyecto
             Form formulario = new FormAreas();
             formulario.Show();
         }
+
+        //Cerrar programa al cerrar esta ventana 
+        private void FormListaNueva_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
 
@@ -329,10 +335,12 @@ namespace mantenimiento_proyecto
 public class PageEventHelper2 : PdfPageEventHelper
 {
     PdfContentByte cb;
-    PdfTemplate template;
+    PdfTemplate template;  //plantilla de pdf 
     BaseFont bf = null;
-    int totalPages = 0;
+    int totalPages = 0;     //Contador de paginas 
     string textPag;
+
+    //Abrir documento para crear 
     public override void OnOpenDocument(PdfWriter myPDFWriter, Document document)
     {
         cb = myPDFWriter.DirectContent;
@@ -346,7 +354,7 @@ public class PageEventHelper2 : PdfPageEventHelper
     {
         base.OnStartPage(writer, listaPdf);
 
-        //no. de pagina 
+        //colocar no. de pagina 
         int pageN = writer.PageNumber;
         iTextSharp.text.Rectangle pageSize = listaPdf.PageSize;
         textPag = "Página " + pageN.ToString() + " de";
@@ -408,19 +416,10 @@ public class PageEventHelper2 : PdfPageEventHelper
         cb.ShowText(text2);
         cb.EndText();
 
-
-
-        //html 
-        /*string pie = mantenimiento_proyecto.Properties.Resources.Pielista.ToString();
-        using (StringReader sr = new StringReader(pie))
-        {
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            XMLWorkerHelper.GetInstance().ParseXHtml(myPDFWriter, listaPdf, sr);
-        }*/
-
-        totalPages++;
+        totalPages++;   //contar páginas totales de documento 
     }
 
+    //Cerrar documento para imprimir, colocar páginas totales 
     public override void OnCloseDocument(PdfWriter writer, Document document)
     {
         base.OnCloseDocument(writer, document);
@@ -430,30 +429,5 @@ public class PageEventHelper2 : PdfPageEventHelper
         template.SetTextMatrix(document.RightMargin + 465, document.Top - 106);
         template.ShowText(" " + (writer.PageNumber));
         template.EndText();
-
-
-
     }
-
-    /* 
-     public override void OnEndPage(PdfWriter myPDFWriter, Document document)
-    {
-        base.OnEndPage(myPDFWriter, document);
-
-        int pageN = myPDFWriter.PageNumber;
-        String text = "Page " + pageN.ToString();
-
-        iTextSharp.text.Rectangle pageSize = document.PageSize;
-
-        cb.SetRGBColorFill(100, 100, 100);
-
-        cb.BeginText();
-        cb.SetFontAndSize(this.RunDateFont.BaseFont, this.RunDateFont.Size);
-        cb.SetTextMatrix(document.LeftMargin, pageSize.GetBottom(document.BottomMargin));
-        cb.ShowText(text);
-
-        cb.EndText();
-
-        cb.AddTemplate(template, document.LeftMargin + len, pageSize.GetBottom(document.BottomMargin));
-    }*/
 }

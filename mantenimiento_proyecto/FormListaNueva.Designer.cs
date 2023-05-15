@@ -38,10 +38,11 @@
             btnCargarEspacio = new Button();
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
+            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
+            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
             listaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
             crearListaDeVerificaciónToolStripMenuItem = new ToolStripMenuItem();
             planAnualToolStripMenuItem = new ToolStripMenuItem();
-            registrarPersonalToolStripMenuItem = new ToolStripMenuItem();
             textFecha = new DateTimePicker();
             label8 = new Label();
             comboBox1 = new ComboBox();
@@ -57,7 +58,6 @@
             comboPeriodo = new ComboBox();
             nombreJefe = new TextBox();
             pictureBox1 = new PictureBox();
-            registrarDepartamentoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericAnio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -165,6 +165,23 @@
             inicioToolStripMenuItem.Text = "Inicio";
             inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click_1;
             // 
+            // registrarDepartamentoToolStripMenuItem
+            // 
+            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
+            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
+            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
+            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
+            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
+            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
+            // 
+            // registrarPersonalToolStripMenuItem
+            // 
+            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
+            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
+            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
+            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
+            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
+            // 
             // listaDeVerificaciónToolStripMenuItem
             // 
             listaDeVerificaciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearListaDeVerificaciónToolStripMenuItem });
@@ -187,14 +204,6 @@
             planAnualToolStripMenuItem.Size = new Size(198, 27);
             planAnualToolStripMenuItem.Text = "Crear Programa Anual";
             planAnualToolStripMenuItem.Click += planAnualToolStripMenuItem_Click;
-            // 
-            // registrarPersonalToolStripMenuItem
-            // 
-            registrarPersonalToolStripMenuItem.Image = (Image)resources.GetObject("registrarPersonalToolStripMenuItem.Image");
-            registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
-            registrarPersonalToolStripMenuItem.Size = new Size(170, 27);
-            registrarPersonalToolStripMenuItem.Text = "Registrar Personal";
-            registrarPersonalToolStripMenuItem.Click += registrarPersonalToolStripMenuItem_Click;
             // 
             // textFecha
             // 
@@ -357,15 +366,6 @@
             pictureBox1.TabIndex = 47;
             pictureBox1.TabStop = false;
             // 
-            // registrarDepartamentoToolStripMenuItem
-            // 
-            registrarDepartamentoToolStripMenuItem.BackColor = Color.Transparent;
-            registrarDepartamentoToolStripMenuItem.Image = (Image)resources.GetObject("registrarDepartamentoToolStripMenuItem.Image");
-            registrarDepartamentoToolStripMenuItem.Name = "registrarDepartamentoToolStripMenuItem";
-            registrarDepartamentoToolStripMenuItem.Size = new Size(83, 27);
-            registrarDepartamentoToolStripMenuItem.Text = "Áreas";
-            registrarDepartamentoToolStripMenuItem.Click += registrarDepartamentoToolStripMenuItem_Click;
-            // 
             // FormListaNueva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -395,10 +395,12 @@
             Controls.Add(comboAreas);
             Controls.Add(label7);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormListaNueva";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Listas de verificación";
             WindowState = FormWindowState.Maximized;
+            FormClosed += FormListaNueva_FormClosed;
             Load += FormListaNueva_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
