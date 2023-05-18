@@ -120,7 +120,7 @@ namespace mantenimiento_proyecto.Logica
         //Limpiar campos para poder agregar un nuevo registro en la tabla hallazgos 
         public void limpiar()
         {
-            textNombreHallazgo.Text = null;
+            textNombreHallazgo.Text = string.Empty;
             comboAtendido.Text = "No";
             textIdE.Text = string.Empty;
         }
@@ -128,19 +128,27 @@ namespace mantenimiento_proyecto.Logica
         //Editar información de un registro en la tabla de hallazgos 
         private void btnModificarHallazgo_Click(object sender, EventArgs e)
         {
-            Hallazgo hallazgo1 = new Hallazgo()
+            try
             {
-                idHallazgo = int.Parse(textIdE.Text),
-                descripcion = textNombreHallazgo.Text,
-                atendido = comboAtendido.Text
-            };
-            bool respuesta = HallazgoLogica.Instancia.Editar(hallazgo1);
-            if (respuesta)
-            {
-                mostrarHallazgos();
-                limpiar();
-                //MessageBox.Show("Editado");
+                Hallazgo hallazgo1 = new Hallazgo()
+                {
+                    idHallazgo = int.Parse(textIdE.Text),
+                    descripcion = textNombreHallazgo.Text,
+                    atendido = comboAtendido.Text
+                };
+                bool respuesta = HallazgoLogica.Instancia.Editar(hallazgo1);
+                if (respuesta)
+                {
+                    mostrarHallazgos();
+                    limpiar();
+                    //MessageBox.Show("Editado");
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione un registro de la tabla primero");
+            }
+
         }
 
         private void gridHallazgos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -209,6 +217,11 @@ namespace mantenimiento_proyecto.Logica
         {
             FormListaNueva forml = new FormListaNueva();
             forml.Refresh();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }

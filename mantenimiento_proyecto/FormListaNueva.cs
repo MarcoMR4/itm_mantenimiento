@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
@@ -185,6 +184,19 @@ namespace mantenimiento_proyecto
             {
                 MessageBox.Show(aver.ToString());
             }*/
+            if (collection == null)
+            {
+                MessageBox.Show("Parece que no hay hallazgos");
+            }
+            else
+            {
+                MessageBox.Show("Todo bien...");
+                foreach (var aver in collection)
+                {
+                    MessageBox.Show(aver.ToString());
+                }
+            }
+
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {

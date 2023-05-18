@@ -53,5 +53,10 @@ namespace mantenimiento_proyecto
         {
 
         }
+
+        private void FormPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

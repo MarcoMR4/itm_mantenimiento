@@ -17,7 +17,7 @@ namespace mantenimiento_proyecto.Logica
         public static string nombreAreaV;
         public FormServicios()
         {
-            InitializeComponent();
+            InitializeComponent();   //Inicializar 
             if (FormHallazgos.hallazgo)
             {
                 textAnio.Text = FormHallazgos.anio.ToString();
@@ -63,7 +63,7 @@ namespace mantenimiento_proyecto.Logica
             return id;
         }
 
-        public bool validarDatos()
+        public bool validarDatos()  //validar datos ingresados 
         {
             bool respuesta;
             if (string.IsNullOrEmpty(textDescripcion.Text))
@@ -114,7 +114,7 @@ namespace mantenimiento_proyecto.Logica
             ocultarCeldas();
         }
 
-        private void FormServicios_Load(object sender, EventArgs e)
+        private void FormServicios_Load(object sender, EventArgs e)  //abrir formulario 
         {
             var h = mesesLista.Items[0].ToString();
             //MessageBox.Show(h);
@@ -247,7 +247,7 @@ namespace mantenimiento_proyecto.Logica
 
         }
 
-        private void desmarcarTodo()
+        private void desmarcarTodo()  
         {
             for (int i = 0; i < mesesLista.Items.Count; i++)
             {

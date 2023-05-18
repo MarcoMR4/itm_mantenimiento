@@ -1,4 +1,5 @@
-﻿using mantenimiento_proyecto.Logica;
+﻿//Librerías 
+using mantenimiento_proyecto.Logica;
 using mantenimiento_proyecto.Models;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mantenimiento_proyecto
-{
-    public partial class FormAreas : Form
+{ 
+    public partial class FormAreas : Form    //Clase que controla el comportmiento del formulario 
     {
         public FormAreas()
         {
@@ -53,6 +54,7 @@ namespace mantenimiento_proyecto
             gridAreas.DataSource = AreaLogica.Instancia.Listar();
         }
 
+        //Comprobar que los campos se llenaron 
         public bool validarDatos()
         {
             string nombre = textArea.Text;
@@ -75,6 +77,7 @@ namespace mantenimiento_proyecto
             return respuesta;
         }
 
+        //Borrar campos 
         public void limpiar()
         {
             textArea.Text = string.Empty;
@@ -89,6 +92,7 @@ namespace mantenimiento_proyecto
             validarCelda(sender, e);
         }
 
+        //Botón de editar 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             try
@@ -115,6 +119,7 @@ namespace mantenimiento_proyecto
 
         }
 
+        //Botón de eliminar 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try

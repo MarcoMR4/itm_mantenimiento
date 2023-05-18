@@ -118,7 +118,7 @@ namespace mantenimiento_proyecto
                 Espacio espacio1 = new Espacio()
                 {
                     idEspacio = int.Parse(textIdE.Text),
-                    nombre = textNombre.Text,
+                    nombre = textNombreE.Text,
                 };
                 bool respuesta = EspacioLogica.Instancia.Editar(espacio1);
                 if (respuesta)

@@ -91,6 +91,7 @@
             btnBorrar.TabIndex = 71;
             btnBorrar.Text = "Limpiar campos";
             btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // btnAgregarHallazgo
             // 

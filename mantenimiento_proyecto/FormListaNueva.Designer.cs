@@ -258,13 +258,13 @@
             // button1
             // 
             button1.BackColor = SystemColors.ControlLight;
-            button1.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(421, 322);
+            button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(631, 318);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(154, 29);
+            button1.Size = new Size(154, 38);
             button1.TabIndex = 37;
-            button1.Text = "Hallazgos";
+            button1.Text = "Ver Hallazgos";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
