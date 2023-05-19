@@ -184,7 +184,7 @@ namespace mantenimiento_proyecto
             {
                 MessageBox.Show(aver.ToString());
             }*/
-            if (collection == null)
+            /*if (collection == null)
             {
                 MessageBox.Show("Parece que no hay hallazgos");
             }
@@ -195,7 +195,7 @@ namespace mantenimiento_proyecto
                 {
                     MessageBox.Show(aver.ToString());
                 }
-            }
+            }*/
 
 
             if (guardar.ShowDialog() == DialogResult.OK)

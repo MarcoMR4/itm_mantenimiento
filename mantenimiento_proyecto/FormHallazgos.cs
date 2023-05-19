@@ -216,6 +216,7 @@ namespace mantenimiento_proyecto.Logica
         private void FormHallazgos_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormListaNueva forml = new FormListaNueva();
+            MessageBox.Show("Vuelva a abrir Crear lista de verificación en la barra superior para actualizar datos");
             forml.Refresh();
         }
 
