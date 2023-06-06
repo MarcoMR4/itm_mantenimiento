@@ -143,6 +143,18 @@ namespace mantenimiento_proyecto
             formulario.Show();
         }
 
+        //Validar captura de nombres 
+        private bool validarNombres()
+        {
+            bool respuesta = true;
+            if (nombreJefe.Text == "" || comboJefeArea.Text == "")
+            {
+                MessageBox.Show("Debes capturar los nombres de quien elabora y aprueba");
+                respuesta = false;
+            }
+            return respuesta;
+        }
+
         //Generar y guardar doumento pdf 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -154,14 +166,14 @@ namespace mantenimiento_proyecto
             //guardar.ShowDialog();
 
             //generar html
-            string paginahtmlTexto = Properties.Resources.listaV1.ToString();
+            //string paginahtmlTexto = Properties.Resources.listaV1.ToString();
             string pieHtml = Properties.Resources.pieLista.ToString();
 
             //Escribir información capturada en formulario en la tabla de html 
-            paginahtmlTexto = paginahtmlTexto.Replace("@jefeElabora", nombreJefe.Text);      //pasar datos a la primera tabla 
-            paginahtmlTexto = paginahtmlTexto.Replace("@jefeArea", comboJefeArea.Text);
+            //paginahtmlTexto = paginahtmlTexto.Replace("@jefeElabora", nombreJefe.Text);      //pasar datos a la primera tabla 
+            //paginahtmlTexto = paginahtmlTexto.Replace("@jefeArea", comboJefeArea.Text);
             var fecha1 = textFecha.Value.ToString("dd/MM/yyyy");   //establecer formato ara fecha seleccionada 
-            paginahtmlTexto = paginahtmlTexto.Replace("@fecha", fecha1);     //agregar la fecha 
+            //paginahtmlTexto = paginahtmlTexto.Replace("@fecha", fecha1);     //agregar la fecha 
             pieHtml = pieHtml.Replace("@jefeElabora", nombreJefe.Text);
             pieHtml = pieHtml.Replace("@jefeArea", comboJefeArea.Text);      //pasar datos a la ultima tabla 
 
@@ -197,6 +209,7 @@ namespace mantenimiento_proyecto
                 }
             }*/
 
+            if (validarNombres() == false) { return; }
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
@@ -214,14 +227,49 @@ namespace mantenimiento_proyecto
                         //Crear un estilo de letra en negritas 
                         //var boldFont = new iTextSharp.text.Font(Font.FontFamily, 12, Font.BOLD);
 
+                        // Agregar encabezado de tabla, columnas de encabezado
+                        var font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+
+                        //Crear tabla con ayuda de itextSharp para encabezados 
+                        PdfPTableHeader header1 = new PdfPTableHeader();
+                        PdfPTable table1 = new PdfPTable(2);
+                        table1.WidthPercentage = 98;
+                        table1.SetWidths(new float[] { 50,50 }); // Establecer el ancho relativo de cada columna
+
+                        PdfPCell celda1 = new PdfPCell(new Paragraph("JEFE DEL DEPARTAMENTO DE "));
+                        celda1.Padding = 5f;
+                        table1.AddCell(celda1);
+
+                        PdfPCell celda21 = new PdfPCell(new Paragraph("MANTENIMIENTO Y EQUIPO "));
+                        celda21.Padding = 5f;
+                        table1.AddCell(celda21);
+
+                        PdfPCell celda31 = new PdfPCell(new Paragraph("JEFE DEL ÁREA VERIFICADA "));
+                        celda31.Padding = 5f;
+                        table1.AddCell(celda31);
+                        //                                              Se toma el nombre capturado 
+                        PdfPCell celda41 = new PdfPCell(new Paragraph(comboJefeArea.Text));
+                        celda41.Padding = 5f;
+                        table1.AddCell(celda41);
+
+                        listaPdf.Add(table1);
+
+                        //Añadir un salto entre tabla de hallazgos y espacio de firmas 
+                        Paragraph salto = new Paragraph();
+                        salto.Add(new Chunk("\n")); // Agregar un salto de línea
+                        listaPdf.Add(salto);
+
+                        //Fecha 
+                        Paragraph fecha = new Paragraph();
+                        fecha.Add(new Chunk("                                                            " +
+                            "                                                                    FECHA: " + fecha1+" \n\n"));
+                        listaPdf.Add(fecha);
+
                         //Crear tabla con ayuda de itextSharp 
                         PdfPTableHeader header = new PdfPTableHeader();
                         PdfPTable table = new PdfPTable(4);
-                        table.WidthPercentage = 95;
+                        table.WidthPercentage = 98;
                         table.SetWidths(new float[] { 40, 50, 10, 10 }); // Establecer el ancho relativo de cada columna
-
-                        // Agregar encabezado de tabla, columnas de encabezado
-                        var font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
 
                         table.HeaderRows = 2;
                         PdfPCell celda = new PdfPCell(new Paragraph("Espacio Revisado"));
@@ -257,36 +305,46 @@ namespace mantenimiento_proyecto
 
                         }
 
-
-                        //Convertir el html generado a un archivo PDF  
-                        try
-                        {
-                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(paginahtmlTexto));
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al convertir html en pdf \n\n\n");
-                            Console.WriteLine(ex);
-                        }
-
-                        //añadir tabla dinamica creada con la librería ItextSharp
                         listaPdf.Add(table);
 
                         //Añadir un salto entre tabla de hallazgos y espacio de firmas 
-                        Paragraph salto = new Paragraph();
-                        salto.Add(new Chunk("\n")); // Agregar un salto de línea
-                        listaPdf.Add(salto);
-                        //ultima tabla de nombres (firmas) con html 
-                        try
-                        {
-                            //Convertir tabla html y agregar al documento 
-                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, listaPdf, new StringReader(pieHtml));
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al convertir html en pdf ");
-                            Console.WriteLine(ex);
-                        }
+                        Paragraph salto1 = new Paragraph();
+                        salto1.Add(new Chunk("\n")); // Agregar un salto de línea
+                        listaPdf.Add(salto1);
+                        Paragraph realiza = new Paragraph();
+                        realiza.Add(new Chunk("\t\t REALIZÓ: \n\n")); 
+                        listaPdf.Add(realiza);
+
+                        //Tabla de firmas 
+                        //Crear tabla con ayuda de itextSharp para encabezados
+                        PdfPTable table3 = new PdfPTable(2);
+                        //Evitar que se separe la tabla 
+                        table3.KeepTogether = true;
+
+                        //Ancho de la tabla 
+                        table3.WidthPercentage = 98;
+                        table3.SetWidths(new float[] { 50, 50 }); // Establecer el ancho relativo de cada columna
+
+                        PdfPCell celd1 = new PdfPCell(new Paragraph("DEPTO. DE RECURSOS MATERIALES Y\r\nSERVICIOS Y/O MANTENIMIENTO DE\r\nEQUIPO"));
+                        celd1.PaddingBottom = 20f;
+                        table3.AddCell(celd1);
+                        
+                        //                                           Se toma el nombre del jefe de mantenimiento 
+                        PdfPCell celd2 = new PdfPCell(new Paragraph(nombreJefe.Text));
+                        celd2.PaddingBottom = 20f;
+                        table3.AddCell(celd2);
+
+                        PdfPCell celd3 = new PdfPCell(new Paragraph("JEFE DEL ÁREA VERIFICADA "));
+                        celd3.PaddingBottom = 20f;
+                        table3.AddCell(celd3);
+                        //                                              Se toma el nombre del jefe de area  capturado 
+                        PdfPCell celd4 = new PdfPCell(new Paragraph(comboJefeArea.Text));
+                        celd4.PaddingBottom = 20f;
+                        table3.AddCell(celd4);
+
+
+                        listaPdf.Add(table3);
+
 
                         //          Probar varias paginas 
                         /*

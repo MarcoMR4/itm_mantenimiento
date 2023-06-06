@@ -10,7 +10,8 @@ xhtml1-transitional.dtd">
     <style>
         .c1 {
             margin-top: 10%;
-            margin-left: 10%;
+
+            float: right;
         }
 
         .tabla1 {
@@ -31,15 +32,7 @@ xhtml1-transitional.dtd">
             border-right: white 0.1px;
             border-collapse: collapse;
             padding: 10%;
-        }
-
-        .tablaEncabezado {
-            margin-left: 5%;
-            width: 96%;
-            border-bottom: darkred solid 2px;
-            border-top: darkred solid 2px;
-            padding-bottom: 10%;
-            text-align: center;
+            float: right;
         }
 
         .p1 {
@@ -48,53 +41,14 @@ xhtml1-transitional.dtd">
         .fecha{
             font-size: small;
         }
-
-        @media all{
-            div.saltoPagina{
-                display: none;
-            }
-        }
-
-        @media print{
-            div.saltoPagina{
-                display: block;
-                page-break-inside: always;
-            }
-        }
-
-        @media all{
-            div.saltoPagina2{
-                display: none;
-            }
-        }
-
-        @media print{
-            div.saltoPagina2{
-                display: block;
-                page-break-before: always;
-            }
-        }
-
-        
+      
     </style>
 </head>
 <body>
     <br />
     <br />
-    <div class="c1">
-        <table class="tabla1">
-            <tr>
-                <td class="celda1">JEFE DEL DEPARTAMENTO DE</td>
-                <td class="celda1" align="center">MANTENIMIENTO Y EQUIPO</td>
-            </tr>
-            <tr>
-                <TD class="celda1">JEFE DEL ÁREA VERIFICADA</TD>
-                <TD class="celda1" align="center">@jefeArea</TD>
-            </tr>
-        </table>
-    </div>
+   
 
-    <br />
     <br />
     <br />
 

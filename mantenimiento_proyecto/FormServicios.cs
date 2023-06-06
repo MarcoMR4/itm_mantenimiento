@@ -50,6 +50,18 @@ namespace mantenimiento_proyecto.Logica
             mesesLista.Items.Add("octubre");
             mesesLista.Items.Add("noviembre");
             mesesLista.Items.Add("diciembre");
+            mesesLista2.Items.Add("enero");
+            mesesLista2.Items.Add("febrero");
+            mesesLista2.Items.Add("marzo");
+            mesesLista2.Items.Add("abril");
+            mesesLista2.Items.Add("mayo");
+            mesesLista2.Items.Add("junio");
+            mesesLista2.Items.Add("julio");
+            mesesLista2.Items.Add("agosto");
+            mesesLista2.Items.Add("septiembre");
+            mesesLista2.Items.Add("octubre");
+            mesesLista2.Items.Add("noviembre");
+            mesesLista2.Items.Add("diciembre");
         }
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
@@ -96,7 +108,7 @@ namespace mantenimiento_proyecto.Logica
             else { t = 'E'; }
 
             return t;
-        }
+        } //Ver tipo de servicio 
 
         public void mostrarServicios()
         {
@@ -118,7 +130,7 @@ namespace mantenimiento_proyecto.Logica
         {
             var h = mesesLista.Items[0].ToString();
             //MessageBox.Show(h);
-
+                    //Poner los meses del periodo que compete 
             if (textPeriodo.Text == "enero-junio")
             {
                 mesesLista.Items.Remove("julio");
@@ -127,6 +139,12 @@ namespace mantenimiento_proyecto.Logica
                 mesesLista.Items.Remove("octubre");
                 mesesLista.Items.Remove("noviembre");
                 mesesLista.Items.Remove("diciembre");
+                mesesLista2.Items.Remove("julio");
+                mesesLista2.Items.Remove("agosto");
+                mesesLista2.Items.Remove("septiembre");
+                mesesLista2.Items.Remove("octubre");
+                mesesLista2.Items.Remove("noviembre");
+                mesesLista2.Items.Remove("diciembre");
             }
             else
             {
@@ -137,6 +155,12 @@ namespace mantenimiento_proyecto.Logica
                 mesesLista.Items.Remove("abril");
                 mesesLista.Items.Remove("mayo");
                 mesesLista.Items.Remove("junio");
+                mesesLista2.Items.Remove("enero");
+                mesesLista2.Items.Remove("febrero");
+                mesesLista2.Items.Remove("marzo");
+                mesesLista2.Items.Remove("abril");
+                mesesLista2.Items.Remove("mayo");
+                mesesLista2.Items.Remove("junio");
             }
             comboTipo.Text = "Interno";
         }
@@ -154,7 +178,7 @@ namespace mantenimiento_proyecto.Logica
         private void validarCelda(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {
+            {   //Revisar si el servicio sera interno o externo 
                 textDescripcion.Text = gridServicios.Rows[e.RowIndex].Cells[1].Value.ToString();
                 if (gridServicios.Rows[e.RowIndex].Cells[2].Value.ToString() == "I")
                 {
@@ -169,6 +193,7 @@ namespace mantenimiento_proyecto.Logica
                 desmarcarTodo();
                 if (textPeriodo.Text == "enero-junio")
                 {
+                    //Mostrar meses de solo programado
                     //MessageBox.Show("Äqui: "+ gridServicios.Rows[e.RowIndex].Cells[6].Value.ToString());
                     if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[6].Value.ToString()) == 1)
                     {
@@ -200,6 +225,71 @@ namespace mantenimiento_proyecto.Logica
                         //MessageBox.Show("Junio si esta seleccionado");
                         mesesLista.SetItemChecked(5, true);
                     }
+
+                    //Mostrar meses de programado y realizado 
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[6].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(0, true);
+                        mesesLista2.SetItemChecked(0, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[7].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(1, true);
+                        mesesLista2.SetItemChecked(1, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[8].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(2, true);
+                        mesesLista2.SetItemChecked(2, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[9].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(3, true);
+                        mesesLista2.SetItemChecked(3, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[10].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(4, true);
+                        mesesLista2.SetItemChecked(4, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[11].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(5, true);
+                        mesesLista2.SetItemChecked(5, true);
+                    }
+                    //                              mostrar meses de solo realizado 
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[6].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(0, false);
+                        mesesLista2.SetItemChecked(0, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[7].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(1, false);
+                        mesesLista2.SetItemChecked(1, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[8].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(2, false);
+                        mesesLista2.SetItemChecked(2, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[9].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(3, false);
+                        mesesLista2.SetItemChecked(3, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[10].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(4, false);
+                        mesesLista2.SetItemChecked(4, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[11].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(5, false);
+                        mesesLista2.SetItemChecked(5, true);
+                    }
+
+
                 }
                 else
                 {
@@ -233,29 +323,93 @@ namespace mantenimiento_proyecto.Logica
                         //MessageBox.Show("Diciembre si esta seleccionado");
                         mesesLista.SetItemChecked(5, true);
                     }
+
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[12].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(0, true);
+                        mesesLista2.SetItemChecked(0, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[13].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(1, true);
+                        mesesLista2.SetItemChecked(1, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[14].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(2, true);
+                        mesesLista2.SetItemChecked(2, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[15].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(3, true);
+                        mesesLista2.SetItemChecked(3, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[16].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(4, true);
+                        mesesLista2.SetItemChecked(4, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[17].Value.ToString()) == 2)
+                    {
+                        mesesLista.SetItemChecked(5, true);
+                        mesesLista2.SetItemChecked(5, true);
+                    }
+
+                    //                              mostrar meses de solo realizado 
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[12].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(0, false);
+                        mesesLista2.SetItemChecked(0, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[13].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(1, false);
+                        mesesLista2.SetItemChecked(1, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[14].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(2, false);
+                        mesesLista2.SetItemChecked(2, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[15].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(3, false);
+                        mesesLista2.SetItemChecked(3, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[16].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(4, false);
+                        mesesLista2.SetItemChecked(4, true);
+                    }
+                    if (int.Parse(gridServicios.Rows[e.RowIndex].Cells[17].Value.ToString()) == 3)
+                    {
+                        mesesLista.SetItemChecked(5, false);
+                        mesesLista2.SetItemChecked(5, true);
+                    }
                 }
 
                 textId.Text = gridServicios.Rows[e.RowIndex].Cells[0].Value.ToString();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error, debe seleccionar una fila válida \n\n\n" + ex.Message);
                 //this.Close();
             }
-
-
         }
 
-        private void desmarcarTodo()  
+        private void desmarcarTodo()
         {
             for (int i = 0; i < mesesLista.Items.Count; i++)
             {
                 mesesLista.SetItemChecked(i, false);
             }
+            for (int i = 0; i < mesesLista.Items.Count; i++)
+            {
+                mesesLista2.SetItemChecked(i, false);
+            }
         }
 
-        private void ocultarCeldas()
+        private void ocultarCeldas()  //Ocultar los campos no necesarios de mostrar
         {
             this.gridServicios.Columns["idServicio"].Visible = false;
             this.gridServicios.Columns["idArea"].Visible = false;
@@ -310,37 +464,7 @@ namespace mantenimiento_proyecto.Logica
                         periodo = textPeriodo.Text,
                         idArea = idArea1,
                     };
-
-                    foreach (var item in mesesLista.CheckedItems)
-                    {
-                        //MessageBox.Show("Item: "+item.ToString());
-                        if (item.ToString() == "enero")
-                        { s1.enero = 1; }
-                        if (item.ToString() == "febrero")
-                        { s1.febrero = 1; }
-                        if (item.ToString() == "marzo")
-                        { s1.marzo = 1; }
-                        if (item.ToString() == "abril")
-                        { s1.abril = 1; }
-                        if (item.ToString() == "mayo")
-                        { s1.mayo = 1; }
-                        if (item.ToString() == "junio")
-                        { s1.junio = 1; }
-
-                        if (item.ToString() == "julio")
-                        { s1.julio = 1; }
-                        if (item.ToString() == "agosto")
-                        { s1.agosto = 1; }
-                        if (item.ToString() == "septiembre")
-                        { s1.septiembre = 1; }
-                        if (item.ToString() == "octubre")
-                        { s1.octubre = 1; }
-                        if (item.ToString() == "noviembre")
-                        { s1.noviembre = 1; }
-                        if (item.ToString() == "diciembre")
-                        { s1.diciembre = 1; }
-
-                    }
+                    verChecks(s1);
 
                     //guardar en BD 
                     bool respuesta = ServicioLogica.Instancia.Guardar(s1);
@@ -376,37 +500,7 @@ namespace mantenimiento_proyecto.Logica
                     periodo = textPeriodo.Text,
                     idArea = idArea1,
                 };
-
-                foreach (var item in mesesLista.CheckedItems)
-                {
-                    //MessageBox.Show("Item: "+item.ToString());
-                    if (item.ToString() == "enero")
-                    { s1.enero = 1; }
-                    if (item.ToString() == "febrero")
-                    { s1.febrero = 1; }
-                    if (item.ToString() == "marzo")
-                    { s1.marzo = 1; }
-                    if (item.ToString() == "abril")
-                    { s1.abril = 1; }
-                    if (item.ToString() == "mayo")
-                    { s1.mayo = 1; }
-                    if (item.ToString() == "junio")
-                    { s1.junio = 1; }
-
-                    if (item.ToString() == "julio")
-                    { s1.julio = 1; }
-                    if (item.ToString() == "agosto")
-                    { s1.agosto = 1; }
-                    if (item.ToString() == "septiembre")
-                    { s1.septiembre = 1; }
-                    if (item.ToString() == "octubre")
-                    { s1.octubre = 1; }
-                    if (item.ToString() == "noviembre")
-                    { s1.noviembre = 1; }
-                    if (item.ToString() == "diciembre")
-                    { s1.diciembre = 1; }
-
-                }
+                verChecks(s1);
 
                 //guardar en BD 
                 bool respuesta = ServicioLogica.Instancia.Editar(s1);
@@ -418,6 +512,94 @@ namespace mantenimiento_proyecto.Logica
 
             }
         }
+
+        //Revisar qe meses estan seleccionados 1, programado, 2 programado y realizado, 3 solo realizado
+        private void verChecks(Servicio s1)
+        {
+            foreach (var item in mesesLista.CheckedItems)
+            {
+                //Revisar meses programados 
+                if (item.ToString() == "enero")
+                { s1.enero = 1; }
+                if (item.ToString() == "febrero")
+                { s1.febrero = 1; }
+                if (item.ToString() == "marzo")
+                { s1.marzo = 1; }
+                if (item.ToString() == "abril")
+                { s1.abril = 1; }
+                if (item.ToString() == "mayo")
+                { s1.mayo = 1; }
+                if (item.ToString() == "junio")
+                { s1.junio = 1; }
+
+                if (item.ToString() == "julio")
+                { s1.julio = 1; }
+                if (item.ToString() == "agosto")
+                { s1.agosto = 1; }
+                if (item.ToString() == "septiembre")
+                { s1.septiembre = 1; }
+                if (item.ToString() == "octubre")
+                { s1.octubre = 1; }
+                if (item.ToString() == "noviembre")
+                { s1.noviembre = 1; }
+                if (item.ToString() == "diciembre")
+                { s1.diciembre = 1; }
+
+            }
+
+            //revisar meses realizados 
+            foreach (var item in mesesLista2.CheckedItems)
+            {
+                //MessageBox.Show("Item: "+item.ToString());
+                if (item.ToString() == "enero")
+                { s1.enero = 2; }
+                if (item.ToString() == "febrero")
+                { s1.febrero = 2; }
+                if (item.ToString() == "marzo")
+                { s1.marzo = 2; }
+                if (item.ToString() == "abril")
+                { s1.abril = 2; }
+                if (item.ToString() == "mayo")
+                { s1.mayo = 2; }
+                if (item.ToString() == "junio")
+                { s1.junio = 2; }
+
+                if (item.ToString() == "julio")
+                { s1.julio = 2; }
+                if (item.ToString() == "agosto")
+                { s1.agosto = 2; }
+                if (item.ToString() == "septiembre")
+                { s1.septiembre = 2; }
+                if (item.ToString() == "octubre")
+                { s1.octubre = 2; }
+                if (item.ToString() == "noviembre")
+                { s1.noviembre = 2; }
+                if (item.ToString() == "diciembre")
+                { s1.diciembre = 2; }
+
+            }
+
+            //revisar meses realizados y no programados 
+            if (textPeriodo.Text == "enero-junio")
+            {
+                if (mesesLista.GetItemChecked(0) == false && mesesLista2.GetItemChecked(0)) { s1.enero = 3; }
+                if (mesesLista.GetItemChecked(1) == false && mesesLista2.GetItemChecked(1)) { s1.febrero = 3; }
+                if (mesesLista.GetItemChecked(2) == false && mesesLista2.GetItemChecked(2)) { s1.abril = 3; }
+                if (mesesLista.GetItemChecked(3) == false && mesesLista2.GetItemChecked(3)) { s1.abril = 3; }
+                if (mesesLista.GetItemChecked(4) == false && mesesLista2.GetItemChecked(4)) { s1.mayo = 3; }
+                if (mesesLista.GetItemChecked(5) == false && mesesLista2.GetItemChecked(5)) { s1.junio = 3; }
+            }
+            else
+            {
+                if (mesesLista.GetItemChecked(0) == false && mesesLista2.GetItemChecked(0)) { s1.julio = 3; }
+                if (mesesLista.GetItemChecked(1) == false && mesesLista2.GetItemChecked(1)) { s1.agosto = 3; }
+                if (mesesLista.GetItemChecked(2) == false && mesesLista2.GetItemChecked(2)) { s1.septiembre = 3; }
+                if (mesesLista.GetItemChecked(3) == false && mesesLista2.GetItemChecked(3)) { s1.octubre = 3; }
+                if (mesesLista.GetItemChecked(4) == false && mesesLista2.GetItemChecked(4)) { s1.noviembre = 3; }
+                if (mesesLista.GetItemChecked(5) == false && mesesLista2.GetItemChecked(5)) { s1.diciembre = 3; }
+            }
+        }  
+    
 
         private void btnEliminarServicio_Click_1(object sender, EventArgs e)
         {
@@ -440,6 +622,13 @@ namespace mantenimiento_proyecto.Logica
                 }
 
             }
+        }
+
+        //Boton para marcar con X los meses de realizacion de servicio 
+        private void btnRealizado_Click(object sender, EventArgs e)
+        {
+            if (mesesLista2.Visible) {mesesLista2.Visible = false;}
+            else {mesesLista2.Visible = true;}   
         }
     }
 }

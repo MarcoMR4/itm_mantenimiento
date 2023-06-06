@@ -46,6 +46,9 @@
             mesesLista = new CheckedListBox();
             textId = new TextBox();
             btnLimpiar = new Button();
+            mesesLista2 = new CheckedListBox();
+            btnRealizado = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridServicios).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +57,7 @@
             textServicio.AutoSize = true;
             textServicio.Font = new Font("Arial Narrow", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             textServicio.ForeColor = Color.Navy;
-            textServicio.Location = new Point(441, 8);
+            textServicio.Location = new Point(555, 6);
             textServicio.Margin = new Padding(2, 0, 2, 0);
             textServicio.Name = "textServicio";
             textServicio.Size = new Size(100, 29);
@@ -66,7 +69,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial Narrow", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.Navy;
-            label1.Location = new Point(195, 8);
+            label1.Location = new Point(309, 6);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(221, 29);
@@ -76,7 +79,7 @@
             // textDescripcion
             // 
             textDescripcion.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textDescripcion.Location = new Point(225, 133);
+            textDescripcion.Location = new Point(339, 131);
             textDescripcion.Name = "textDescripcion";
             textDescripcion.Size = new Size(747, 29);
             textDescripcion.TabIndex = 70;
@@ -86,7 +89,7 @@
             textNombre.AutoSize = true;
             textNombre.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             textNombre.ForeColor = Color.Black;
-            textNombre.Location = new Point(225, 109);
+            textNombre.Location = new Point(339, 107);
             textNombre.Margin = new Padding(2, 0, 2, 0);
             textNombre.Name = "textNombre";
             textNombre.Size = new Size(224, 25);
@@ -97,7 +100,7 @@
             // 
             btnAgregarServicio.BackColor = Color.MediumAquamarine;
             btnAgregarServicio.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAgregarServicio.Location = new Point(778, 184);
+            btnAgregarServicio.Location = new Point(892, 182);
             btnAgregarServicio.Margin = new Padding(2);
             btnAgregarServicio.Name = "btnAgregarServicio";
             btnAgregarServicio.Size = new Size(97, 35);
@@ -110,7 +113,7 @@
             // 
             btnModificarServicio.BackColor = Color.Khaki;
             btnModificarServicio.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnModificarServicio.Location = new Point(560, 253);
+            btnModificarServicio.Location = new Point(674, 251);
             btnModificarServicio.Margin = new Padding(2);
             btnModificarServicio.Name = "btnModificarServicio";
             btnModificarServicio.Size = new Size(109, 35);
@@ -123,7 +126,7 @@
             // 
             btnEliminarServicio.BackColor = Color.LightCoral;
             btnEliminarServicio.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminarServicio.Location = new Point(695, 253);
+            btnEliminarServicio.Location = new Point(809, 251);
             btnEliminarServicio.Margin = new Padding(2);
             btnEliminarServicio.Name = "btnEliminarServicio";
             btnEliminarServicio.Size = new Size(97, 35);
@@ -150,7 +153,7 @@
             labelAnio.AutoSize = true;
             labelAnio.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             labelAnio.ForeColor = Color.Black;
-            labelAnio.Location = new Point(732, 34);
+            labelAnio.Location = new Point(846, 32);
             labelAnio.Margin = new Padding(2, 0, 2, 0);
             labelAnio.Name = "labelAnio";
             labelAnio.Size = new Size(52, 25);
@@ -162,7 +165,7 @@
             labelPeriodo.AutoSize = true;
             labelPeriodo.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             labelPeriodo.ForeColor = Color.Black;
-            labelPeriodo.Location = new Point(700, 73);
+            labelPeriodo.Location = new Point(814, 71);
             labelPeriodo.Margin = new Padding(2, 0, 2, 0);
             labelPeriodo.Name = "labelPeriodo";
             labelPeriodo.Size = new Size(84, 25);
@@ -171,7 +174,7 @@
             // 
             // textAnio
             // 
-            textAnio.Location = new Point(789, 34);
+            textAnio.Location = new Point(903, 32);
             textAnio.Name = "textAnio";
             textAnio.ReadOnly = true;
             textAnio.Size = new Size(183, 23);
@@ -179,7 +182,7 @@
             // 
             // textPeriodo
             // 
-            textPeriodo.Location = new Point(789, 73);
+            textPeriodo.Location = new Point(903, 71);
             textPeriodo.Name = "textPeriodo";
             textPeriodo.ReadOnly = true;
             textPeriodo.Size = new Size(183, 23);
@@ -192,7 +195,7 @@
             comboTipo.Font = new Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboTipo.FormattingEnabled = true;
             comboTipo.Items.AddRange(new object[] { "Interno", "Externo" });
-            comboTipo.Location = new Point(394, 184);
+            comboTipo.Location = new Point(508, 182);
             comboTipo.Name = "comboTipo";
             comboTipo.Size = new Size(177, 30);
             comboTipo.TabIndex = 82;
@@ -201,7 +204,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label6.Location = new Point(225, 184);
+            label6.Location = new Point(339, 182);
             label6.Name = "label6";
             label6.Size = new Size(163, 23);
             label6.TabIndex = 81;
@@ -211,14 +214,14 @@
             // 
             mesesLista.CheckOnClick = true;
             mesesLista.FormattingEnabled = true;
-            mesesLista.Location = new Point(22, 69);
+            mesesLista.Location = new Point(150, 59);
             mesesLista.Name = "mesesLista";
             mesesLista.Size = new Size(120, 202);
             mesesLista.TabIndex = 83;
             // 
             // textId
             // 
-            textId.Location = new Point(433, 253);
+            textId.Location = new Point(547, 251);
             textId.Name = "textId";
             textId.ReadOnly = true;
             textId.Size = new Size(93, 23);
@@ -228,7 +231,7 @@
             // 
             btnLimpiar.BackColor = Color.Silver;
             btnLimpiar.Font = new Font("Arial Narrow", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLimpiar.Location = new Point(591, 184);
+            btnLimpiar.Location = new Point(705, 182);
             btnLimpiar.Margin = new Padding(2);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(167, 35);
@@ -236,12 +239,47 @@
             btnLimpiar.Text = "Limpiar campos";
             btnLimpiar.UseVisualStyleBackColor = false;
             // 
+            // mesesLista2
+            // 
+            mesesLista2.CheckOnClick = true;
+            mesesLista2.FormattingEnabled = true;
+            mesesLista2.Location = new Point(12, 59);
+            mesesLista2.Name = "mesesLista2";
+            mesesLista2.Size = new Size(120, 202);
+            mesesLista2.TabIndex = 86;
+            mesesLista2.Visible = false;
+            // 
+            // btnRealizado
+            // 
+            btnRealizado.Location = new Point(12, 12);
+            btnRealizado.Name = "btnRealizado";
+            btnRealizado.Size = new Size(120, 41);
+            btnRealizado.TabIndex = 87;
+            btnRealizado.Text = "Registrar meses realizado";
+            btnRealizado.UseVisualStyleBackColor = true;
+            btnRealizado.Click += btnRealizado_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(150, 35);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(122, 25);
+            label2.TabIndex = 88;
+            label2.Text = "Programado:";
+            // 
             // FormServicios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1016, 516);
+            ClientSize = new Size(1121, 516);
+            Controls.Add(label2);
+            Controls.Add(btnRealizado);
+            Controls.Add(mesesLista2);
             Controls.Add(btnLimpiar);
             Controls.Add(textId);
             Controls.Add(mesesLista);
@@ -287,5 +325,8 @@
         private CheckedListBox mesesLista;
         private TextBox textId;
         private Button btnLimpiar;
+        private CheckedListBox mesesLista2;
+        private Button btnRealizado;
+        private Label label2;
     }
 }

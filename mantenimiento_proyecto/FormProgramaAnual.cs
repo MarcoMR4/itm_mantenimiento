@@ -177,10 +177,23 @@ namespace mantenimiento_proyecto
             }
         }
 
+        //Validar captura de nombres 
+        private bool validarNombres() 
+        {
+            bool respuesta = true;
+            if (textElaboro.Text=="" || textAprobo.Text=="")
+            {
+                MessageBox.Show("Debes capturar los nombres de quien elabora y aprueba");
+                respuesta = false;
+            }
+            return respuesta;
+        }
 
         //                                                         Generar formato PDF 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            if (validarNombres() == false) { return; }
+            
             try
             {
                 //nombre de archivo para guardar 
@@ -301,8 +314,8 @@ namespace mantenimiento_proyecto
                                 PdfPCell celdaTipo = new PdfPCell(new Paragraph(collection[i].tipoServicio));
                                 celdaTipo.Rowspan = 2;
                                 table.AddCell(celdaTipo);
-                                table.AddCell("P");
-                                if (collection[i].enero == 1)
+                                table.AddCell("P");  //Primer renglon (servicio programado)
+                                if (collection[i].enero == 1 || collection[i].enero == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -310,7 +323,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].febrero == 1)
+                                if (collection[i].febrero == 1 || collection[i].febrero == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -318,7 +331,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].marzo == 1)
+                                if (collection[i].marzo == 1 || collection[i].marzo == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -326,7 +339,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].abril == 1)
+                                if (collection[i].abril == 1 || collection[i].abril == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -334,7 +347,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].mayo == 1)
+                                if (collection[i].mayo == 1 || collection[i].mayo == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -342,7 +355,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].junio == 1)
+                                if (collection[i].junio == 1 || collection[i].junio == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -350,7 +363,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].julio == 1)
+                                if (collection[i].julio == 1 || collection[i].julio == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -358,7 +371,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].agosto == 1)
+                                if (collection[i].agosto == 1 || collection[i].agosto == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -366,7 +379,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].septiembre == 1)
+                                if (collection[i].septiembre == 1 || collection[i].septiembre == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -374,7 +387,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].octubre == 1)
+                                if (collection[i].octubre == 1 || collection[i].octubre == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -382,7 +395,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].noviembre == 1)
+                                if (collection[i].noviembre == 1 || collection[i].noviembre == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -390,7 +403,7 @@ namespace mantenimiento_proyecto
                                 {
                                     table.AddCell("");
                                 }
-                                if (collection[i].diciembre == 1)
+                                if (collection[i].diciembre == 1 || collection[i].diciembre == 2)
                                 {
                                     table.AddCell("X");
                                 }
@@ -399,22 +412,106 @@ namespace mantenimiento_proyecto
                                     table.AddCell("");
                                 }
 
-                                //segunda fila
+                                //segunda fila (servicio realizado meses)
                                 table.AddCell("R");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
-                                table.AddCell("");
+                                if (collection[i].enero == 2 || collection[i].enero == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].febrero == 2 || collection[i].febrero == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].marzo == 2 || collection[i].marzo == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].abril == 2 || collection[i].abril == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].mayo == 2 || collection[i].mayo == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].junio == 2 || collection[i].junio == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].julio == 2 || collection[i].julio == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].agosto == 2 || collection[i].agosto == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].septiembre == 2 || collection[i].septiembre == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].octubre == 2 || collection[i].octubre == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].noviembre == 2 || collection[i].noviembre == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
+                                if (collection[i].diciembre == 2 || collection[i].diciembre == 3)
+                                {
+                                    table.AddCell("X");
+                                }
+                                else
+                                {
+                                    table.AddCell("");
+                                }
 
-                                //tercera fila 
+                                //tercera fila (servicio reprogramado)
                                 table.AddCell("");
                                 table.AddCell("");
                                 table.AddCell("");
@@ -611,7 +708,7 @@ public class PageEventHelper : PdfPageEventHelper
         iTextSharp.text.Rectangle pageSize = document.PageSize;
         template2.BeginText();
         template2.SetFontAndSize(bf2, 11);
-        template2.SetTextMatrix(document.RightMargin + 630, 0);
+        template2.SetTextMatrix(document.RightMargin + 628, 0);
         template2.ShowText("" + (writer.PageNumber));
         template2.EndText();
     }
